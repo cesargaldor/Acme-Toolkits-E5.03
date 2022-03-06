@@ -1,0 +1,4 @@
+key,reference,moment,status,statement,skills,qualifications,key:job,key:worker
+application-01,WORKER01-JOB01,2019/08/25 22:15,PENDING,Statement 1,Skills 1,Qualifications 1,job-01,worker-01
+application-02,WORKER01-JOB02,2020/08/25 10:00,PENDING,Statement 2,Skills 2,Qualifications 2,job-02,worker-01
+application-03,WORKER01-JOB03,2020/01/02 10:00,PENDING,Statement 3,Skills 3,Qualifications 3,job-03,worker-01

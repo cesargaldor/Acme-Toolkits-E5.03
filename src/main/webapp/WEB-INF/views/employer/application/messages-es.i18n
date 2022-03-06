@@ -1,0 +1,25 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+employer.application.form.label.reference = Referencia:
+employer.application.form.label.moment = Momento:
+employer.application.form.label.statement = Defensa:
+employer.application.form.label.skills = Habilidades:
+employer.application.form.label.qualifications = Cualificaciones: 
+employer.application.form.label.status = Estado:
+employer.application.form.label.new-status = Cambiar estado a:
+
+employer.application.form.button.update = Actualizar
+
+employer.application.list.title = Mis solicitudes
+
+employer.application.list.label.reference = Referencia
+employer.application.list.label.status = Estado
+employer.application.list.label.title = Título

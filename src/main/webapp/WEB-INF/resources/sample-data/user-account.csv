@@ -1,0 +1,7 @@
+key,username,password,identity,enabled
+user-account-employer-01,employer1,employer1,"UserIdentity{name: 'Employer', surname: 'One', email: 'employer1@mail.com', phone: {country-code: '+44', area-code: null, number: '123-456-789'} }",true
+user-account-employer-02,employer2,employer2,"UserIdentity{name: 'Employer', surname: 'Two', email: 'employer2@mail.com', phone: null}",true
+user-account-employer-03,employer3,employer3,"UserIdentity{name: 'Employer', surname: 'Three', email: 'employer3@mail.com', phone: {country-code: '+34', area-code: '954', number: '55 67 11'} }",true
+user-account-worker-01,worker1,worker1,"UserIdentity{name: 'Worker', surname: 'One', email: 'worker1@mail.com', phone: {country-code: '+28', area-code: '111', number: '1234-5678'} }",true
+user-account-worker-02,worker2,worker2,"UserIdentity{name: 'Worker', surname: 'Two', email: 'worker2@mail.com', phone: {country-code: '+1', area-code: '256', number: '900 123'} }",true
+user-account-worker-03,worker3,worker2,"UserIdentity{name: 'Worker', surname: 'Three', email: 'worker3@mail.com', phone: {country-code: '+4', area-code: null, number: '123456789'} }",true

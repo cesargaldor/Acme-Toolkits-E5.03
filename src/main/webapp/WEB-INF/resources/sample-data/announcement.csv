@@ -1,0 +1,8 @@
+key,title,moment,status,text,info
+announcement-01,Very old announcement,2000/01/01 00:00,INFO,This is the oldest announcement in the system.,null
+announcement-02,The system's restarted,2022/01/22 00:00,INFO,The system's been restarted after updating it.,null
+announcement-03,The system's restarted again,2022/01/22 00:10,WARNING,We're sorry. The update didn't work well.,http://www.us.es
+announcement-04,Great discount,2022/01/22 09:00,IMPORTANT,You may now benefit from our great volume discount!,http://www.acme-jobs.com/discount
+announcement-05,The system's working well,2022/01/02 12:00,INFO,The system's gone through extensive testing and it works pretty well.,null
+announcement-06,The creator's birth date,1970/09/07 22:30,INFO,This message was published long ago on the creator's birthday.,https://www.kidscanfly.ca/wp-content/uploads/2020/08/happy-birthday.jpeg
+announcement-07,The framework's birthday,2012/01/01 00:00,INFO,This message celebrates the framework bithday,https://www.acme.org

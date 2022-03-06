@@ -1,0 +1,82 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+﻿# master.menu #################################################################
+
+master.menu.home = Inicio
+master.menu.sign-up = Registrarse
+master.menu.sign-in = Entrar
+master.menu.sign-out = Salir
+
+# master.menu.anonymous #######################################################
+
+master.menu.anonymous = Anónimo
+master.menu.anonymous.all-jobs = Ver trabajos
+master.menu.anonymous.list-shouts = Ver gritos
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.announcement.list = Ver anuncios
+master.menu.authenticated.money-exchage = Cambio de dinero
+
+# master.menu.administrator ###################################################
+
+master.menu.administrator = Administrador
+master.menu.administrator.announcement.list-all = Ver todos los anuncios
+master.menu.administrator.announcement.list-recent = Ver anuncios recientes
+master.menu.administrator.announcement.create = Crear anuncio
+master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.populate-initial = Poblar BD (inicial)
+master.menu.administrator.populate-sample = Poblar BD (ejemplos)
+master.menu.administrator.shut-down = Parar el sistema
+
+# master.menu.employer ########################################################
+
+master.menu.employer = Empleador
+master.menu.employer.all-jobs = Ver todos los trabajos
+master.menu.employer.my-jobs = Ver mis trabajos
+master.menu.employer.my-applications = Ver mis solicitudes
+
+# master.menu.worker ##########################################################
+
+master.menu.worker = Trabajador
+master.menu.worker.all-jobs = Ver todos los trabajos
+master.menu.worker.my-applications = Ver mis solicitudes
+
+# master.menu.user-account ####################################################
+
+master.menu.user-account = Cuenta
+master.menu.user-account.general-data = Datos generales
+master.menu.user-account.employer = Datos de empleado
+master.menu.user-account.become-employer = Hazte empleador
+master.menu.user-account.worker = Datos de trabajador
+master.menu.user-account.become-worker = Hazte trabajador
+
+﻿# master.welcome ##############################################################
+
+master.welcome.title = ¡Bienvenidos!
+master.welcome.text = \
+	Bienvenidos a Acme Jobs, tu compañero de trabajo!  Da igual que seas un \
+	empleador o un trabajador: nuestro sistema de dará las opotunidades que \
+	necesitas.  ¡Te deseamos los mayores logros profesionales!
+
+﻿# master.footer ###############################################################
+
+master.footer.title.about = Nosotros
+master.footer.label.company = La empresa
+master.footer.label.license = Licencia
+master.footer.title.social = Social
+master.footer.label.linked-in = Linked-In
+master.footer.label.twitter = Twitter
+master.footer.title.languages = Lenguajes
+master.footer.label.english = Inglés
+master.footer.label.spanish = Español
