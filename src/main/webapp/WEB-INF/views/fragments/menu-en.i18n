@@ -20,6 +20,7 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.all-jobs = List jobs
 master.menu.anonymous.list-shouts = List shouts
+master.menu.anonymous.list-chirps = List chirps
 
 # master.menu.administrator ###################################################
 
