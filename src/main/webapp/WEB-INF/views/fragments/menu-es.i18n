@@ -21,6 +21,7 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.all-jobs = Ver trabajos
 master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.list-chirps = Ver chirps
+master.menu.anonymous.list-patronages = Ver mecenazgos
 
 # master.menu.authenticated #######################################################
 

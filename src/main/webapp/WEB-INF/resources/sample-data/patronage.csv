@@ -1,0 +1,19 @@
+key,title,description,work-load,more-info,key:job
+duty-01-01,Duty 01.01,Sample duty,100,null,job-01
+duty-02-01,Duty 02.01,Sample duty,50,null,job-02
+duty-02-02,Duty 02.02,Sample duty,50,null,job-02
+duty-03-01,Duty 03.01,Sample duty,33.33,null,job-03
+duty-03-02,Duty 03.02,Sample duty,33.33,null,job-03
+duty-03-03,Duty 03.03,Sample duty,33.34,null,job-03
+duty-04-01,Duty 04.01,Sample duty,0.80,null,job-04
+duty-04-02,Duty 04.02,Sample duty,0.10,null,job-04
+duty-04-03,Duty 04.03,Sample duty,0.10,null,job-04
+duty-05-01,Duty 05.01,Sample duty,50.00,null,job-05
+duty-05-02,Duty 05.02,Sample duty,49.00,null,job-05
+duty-05-03,Duty 05.03,Sample duty,0.00,null,job-05
+duty-06-01,Duty 06.01,Sample duty,1.99,null,job-06
+duty-06-02,Duty 06.02,Sample duty,98.01,null,job-06
+duty-07-01,Duty 07.01,Sample duty,100,http://www.acme.org/more-info,job-07
+duty-08-01,Duty 08.01,Sample duty,100,null,job-08
+duty-09-01,Duty 09.01,Sample duty,100,null,job-09
+duty-10-01,Duty 10.1,Sample duty,50,http://www.example.org,job-10
