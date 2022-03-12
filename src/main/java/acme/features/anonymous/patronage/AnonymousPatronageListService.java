@@ -33,7 +33,7 @@ public class AnonymousPatronageListService implements AbstractListService<Anonym
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "title", "author", "body", "moment", "email");
+			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 		}
 
 		@Override

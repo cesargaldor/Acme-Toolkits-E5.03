@@ -16,9 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="anonymous.patronage.form.label.title" path="title"/>
-	<acme:input-textarea code="anonymous.patronage.form.label.description" path="description"/>
-	<acme:input-moment code="anonymous.patronage.form.label.work-load" path="workLoad"/>
-	<acme:input-url code="anonymous.patronage.form.label.moreInfo" path="moreInfo"/>			
+	<acme:input-textbox code="anonymous.patronage.form.label.status" path="status"/>
+	<acme:input-textarea code="anonymous.patronage.form.label.code" path="code"/>
+	<acme:input-moment code="anonymous.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-url code="anonymous.patronage.form.label.budget" path="budget"/>
+	<acme:input-url code="anonymous.patronage.form.label.moment" path="moment"/>			
+	<acme:input-url code="anonymous.patronage.form.label.optionalLink" path="optionalLink"/>
+	
+	<acme:submit code="anonymous.patronage.form.button.create" action="/anonymous/patronage/create"/>	
 </acme:form>
 

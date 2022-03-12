@@ -1,15 +1,20 @@
 
 package acme.features.anonymous.patronage;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.framework.components.models.Model;
+import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
+import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AnonymousPatronageCreateService implements AbstractCreateService {
+public class AnonymousPatronageCreateService implements AbstractCreateService<Anonymous, Patronage> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -32,7 +37,7 @@ public class AnonymousPatronageCreateService implements AbstractCreateService {
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "moment", "title", "author", "body", "email");
+		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
 	@Override
@@ -41,7 +46,7 @@ public class AnonymousPatronageCreateService implements AbstractCreateService {
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "moment", "title", "author", "body", "email");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
 	@Override
@@ -52,13 +57,8 @@ public class AnonymousPatronageCreateService implements AbstractCreateService {
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis());
-
 		result = new Patronage();
-		//			result.setTitle("Prueba creando un Patronage");
-		//			result.setAuthor("César Gálvez");
-		//			result.setBody("Lorem ipsum!");
 		result.setMoment(moment);
-		//			result.setEmail("cesgaldor@alum.us.es");
 
 		return result;
 	}
@@ -78,5 +78,7 @@ public class AnonymousPatronageCreateService implements AbstractCreateService {
 
 		this.repository.save(entity);
 	}
+
+
 
 }

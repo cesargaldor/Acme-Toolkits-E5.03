@@ -8,15 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.chirp.form.label.moment = Moment:
-anonymous.chirp.form.label.author = Author:
-anonymous.chirp.form.label.title = Title:
-anonymous.chirp.form.label.body = Body:
-anonymous.chirp.form.label.email = Email:
-anonymous.chirp.form.button.create = Create
- 
-anonymous.chirp.list.label.moment = Moment
-anonymous.chirp.list.label.author = Author
-anonymous.chirp.list.label.title = Title
-
-anonymous.chirp.list.button.create = Create chirp
+anonymous.patronage.form.label.status = Status:
+anonymous.patronage.form.label.code = Code:
+anonymous.patronage.form.label.legalStuff = Legal Stuff:
+anonymous.patronage.form.label.budget = Budget:
+anonymous.patronage.form.label.moment = Moment:
+anonymous.patronage.form.button.optionalLink = Optional Link:
+anonymous.patronage.list.button.create = Create patronage

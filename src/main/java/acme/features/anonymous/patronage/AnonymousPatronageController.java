@@ -16,10 +16,10 @@ public class AnonymousPatronageController extends AbstractController<Anonymous, 
 	
 	//Internal state  -------------------------------------------------------------------
 	@Autowired
-	protected AnonymousPatronageListService		listPatronage;
+	protected AnonymousPatronageListService		listService;
 
 	@Autowired
-	protected AnonymousPatronageCreateService	createPatronage;
+	protected AnonymousPatronageCreateService	createService;
 	
 	//Constructors ----------------------------------------------------------------------
 	
@@ -28,4 +28,5 @@ public class AnonymousPatronageController extends AbstractController<Anonymous, 
 		super.addCommand("list", this.listService);
 		super.addCommand("create", this.createService);
 
+	}
 }

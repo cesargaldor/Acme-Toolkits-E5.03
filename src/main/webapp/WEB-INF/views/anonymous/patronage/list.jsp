@@ -16,9 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list readonly="true">
-	<acme:list-column code="anonymous.patronage.list.label.moment" path="moment" width="20%"/>
-	<acme:list-column code="anonymous.patronage.list.label.author" path="author" width="20%"/>
-	<acme:list-column code="anonymous.patronage.list.label.title" path="title" width="60%"/>
+	<acme:list-column code="anonymous.patronage.list.label.status" path="status" width="20%"/>
+	<acme:list-column code="anonymous.patronage.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="anonymous.patronage.list.label.legalStuff" path="legalStuff" width="20%"/>
+	<acme:list-column code="anonymous.patronage.list.label.budget" path="budget" width="20%"/>
+	<acme:list-column code="anonymous.patronage.list.label.moment" path="moment" width="10%"/>
+	<acme:list-column code="anonymous.patronage.list.label.optionalLink" path="optionalLink" width="10%"/>
+	
 </acme:list>
 
 <acme:button code="anonymous.patronage.list.button.create" action="/anonymous/patronage/create"/>
