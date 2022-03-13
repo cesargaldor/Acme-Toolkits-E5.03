@@ -1,3 +1,2 @@
-key,status,code,legalStuff,budget,moment,optionalLink
-patronage-01,PROPOSED,SAMPLE TEXT,100.0,2022/03/12 12:32,optionalInformationSampleText
-
+key,status,code,legalStuff,budget,moment,optionalLink,key:patron
+patronage-01,PROPOSED,ABC-123-B,Cantidad acordada,100.0,2022/03/12 12:32,http://youtube.com,patron-01

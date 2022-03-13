@@ -5,3 +5,4 @@ user-account-employer-03,employer3,employer3,"UserIdentity{name: 'Employer', sur
 user-account-worker-01,worker1,worker1,"UserIdentity{name: 'Worker', surname: 'One', email: 'worker1@mail.com', phone: {country-code: '+28', area-code: '111', number: '1234-5678'} }",true
 user-account-worker-02,worker2,worker2,"UserIdentity{name: 'Worker', surname: 'Two', email: 'worker2@mail.com', phone: {country-code: '+1', area-code: '256', number: '900 123'} }",true
 user-account-worker-03,worker3,worker2,"UserIdentity{name: 'Worker', surname: 'Three', email: 'worker3@mail.com', phone: {country-code: '+4', area-code: null, number: '123456789'} }",true
+user-account-patron-01,patron1,patron1,"UserIdentity{name: 'patron1', surname: 'asdf', email: 'patron1@mail.com', phone: {country-code: '+34', area-code: null, number: '234-446-789'} }",true

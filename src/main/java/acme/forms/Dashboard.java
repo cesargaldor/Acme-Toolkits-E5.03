@@ -33,6 +33,7 @@ public class Dashboard implements Serializable {
 	Double						ratioOfPendingApplications;
 	Double						ratioOfAcceptedApplications;
 	Double						ratioOfRejectedApplications;
+	
 
 	// Derived attributes -----------------------------------------------------
 
