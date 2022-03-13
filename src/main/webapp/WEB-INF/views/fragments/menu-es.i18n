@@ -54,6 +54,11 @@ master.menu.worker = Trabajador
 master.menu.worker.all-jobs = Ver todos los trabajos
 master.menu.worker.my-applications = Ver mis solicitudes
 
+# master.menu.patron ##########################################################
+
+master.menu.patron = Patrón
+master.menu.patron.all-patronages = Ver todos mis patronages
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
@@ -62,3 +67,8 @@ master.menu.user-account.employer = Datos de empleado
 master.menu.user-account.become-employer = Hazte empleador
 master.menu.user-account.worker = Datos de trabajador
 master.menu.user-account.become-worker = Hazte trabajador
+
+master.menu.user-account.become-inventor = Hazte inventor
+master.menu.user-account.inventor = Datos de inventor
+master.menu.user-account.become-patron = Hazte patrón
+master.menu.user-account.patron = Datos de patrón

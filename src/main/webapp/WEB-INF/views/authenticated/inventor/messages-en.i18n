@@ -1,0 +1,7 @@
+authenticated.inventor.form.title.create = Become a inventor
+authenticated.inventor.form.title.update = Update your inventor data
+authenticated.inventor.form.button.create = Register
+authenticated.inventor.form.button.update = Update 
+authenticated.inventor.form.label.company = Company
+authenticated.inventor.form.label.statement = Statement
+authenticated.inventor.form.label.link = Link
