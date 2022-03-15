@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.patronage.Patronage;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.roles.Patron;
 
 @Controller
-@RequestMapping("/anonymous/patronage/")
-public class PatronPatronageController extends AbstractController<Anonymous, Patronage>{
+@RequestMapping("/patron/patronage/")
+public class PatronPatronageController extends AbstractController<Patron, Patronage>{
 	
 	//Internal state  -------------------------------------------------------------------
 	@Autowired

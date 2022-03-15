@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
+import acme.roles.Patron;
 
 @Service
-public class PatronPatronageListService implements AbstractListService<Anonymous, Patronage>{
+public class PatronPatronageListService implements AbstractListService<Patron, Patronage>{
 
 	// Internal state ---------------------------------------------------------
 
