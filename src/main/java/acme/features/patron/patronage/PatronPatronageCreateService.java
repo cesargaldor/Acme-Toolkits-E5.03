@@ -55,10 +55,14 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		Patronage result;
 		Date moment;
-
+		//SACAR USER REGISTRADO
+		final Integer id = request.getPrincipal().getActiveRoleId();
+		final Patron p = this.repository.PatronById(id);
+		
 		moment = new Date(System.currentTimeMillis());
 		result = new Patronage();
 		result.setMoment(moment);
+		result.setPatron(p);
 
 		return result;
 	}

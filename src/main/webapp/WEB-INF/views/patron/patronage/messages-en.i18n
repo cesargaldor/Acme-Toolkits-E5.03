@@ -8,10 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.patronage.form.label.title = Title:
-anonymous.patronage.form.label.description = Description:
-anonymous.patronage.form.label.work-load = Work load:
-anonymous.patronage.form.label.moreInfo = More info: (Optional)
-
-anonymous.patronage.list.label.title = Title
-anonymous.patronage.list.label.work-load = Work load
+patron.patronage.list.label.status = Status:
+patron.patronage.list.label.code = Code:
+patron.patronage.list.label.legalStuff = Legal Stuff:
+patron.patronage.list.label.budget = Budget:
+patron.patronage.list.label.moment = Moment:
+patron.patronage.list.label.optionalLink = Optional link:

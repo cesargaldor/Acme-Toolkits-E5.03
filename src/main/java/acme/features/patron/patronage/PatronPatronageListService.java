@@ -40,12 +40,9 @@ public class PatronPatronageListService implements AbstractListService<Patron, P
 
 		@Override
 		public Collection<Patronage> findMany(final Request<Patronage> request) {
-			assert request != null;
+			assert request != null;			
+			final Integer id = request.getPrincipal().getActiveRoleId();
+	        return this.repository.findPatronageByPatronId(id);
 
-			Collection<Patronage> result;
-
-			result = this.repository.findMany();
-
-			return result;
 		}
 }

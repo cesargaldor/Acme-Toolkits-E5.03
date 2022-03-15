@@ -16,9 +16,17 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textbox code="patron.patronage.form.label.status" path="status"/>
+	<acme:input-select code="patron.patronage.form.label.status" path="status">
+		<acme:input-option code="patron.patronage.form.label.status.PROPOSED" value="PROPOSED"/>
+		<acme:input-option code="patron.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
+		<acme:input-option code="patron.patronage.form.label.status.DENIED" value="DENIED"/>
+		
+		
+	</acme:input-select>
+			
+		
 	<acme:input-textarea code="patron.patronage.form.label.code" path="code"/>
-	<acme:input-moment code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
 	<acme:input-url code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-url code="patron.patronage.form.label.moment" path="moment"/>			
 	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink"/>
