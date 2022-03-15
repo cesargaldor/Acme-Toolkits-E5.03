@@ -24,15 +24,15 @@ import acme.framework.roles.Anonymous;
 
 @Controller
 @RequestMapping("/anonymous/shout/")
-public class AnonymousShoutController extends AbstractController<Anonymous, Shout> {
+public class AnonymousComponentsController extends AbstractController<Anonymous, Shout> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousShoutListService		listService;
+	protected AnonymousComponentsListService		listService;
 
 	@Autowired
-	protected AnonymousShoutCreateService	createService;
+	protected AnonymousComponentsCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 

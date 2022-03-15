@@ -25,12 +25,12 @@ import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
+public class AnonymousComponentsCreateService implements AbstractCreateService<Anonymous, Shout> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousShoutRepository repository;
+	protected AnonymousComponentsRepository repository;
 
 	// AbstractCreateService<Administrator, Shout> interface --------------
 

@@ -21,7 +21,7 @@ import acme.entities.shouts.Shout;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousShoutRepository extends AbstractRepository {
+public interface AnonymousComponentsRepository extends AbstractRepository {
 
 	@Query("select s from Shout s")
 	Collection<Shout> findMany();
