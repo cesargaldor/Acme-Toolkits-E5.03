@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAnnouncementRepository.java
+ * AnonymousShoutRepository.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,25 +10,20 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.announcement;
+package acme.features.anonymous.announcement;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.announcements.Announcement;
+import acme.entities.shouts.Shout;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuthenticatedAnnouncementRepository extends AbstractRepository {
+public interface AnonymousAnnouncementRepository extends AbstractRepository {
 
-	@Query("select a from Announcement a where a.id = :id")
-	Announcement findOneAnnouncementById(int id);
-
-	@Query("select a from Announcement a where a.moment >= :deadline")
-	Collection<Announcement> findRecentAnnouncements(Date deadline);
+	@Query("select s from Shout s")
+	Collection<Shout> findMany();
 
 }
- 

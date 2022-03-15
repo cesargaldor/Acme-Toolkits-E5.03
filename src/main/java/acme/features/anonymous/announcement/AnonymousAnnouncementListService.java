@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAnnouncementListService.java
+ * AnonymousShoutListService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,61 +10,53 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.announcement;
+package acme.features.anonymous.announcement;
 
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.announcements.Announcement;
+import acme.entities.shouts.Shout;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuthenticatedAnnouncementListService implements AbstractListService<Authenticated, Announcement> {
+public class AnonymousAnnouncementListService implements AbstractListService<Anonymous, Shout> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedAnnouncementRepository repository;
+	protected AnonymousAnnouncementRepository repository;
 
-	// AbstractListService<Administrator, Announcement> interface --------------
- 
+	// AbstractListService<Administrator, Shout> interface --------------
+
 
 	@Override
-	public boolean authorise(final Request<Announcement> request) {
+	public boolean authorise(final Request<Shout> request) {
 		assert request != null;
 
 		return true;
-	}
+	} 
 
 	@Override
-	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
+	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "status");
+		request.unbind(entity, model, "author", "text", "moment");
 	}
 
 	@Override
-	public Collection<Announcement> findMany(final Request<Announcement> request) {
+	public Collection<Shout> findMany(final Request<Shout> request) {
 		assert request != null;
 
-		Collection<Announcement> result;
-		Calendar calendar;
-		Date deadline;
+		Collection<Shout> result;
 
-		calendar = Calendar.getInstance();
-		calendar.add(Calendar.MONTH, -1);
-		deadline = calendar.getTime();
-
-		result = this.repository.findRecentAnnouncements(deadline);
+		result = this.repository.findMany();
 
 		return result;
 	}

@@ -1,5 +1,5 @@
 /*
- * AuthenticatedAnnouncementController.java
+ * AnonymousShoutController.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.announcement;
+package acme.features.anonymous.announcement;
 
 import javax.annotation.PostConstruct;
 
@@ -18,21 +18,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.announcements.Announcement;
+import acme.entities.shouts.Shout;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Authenticated;
+import acme.framework.roles.Anonymous;
 
 @Controller
-@RequestMapping("/authenticated/announcement/")
-public class AuthenticatedAnnouncementController extends AbstractController<Authenticated, Announcement> {
+@RequestMapping("/anonymous/announcement/")
+public class AnonymousAnnouncementController extends AbstractController<Anonymous, Shout> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedAnnouncementListService	listService;
- 
+	protected AnonymousAnnouncementListService		listService;
+
 	@Autowired
-	protected AuthenticatedAnnouncementShowService	showService;
+	protected AnonymousAnnouncementCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -40,7 +40,7 @@ public class AuthenticatedAnnouncementController extends AbstractController<Auth
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		super.addCommand("show", this.showService);
+		super.addCommand("create", this.createService);
 	}
 
 }
