@@ -65,7 +65,7 @@
 		
 		<!-- Roles inventor y patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list-all"/>
+			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
 		</acme:menu-option>
 		
 	</acme:menu-left>

@@ -3,6 +3,7 @@ package acme.features.patron.patronage;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
 import acme.framework.components.models.Model;
@@ -10,6 +11,7 @@ import acme.framework.controllers.Request;
 import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
 
+@Service
 public class PatronPatronageListService implements AbstractListService<Anonymous, Patronage>{
 
 	// Internal state ---------------------------------------------------------
