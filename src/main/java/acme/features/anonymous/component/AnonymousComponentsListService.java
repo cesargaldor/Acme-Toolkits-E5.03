@@ -1,5 +1,5 @@
 /*
- * AnonymousShoutListService.java
+ * AnonymousComponentListService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,51 +10,51 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.shout;
+package acme.features.anonymous.component;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.shouts.Shout;
+import acme.entities.components.Component;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousComponentsListService implements AbstractListService<Anonymous, Shout> {
+public class AnonymousComponentsListService implements AbstractListService<Anonymous, Component> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AnonymousComponentsRepository repository;
 
-	// AbstractListService<Administrator, Shout> interface --------------
+	// AbstractListService<Administrator, Component> interface --------------
 
 
 	@Override
-	public boolean authorise(final Request<Shout> request) {
+	public boolean authorise(final Request<Component> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
+	public void unbind(final Request<Component> request, final Component entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "moment");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "optionalLink");
 	}
 
 	@Override
-	public Collection<Shout> findMany(final Request<Shout> request) {
+	public Collection<Component> findMany(final Request<Component> request) {
 		assert request != null;
 
-		Collection<Shout> result;
+		Collection<Component> result;
 
 		result = this.repository.findMany();
 

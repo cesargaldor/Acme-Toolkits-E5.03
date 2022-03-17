@@ -1,5 +1,5 @@
 /*
- * AnonymousShoutCreateService.java
+ * AnonymousComponentCreateService.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,14 +10,14 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.shout;
+package acme.features.anonymous.component;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.shouts.Shout;
+import acme.entities.components.Component;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -25,61 +25,65 @@ import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AnonymousComponentsCreateService implements AbstractCreateService<Anonymous, Shout> {
+public class AnonymousComponentsCreateService implements AbstractCreateService<Anonymous, Component> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AnonymousComponentsRepository repository;
 
-	// AbstractCreateService<Administrator, Shout> interface --------------
+	// AbstractCreateService<Administrator, Component> interface --------------
 
 
 	@Override
-	public boolean authorise(final Request<Shout> request) {
+	public boolean authorise(final Request<Component> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<Shout> request, final Shout entity, final Errors errors) {
+	public void bind(final Request<Component> request, final Component entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "author", "text", "info");
+		request.bind(entity, errors, "name", "code", "technology", "description", "retailPrice", "optionalLink");
 	}
 
 	@Override
-	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
+	public void unbind(final Request<Component> request, final Component entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "info");
+		request.unbind(entity, model,"name", "code", "technology", "description", "retailPrice", "optionalLink");
 	}
 
 	@Override
-	public Shout instantiate(final Request<Shout> request) {
+	public Component instantiate(final Request<Component> request) {
 		assert request != null;
 
-		Shout result;
+		Component result;
 		Date moment;
+		
+		final Integer id = request.getPrincipal().getActiveRoleId();
 
 		moment = new Date(System.currentTimeMillis() - 1);
 
-		result = new Shout();
-		result.setAuthor("John Doe");
-		result.setText("Lorem ipsum!");
-		result.setMoment(moment);
-		result.setInfo("http://example.org");
+		result = new Component();
+		result.setName("Juan Carajito");
+		result.setCode("ABC-123-A");
+		result.setTechnology("Tecnología barata");
+		result.setDescription("testestestestestestestestest");
+		result.setRetailPrice(123.0);
+		result.setOptionalLink("https://youtube.com");
 
 		return result;
 	}
 
 	@Override
-	public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
+	public void validate(final Request<Component> request, final Component entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -87,14 +91,9 @@ public class AnonymousComponentsCreateService implements AbstractCreateService<A
 	}
 
 	@Override
-	public void create(final Request<Shout> request, final Shout entity) {
+	public void create(final Request<Component> request, final Component entity) {
 		assert request != null;
 		assert entity != null;
-
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
 		this.repository.save(entity);
 	}
 

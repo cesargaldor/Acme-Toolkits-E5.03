@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.shout;
+package acme.features.anonymous.component;
 
 import javax.annotation.PostConstruct;
 
@@ -18,21 +18,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.shouts.Shout;
+import acme.entities.components.Component;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Anonymous;
 
 @Controller
-@RequestMapping("/anonymous/shout/")
-public class AnonymousComponentsController extends AbstractController<Anonymous, Shout> {
+@RequestMapping("/anonymous/component/")
+public class AnonymousComponentsController extends AbstractController<Anonymous, Component> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousComponentsListService		listService;
+	protected AnonymousComponentsListService listService;
 
 	@Autowired
-	protected AnonymousComponentsCreateService	createService;
+	protected AnonymousComponentsCreateService createService;
 
 	// Constructors -----------------------------------------------------------
 
