@@ -27,7 +27,7 @@ public class Component extends AbstractEntity{
 			
 			//name
 			@NotBlank
-			@Length(min = 1, max = 101)
+			@Length(min = 1, max = 100)
 			protected String name;
 			
 			//code
