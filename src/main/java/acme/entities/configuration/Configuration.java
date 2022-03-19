@@ -1,10 +1,10 @@
 package acme.entities.configuration;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Range;
+import javax.validation.constraints.Pattern;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -16,7 +16,60 @@ import lombok.Setter;
 public class Configuration extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
+	
+	// Attributes -------------------------------------------------------------
 
+				//SystemCurrency(String) //Falta añadir filtro 3 letrasMayusculas
+				@NotBlank
+				@Pattern(regexp = "")
+				private String sysCurrency;
+				
+				
+				//AllowedCurrencies(String) //Falta añadir filtro 3 letrasMayusculas
+				@NotBlank
+				@Pattern(regexp = "")
+				private String allowedCurrencies;
+				
+				
+				//StrongSpamWords(String)
+				@NotBlank
+				private String StrongSpam;
+				
+				
+				//WeakSpamWords(String)
+				@NotBlank
+				private String weakSpam;
+							
+				
+				//StrongSpamThreshold
+				@Min(0)
+				@Max(1)
+				private double strongThreshold;
+					
+				
+				//WeakSpamThreshold
+				@Min(0)
+				@Max(1)
+				private double weakThreshold;
+				
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
 	@NotBlank
 	String						spamWords;
 
@@ -51,4 +104,5 @@ public class Configuration extends AbstractEntity {
 		return umbral > this.spamThreshold;
 
 	}
+	**/
 }
