@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.entities.tools.Tool;
 import lombok.Getter;
@@ -45,6 +46,7 @@ public class ToolKit {
 		protected String assemblyNotes;
 		
 		//optional link
+		@URL
 		protected String			optionalLink;
 
 		// Relationships ----------------------------------------------------------

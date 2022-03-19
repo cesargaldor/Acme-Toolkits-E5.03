@@ -2,13 +2,18 @@ package acme.entities.tools;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
 
+import acme.entities.components.Component;
+import acme.entities.toolKits.ToolKit;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +35,7 @@ public class Tool extends AbstractEntity{
 	protected String			name;
 
 	//code
+	@NotBlank
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	@Column(unique = true)
 	protected String			code;
@@ -50,9 +56,15 @@ public class Tool extends AbstractEntity{
 	protected Double			retailPrice;
 
 	//optional link
+	@URL
 	protected String			optionalLink;
 
 	// Relationships ----------------------------------------------------------
-
+	
+	@OneToMany
+	Component component;
+	
+	@ManyToOne
+	ToolKit toolKit;
 
 }
