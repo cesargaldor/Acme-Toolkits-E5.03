@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -14,7 +15,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.URL;
 
+import acme.entities.patronageReport.PatronageReport;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Patron;
 import lombok.Getter;
@@ -37,6 +40,7 @@ public class Patronage extends AbstractEntity{
 		
 		
 		//code
+		@NotBlank
 		@Pattern(regexp="^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 		@Column(unique=true)
 		protected String code;
@@ -65,10 +69,14 @@ public class Patronage extends AbstractEntity{
 		
 		
 		//optional link
+		@URL
 		protected String optionalLink;
 		
 		// Relationships ----------------------------------------------------------
 	    @ManyToOne
 	    Patron patron;
 
+	    @OneToMany
+	    PatronageReport patronageReport;
+	    
 }
