@@ -33,7 +33,7 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 	protected AuthenticatedAnnouncementRepository repository;
 
 	// AbstractShowService<Administrator, Announcement> interface --------------
-
+ 
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {

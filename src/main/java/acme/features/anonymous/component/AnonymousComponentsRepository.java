@@ -1,5 +1,5 @@
 /*
- * AnnouncementStatus.java
+ * AnonymousShoutRepository.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,8 +10,20 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.entities.announcements;
+package acme.features.anonymous.component;
 
-public enum AnnouncementStatus {
-	INFO, WARNING, IMPORTANT
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.entities.components.Component;
+import acme.framework.repositories.AbstractRepository;
+
+@Repository
+public interface AnonymousComponentsRepository extends AbstractRepository {
+
+	@Query("select c from Component c")
+	Collection<Component> findMany();
+
 }
