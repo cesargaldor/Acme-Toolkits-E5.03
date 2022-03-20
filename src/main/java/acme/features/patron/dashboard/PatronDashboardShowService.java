@@ -70,7 +70,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 		final Double numberOfProposedPatronages;
 		final Double numberOfAcceptedPatronages;
 		final Double numberOfDeniedPatronages;
-		final Double averageOfProposedPatronages;
+//		final Double averageOfProposedPatronages;
 //		final Double averageOfAcceptedPatronages;
 //		final Double averageOfDeniedPatronages;
 //		final Double deviationOfProposedPatronages;
