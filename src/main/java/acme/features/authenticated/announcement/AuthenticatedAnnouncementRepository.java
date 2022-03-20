@@ -31,3 +31,4 @@ public interface AuthenticatedAnnouncementRepository extends AbstractRepository 
 	Collection<Announcement> findRecentAnnouncements(Date deadline);
 
 }
+ 

@@ -34,7 +34,7 @@ public class AuthenticatedAnnouncementListService implements AbstractListService
 	protected AuthenticatedAnnouncementRepository repository;
 
 	// AbstractListService<Administrator, Announcement> interface --------------
-
+ 
 
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
