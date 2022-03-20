@@ -30,7 +30,7 @@ public class AuthenticatedAnnouncementController extends AbstractController<Auth
 
 	@Autowired
 	protected AuthenticatedAnnouncementListService	listService;
-
+ 
 	@Autowired
 	protected AuthenticatedAnnouncementShowService	showService;
 

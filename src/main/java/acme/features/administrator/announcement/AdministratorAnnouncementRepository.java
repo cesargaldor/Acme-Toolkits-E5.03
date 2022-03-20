@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.announcements.Announcement;
 import acme.framework.repositories.AbstractRepository;
+import acme.framework.roles.Administrator;
 
 @Repository
 public interface AdministratorAnnouncementRepository extends AbstractRepository {
@@ -32,5 +33,8 @@ public interface AdministratorAnnouncementRepository extends AbstractRepository 
 
 	@Query("select a from Announcement a where a.moment > :deadline")
 	Collection<Announcement> findRecentAnnouncements(Date deadline);
+	
+	@Query("select a from Announcement a where a.id = ?1")
+	Administrator AdministratorById(int id);
 
 }

@@ -10,20 +10,20 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.shout;
+package acme.features.anonymous.toolkit;
 
-import java.util.Collection;
-
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
-
-import acme.entities.shouts.Shout;
-import acme.framework.repositories.AbstractRepository;
-
-@Repository
-public interface AnonymousShoutRepository extends AbstractRepository {
-
-	@Query("select s from Shout s")
-	Collection<Shout> findMany();
-
-}
+//import java.util.Collection;
+//
+//import org.springframework.data.jpa.repository.Query;
+//import org.springframework.stereotype.Repository;
+//
+//import acme.entities.toolKits.ToolKit;
+//import acme.framework.repositories.AbstractRepository;
+//
+//@Repository
+//public interface AnonymousToolkitRepository extends AbstractRepository {
+//
+//	@Query("select t from ToolKit t")
+//	Collection<ToolKit> findMany();
+//
+//}

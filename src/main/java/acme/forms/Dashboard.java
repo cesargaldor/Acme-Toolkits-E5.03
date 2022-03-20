@@ -33,6 +33,25 @@ public class Dashboard implements Serializable {
 	Double						ratioOfPendingApplications;
 	Double						ratioOfAcceptedApplications;
 	Double						ratioOfRejectedApplications;
+	
+	//-------------------Patron Dashboard--------------------------------------------------------------------
+	
+	Double						numberOfProposedPatronages;
+	Double						numberOfAcceptedPatronages;
+	Double						numberOfDeniedPatronages;
+	Double						averageOfProposedPatronages;
+	Double						averageOfAcceptedPatronages;
+	Double						averageOfDeniedPatronages;
+	Double						deviationOfProposedPatronages;
+	Double						deviationOfAcceptedPatronages;
+	Double						deviationOfDeniedPatronages;
+	Double						minimunBudgetOfProposedPatronages;
+	Double						maximunBudgetOfProposedPatronages;
+	Double						minimunBudgetOfAcceptedPatronages;
+	Double						maximunBudgetOfAcceptedPatronages;
+	Double						minimunBudgetOfDeniedPatronages;
+	Double						maximunBudgetOfDeniedPatronages;
+
 
 	// Derived attributes -----------------------------------------------------
 

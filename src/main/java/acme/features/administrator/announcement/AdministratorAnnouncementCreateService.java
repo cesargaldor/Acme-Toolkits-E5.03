@@ -18,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.announcements.Announcement;
-import acme.entities.announcements.AnnouncementStatus;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -49,7 +48,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "status", "text", "info");
+		request.bind(entity, errors, "moment", "title", "body", "flag","optionalLink");
 	}
 
 	@Override
@@ -58,9 +57,9 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "status", "text", "info");
-		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", false);
+		request.unbind(entity, model, "moment", "title", "body", "flag","optionalLink");
+		//model.setAttribute("confirmation", false);
+		//model.setAttribute("readonly", false);
 	}
 
 	@Override
@@ -70,14 +69,20 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		Announcement result;
 		Date moment;
 
+		
+		//SACAR USER REGISTRADO
+		final Integer id = request.getPrincipal().getActiveRoleId();
+		final Administrator a = this.repository.AdministratorById(id);
+		
+		
 		moment = new Date(System.currentTimeMillis() - 1);
-
 		result = new Announcement();
+		
 		result.setTitle("");
 		result.setMoment(moment);
-		result.setStatus(AnnouncementStatus.INFO);
-		result.setText("");
-		result.setInfo("");
+		result.setAdministrator(a);
+		
+		
 
 		return result;
 	}
