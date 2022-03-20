@@ -19,13 +19,13 @@ public class AdministratorDashboard {
 				//Las List<Double> significa una lista de calculos, average, deviation, minimun
 		 		// and maximun retail price
 		
-		Map<Component,Integer>		totalNumberOfComponents;
-		Map<Currency,List<Double>>		AllComponentsPerCurrency;
-		Map<Technology,List<Double>>	AllComponentsPerTechnology;
-		Map<Tool,Integer>			totalNumberOfTools;
-		Map<Currency,List<Double>>		AllToolsPerCurrency;
-		Map<Patronage,Integer>		totalNumberOfPatronages;
-		Map<Patronage,List<Double>>		AllPatronagesPerProposedPatronage;
+		Integer					totalNumberOfComponents;
+		Map<String,List<Double>>		AllComponentsStatsByCurrency;
+		Map<String,List<Double>>		AllComponentsStatsByTechnology;
+		Integer					totalNumberOfTools;
+		Map<String,List<Double>>		AllToolsStatsPerCurrency;
+		Map<String,Integer>			totalNumberOfPatronagesByStatus;
+		Map<String,List<Double>>		AllPatronagesStatsByStatus;
 
 		// Derived attributes -----------------------------------------------------
 
