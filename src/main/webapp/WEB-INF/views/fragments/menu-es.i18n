@@ -58,6 +58,7 @@ master.menu.worker.my-applications = Ver mis solicitudes
 
 master.menu.patron = Patrón
 master.menu.patron.all-patronages = Ver todos mis patronages
+master.menu.patron.dashboard = Dashboard
 
 # master.menu.user-account ####################################################
 

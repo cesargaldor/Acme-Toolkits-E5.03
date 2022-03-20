@@ -12,6 +12,7 @@
 
 package acme.features.patron.dashboard;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.framework.repositories.AbstractRepository;
@@ -20,17 +21,6 @@ import acme.framework.repositories.AbstractRepository;
 public interface PatronDashboardRepository extends AbstractRepository {
 
 
-//	
-//	//----------------
-//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.patronage.status.PROPOSED")
-//	Double ratioOfProposedStatus();
-//
-//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.patronage.status.ACCEPTED")
-//	Double ratioOfAcceptedStatus();
-//
-//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.patronage.status.DENIED")
-//	Double ratioOfDeniedStatus();
-//	//---------------
 //	@Query("select avg(select count(p) from Patronage p where p.status= status.PROPOSED")
 //	Double averageNumberOfProposedStatus();
 //
@@ -81,5 +71,23 @@ public interface PatronDashboardRepository extends AbstractRepository {
     
     @Query("select max(t.workloadInHours) from Task t")
     Double maximumWorkloadTasks();*/
+	
+	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED")
+	Double numberOfProposedPatronages();
+	
+	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED")
+	Double numberOfAcceptedPatronages();
+	
+	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.DENIED")
+	Double numberOfDeniedPatronages();
+	
+    //@Query("")
+    //Double averageOfProposedPatronages();
+    
+   // @Query("select 1.0 * avg(select count(p) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED)")
+   //Double averageOfAcceptedPatronages();
+    
+   // @Query("select 1.0 * avg(select count(p) from Patronage p where p.status = acme.entities.patronage.Status.DENIED)")
+   // Double averageOfDeniedPatronages();
 
 }

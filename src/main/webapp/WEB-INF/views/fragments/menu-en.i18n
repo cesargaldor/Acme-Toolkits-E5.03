@@ -67,6 +67,7 @@ master.menu.worker.my-applications = List my applications
 
 master.menu.patron = Patron
 master.menu.patron.all-patronages = List all patronages
+master.menu.patron.dashboard = Dashboard
 
 # master.menu.user-account ####################################################
 
