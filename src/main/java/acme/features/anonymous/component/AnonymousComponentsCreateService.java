@@ -12,8 +12,6 @@
 
 package acme.features.anonymous.component;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,19 +63,14 @@ public class AnonymousComponentsCreateService implements AbstractCreateService<A
 		assert request != null;
 
 		Component result;
-		Date moment;
-		
-		final Integer id = request.getPrincipal().getActiveRoleId();
-
-		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new Component();
-		result.setName("Juan Carajito");
-		result.setCode("ABC-123-A");
-		result.setTechnology("Tecnología barata");
-		result.setDescription("testestestestestestestestest");
-		result.setRetailPrice(123.0);
-		result.setOptionalLink("https://youtube.com");
+//		result.setName("Juan Carajito");
+//		result.setCode("ABC-123-A");
+//		result.setTechnology("Tecnología barata");
+//		result.setDescription("testestestestestestestestest");
+//		result.setRetailPrice(123.0);
+//		result.setOptionalLink("https://youtube.com");
 
 		return result;
 	}

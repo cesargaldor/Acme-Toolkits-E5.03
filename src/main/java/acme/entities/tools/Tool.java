@@ -1,5 +1,7 @@
 package acme.entities.tools;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -31,7 +33,7 @@ public class Tool extends AbstractEntity{
 	
 	//name
 	@NotBlank
-	@Length(min = 1, max = 101)
+	@Length(min = 1, max = 100)
 	protected String			name;
 
 	//code
@@ -42,17 +44,17 @@ public class Tool extends AbstractEntity{
 	
 	//technology
 	@NotBlank
-	@Length(min = 1, max = 101)
+	@Length(min = 1, max = 100)
 	protected String technology;
 
 	//description
 	@NotBlank
-	@Length(min = 1, max = 256)
+	@Length(min = 1, max = 255)
 	protected String description;
 
 	//retail price
 	@NotNull
-	@Range(min = 0, max = 100000000)
+	@Range(min = 0)
 	protected Double			retailPrice;
 
 	//optional link
@@ -62,7 +64,7 @@ public class Tool extends AbstractEntity{
 	// Relationships ----------------------------------------------------------
 	
 	@OneToMany
-	Component component;
+	Collection<Component> 		component;
 	
 	@ManyToOne
 	ToolKit toolKit;

@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.entities.tools.Tool;
+import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class ToolKit {
+public class ToolKit extends AbstractEntity {
 	
 	// Serialisation identifier -----------------------------------------------
 
@@ -32,17 +33,17 @@ public class ToolKit {
 		
 		//title
 		@NotBlank
-		@Length(min = 1, max = 101)
+		@Length(min = 1, max = 100)
 		protected String			title;
 
 		//description
 		@NotBlank
-		@Length(min = 1, max = 256)
+		@Length(min = 1, max = 255)
 		protected String description;
 		
 		//assembly notes
 		@NotBlank
-		@Length(min = 1, max = 256)
+		@Length(min = 1, max = 255)
 		protected String assemblyNotes;
 		
 		//optional link
