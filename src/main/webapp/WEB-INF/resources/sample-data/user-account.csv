@@ -6,3 +6,6 @@ user-account-worker-01,worker1,worker1,"UserIdentity{name: 'Worker', surname: 'O
 user-account-worker-02,worker2,worker2,"UserIdentity{name: 'Worker', surname: 'Two', email: 'worker2@mail.com', phone: {country-code: '+1', area-code: '256', number: '900 123'} }",true
 user-account-worker-03,worker3,worker2,"UserIdentity{name: 'Worker', surname: 'Three', email: 'worker3@mail.com', phone: {country-code: '+4', area-code: null, number: '123456789'} }",true
 user-account-patron-01,patron1,patron1,"UserIdentity{name: 'patron1', surname: 'asdf', email: 'patron1@mail.com', phone: {country-code: '+34', area-code: null, number: '234-446-789'} }",true
+user-account-patron-02,patron2,patron2,"UserIdentity{name: 'patron', surname: 'dos', email: 'patron2@mail.com', phone: {country-code: '+34', area-code: null, number: '234-446-548'} }",true
+user-account-inventor-01,inventor1,inventor1,"UserIdentity{name: 'Inventor', surname: 'Uno', email: 'inventor1@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-789'} }",true
+user-account-inventor-02,inventor2,inventor2,"UserIdentity{name: 'Inventor', surname: 'Dos', email: 'inventor2@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-112'} }",true
