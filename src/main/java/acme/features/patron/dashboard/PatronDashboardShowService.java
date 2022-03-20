@@ -15,14 +15,14 @@ package acme.features.patron.dashboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.forms.Dashboard;
+import acme.forms.PatronDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
 @Service
-public class PatronDashboardShowService implements AbstractShowService<Patron, Dashboard> {
+public class PatronDashboardShowService implements AbstractShowService<Patron, PatronDashboard> {
 
 
 //	// Internal state ---------------------------------------------------------
@@ -34,7 +34,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 
 
 	@Override
-	public boolean authorise(final Request<Dashboard> request) {
+	public boolean authorise(final Request<PatronDashboard> request) {
 		assert request != null;
 
 		return true;
@@ -45,7 +45,7 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 	/*total number of proposed/accepted/denied patronages; average, deviation, minimum, and maximum budget 
 	 * of proposed /accepted/denied patronages grouped by currency.*/
 	
-	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
+	public void unbind(final Request<PatronDashboard> request, final PatronDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -62,66 +62,66 @@ public class PatronDashboardShowService implements AbstractShowService<Patron, D
 	}
 
 	@Override
-	public Dashboard findOne(final Request<Dashboard> request) {
+	public PatronDashboard findOne(final Request<PatronDashboard> request) {
 		assert request != null;
 
-		Dashboard result;
-		
-		final Double numberOfProposedPatronages;
-		final Double numberOfAcceptedPatronages;
-		final Double numberOfDeniedPatronages;
-//		final Double averageOfProposedPatronages;
-//		final Double averageOfAcceptedPatronages;
-//		final Double averageOfDeniedPatronages;
-//		final Double deviationOfProposedPatronages;
-//		final Double deviationOfAcceptedPatronages;
-//		final Double deviationOfDeniedPatronages;
-//		final Double minimunBudgetOfProposedPatronages;
-//		final Double maximunBudgetOfProposedPatronages;
-//		final Double minimunBudgetOfAcceptedPatronages;
-//		final Double maximunBudgetOfAcceptedPatronages;
-//		final Double minimunBudgetOfDeniedPatronages;
-//		final Double maximunBudgetOfDeniedPatronages;
+		PatronDashboard result;
+/*
+      	final Double numberOfProposedPatronages;
+      	final Double numberOfAcceptedPatronages;
+      	final Double numberOfDeniedPatronages;
+		final Double averageOfProposedPatronages;
+		final Double averageOfAcceptedPatronages;
+		final Double averageOfDeniedPatronages;
+		final Double deviationOfProposedPatronages;
+		final Double deviationOfAcceptedPatronages;
+		final Double deviationOfDeniedPatronages;
+		final Double minimunBudgetOfProposedPatronages;
+		final Double maximunBudgetOfProposedPatronages;
+		final Double minimunBudgetOfAcceptedPatronages;
+		final Double maximunBudgetOfAcceptedPatronages;
+		final Double minimunBudgetOfDeniedPatronages;
+		final Double maximunBudgetOfDeniedPatronages;
 
 
 		
 		numberOfProposedPatronages = this.repository.numberOfProposedPatronages();
 		numberOfAcceptedPatronages = this.repository.numberOfAcceptedPatronages();
 		numberOfDeniedPatronages = this.repository.numberOfDeniedPatronages();
-//		averageOfProposedPatronages = this.repository.averageOfProposedPatronages();
-//		averageOfAcceptedPatronages = this.repository.averageOfAcceptedPatronages();
-//		averageOfDeniedPatronages = this.repository.averageOfDeniedPatronages();
-//		deviationOfProposedPatronages = this.repository.deviationOfProposedPatronages();
-//		deviationOfAcceptedPatronages = this.repository.deviationOfAcceptedPatronages();
-//		deviationOfDeniedPatronages = this.repository.deviationOfDeniedPatronages();
-//		minimunBudgetOfProposedPatronages = this.repository.minimunBudgetOfProposedPatronages();
-//		maximunBudgetOfProposedPatronages = this.repository.maximunBudgetOfProposedPatronages();
-//		minimunBudgetOfAcceptedPatronages = this.repository.minimunBudgetOfAcceptedPatronages();
-//		maximunBudgetOfAcceptedPatronages = this.repository.maximunBudgetOfAcceptedPatronages();
-//		minimunBudgetOfDeniedPatronages = this.repository.minimunBudgetOfDeniedPatronages();
-//		maximunBudgetOfDeniedPatronages = this.repository.maximunBudgetOfDeniedPatronages();
-
+		averageOfProposedPatronages = this.repository.averageOfProposedPatronages();
+		averageOfAcceptedPatronages = this.repository.averageOfAcceptedPatronages();
+		averageOfDeniedPatronages = this.repository.averageOfDeniedPatronages();
+		deviationOfProposedPatronages = this.repository.deviationOfProposedPatronages();
+		deviationOfAcceptedPatronages = this.repository.deviationOfAcceptedPatronages();
+		deviationOfDeniedPatronages = this.repository.deviationOfDeniedPatronages();
+		minimunBudgetOfProposedPatronages = this.repository.minimunBudgetOfProposedPatronages();
+		maximunBudgetOfProposedPatronages = this.repository.maximunBudgetOfProposedPatronages();
+		minimunBudgetOfAcceptedPatronages = this.repository.minimunBudgetOfAcceptedPatronages();
+		maximunBudgetOfAcceptedPatronages = this.repository.maximunBudgetOfAcceptedPatronages();
+		minimunBudgetOfDeniedPatronages = this.repository.minimunBudgetOfDeniedPatronages();
+		maximunBudgetOfDeniedPatronages = this.repository.maximunBudgetOfDeniedPatronages();
+*/
+		result = new PatronDashboard();
 		
-
-		result = new Dashboard();
-		
-		result.setNumberOfProposedPatronages(numberOfProposedPatronages);
+		result.setNumberOfPatronages(null);
+		result.setAllPatronageStatsByStatus(null);
+/*
 		result.setNumberOfAcceptedPatronages(numberOfAcceptedPatronages);
 		result.setNumberOfDeniedPatronages(numberOfDeniedPatronages);
-//		result.setAverageOfProposedPatronages(averageOfProposedPatronages);
-//		result.setAverageOfAcceptedPatronages(averageOfAcceptedPatronages);
-//		result.setAverageOfDeniedPatronages(averageOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfProposedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfProposedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfProposedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfDeniedPatronages);
+		result.setAverageOfProposedPatronages(averageOfProposedPatronages);
+		result.setAverageOfAcceptedPatronages(averageOfAcceptedPatronages);
+		result.setAverageOfDeniedPatronages(averageOfDeniedPatronages);
+		result.setRatioOfProposedStatus(deviationOfProposedPatronages);
+		result.setRatioOfProposedStatus(deviationOfAcceptedPatronages);
+		result.setRatioOfProposedStatus(deviationOfDeniedPatronages);
+		result.setRatioOfProposedStatus(minimunBudgetOfProposedPatronages);
+		result.setRatioOfProposedStatus(maximunBudgetOfProposedPatronages);
+		result.setRatioOfProposedStatus(minimunBudgetOfAcceptedPatronages);
+		result.setRatioOfProposedStatus(maximunBudgetOfAcceptedPatronages);
+		result.setRatioOfProposedStatus(minimunBudgetOfDeniedPatronages);
+		result.setRatioOfProposedStatus(maximunBudgetOfDeniedPatronages);
 
-
+*/
 		return result;
 	}
 

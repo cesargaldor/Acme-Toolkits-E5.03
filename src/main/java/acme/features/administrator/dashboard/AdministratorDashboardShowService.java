@@ -15,14 +15,14 @@ package acme.features.administrator.dashboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.forms.Dashboard;
+import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
+public class AdministratorDashboardShowService implements AbstractShowService<Administrator, AdministratorDashboard> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -33,14 +33,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 
 	@Override
-	public boolean authorise(final Request<Dashboard> request) {
+	public boolean authorise(final Request<AdministratorDashboard> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
+	public void unbind(final Request<AdministratorDashboard> request, final AdministratorDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -52,10 +52,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	}
 
 	@Override
-	public Dashboard findOne(final Request<Dashboard> request) {
+	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
 		assert request != null;
 
-		Dashboard result;
+		AdministratorDashboard result;
 		Double averageNumberOfApplicationsPerEmployer;
 		Double averageNumberOfApplicationsPerWorker;
 		Double averageNumberOfJobsPerEmployer;
@@ -70,14 +70,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		ratioOfAcceptedApplications = this.repository.ratioOfAcceptedApplications();
 		ratioOfRejectedApplications = this.repository.ratioOfRejectedApplications();
 
-		result = new Dashboard();
-		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
+		result = new AdministratorDashboard();
+/*		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
 		result.setAverageNumberOfApplicationsPerWorker(averageNumberOfApplicationsPerWorker);
 		result.setAverageNumberOfJobsPerEmployer(averageNumberOfJobsPerEmployer);
 		result.setRatioOfPendingApplications(ratioOfPendingApplications);
 		result.setRatioOfAcceptedApplications(ratioOfAcceptedApplications);
 		result.setRatioOfRejectedApplications(ratioOfRejectedApplications);
-
+*/
 		return result;
 	}
 

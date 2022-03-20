@@ -13,13 +13,18 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+import javax.persistence.Entity;
 
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-public class Dashboard implements Serializable {
+public class PatronDashboard implements Serializable {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -27,30 +32,10 @@ public class Dashboard implements Serializable {
 
 	// Attributes -------------------------------------------------------------
 
-	Double						averageNumberOfJobsPerEmployer;
-	Double						averageNumberOfApplicationsPerWorker;
-	Double						avegageNumberOfApplicationsPerEmployer;
-	Double						ratioOfPendingApplications;
-	Double						ratioOfAcceptedApplications;
-	Double						ratioOfRejectedApplications;
+	private Map<String,Integer>					numberOfPatronages;
+	private Map<String,List<Double>>			allPatronageStatsByStatus;
 	
 	//-------------------Patron Dashboard--------------------------------------------------------------------
-	
-	Double						numberOfProposedPatronages;
-	Double						numberOfAcceptedPatronages;
-	Double						numberOfDeniedPatronages;
-	Double						averageOfProposedPatronages;
-	Double						averageOfAcceptedPatronages;
-	Double						averageOfDeniedPatronages;
-	Double						deviationOfProposedPatronages;
-	Double						deviationOfAcceptedPatronages;
-	Double						deviationOfDeniedPatronages;
-	Double						minimunBudgetOfProposedPatronages;
-	Double						maximunBudgetOfProposedPatronages;
-	Double						minimunBudgetOfAcceptedPatronages;
-	Double						maximunBudgetOfAcceptedPatronages;
-	Double						minimunBudgetOfDeniedPatronages;
-	Double						maximunBudgetOfDeniedPatronages;
 
 
 	// Derived attributes -----------------------------------------------------
