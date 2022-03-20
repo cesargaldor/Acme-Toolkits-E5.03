@@ -23,6 +23,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.AbstractEntity;
 import acme.framework.roles.Administrator;
@@ -46,17 +47,18 @@ public class Announcement extends AbstractEntity {
 	protected Date				moment;
 	
 	@NotBlank
-	@Length(min=1, max=101)
+	@Length(min=1, max=100)
 	protected String			title;
 
 	@NotBlank
-	@Length(min=1, max=256)
+	@Length(min=1, max=255)
 	protected String			body;
 
 	//critical or not critical
 	@NotNull
 	protected Boolean 			flag;
 	
+	@URL
 	protected String 			optionalLink;
 
 	// Derived attributes -----------------------------------------------------
