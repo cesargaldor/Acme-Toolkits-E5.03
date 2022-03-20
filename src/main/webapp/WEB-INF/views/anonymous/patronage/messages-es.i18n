@@ -1,4 +1,4 @@
-# i18n-en.i18n
+# i18n-es.i18n
 #
 # Copyright (C) 2012-2022 Rafael Corchuelo.
 #
@@ -8,10 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.patronage.form.label.status = Status:
-anonymous.patronage.form.label.code = Code:
-anonymous.patronage.form.label.legalStuff = Legal Stuff:
-anonymous.patronage.form.label.budget = Budget:
-anonymous.patronage.form.label.moment = Moment:
-anonymous.patronage.form.button.optionalLink = Optional Link:
-anonymous.patronage.list.button.create = Create patronage
+anonymous.patronage.form.label.status = Estado:
+anonymous.patronage.form.label.code = Código:
+anonymous.patronage.form.label.legalStuff = Legal:
+anonymous.patronage.form.label.budget = Cantidad:
+anonymous.patronage.list.label.moment = Fecha:
+anonymous.patronage.list.label.optionalLink = Más información (Opcional):
