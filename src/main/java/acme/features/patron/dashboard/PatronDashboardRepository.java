@@ -20,16 +20,64 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface PatronDashboardRepository extends AbstractRepository {
 
-
-//	@Query("select avg(select count(p) from Patronage p where p.status= status.PROPOSED")
-//	Double averageNumberOfProposedStatus();
+//	Number of patronages by status
+	
+//	@Query("select count(p) from Patronage p where p.status= acme.entities.patronage.Status.PROPOSED")
+//	Double NumOfProposedPatronages();
 //
-//	@Query("select avg(select count(p) from Patronage p where p.status= status.ACCEPTED")
-//	Double averageNumberOfAcceptedStatus();
+//	@Query("select count(p) from Patronage p where p.status= acme.entities.patronage.Status.ACCEPTED")
+//	Double NumbOfAcceptedPatronages();
 //
-//	@Query("select avg(select count(p) from Patronage p where p.status= status.DENIED")
-//	Double averageNumberOfDeniedStatus();
+//	@Query("select count(p) from Patronage p where p.status= acme.entities.patronage.Status.DENIED")
+//	Double NumbOfDeniedPatronages();
 
+// Average
+		
+//	@Query("select avg(p.budget) from Patronage p group by acme.entities.patronage.Status.PROPOSED")
+//	Double avgBudgetProposedPatronages();
+//
+//	@Query("select avg(p.budget) from Patronage p group by acme.entities.patronage.Status.ACCEPTED")
+//	Double avgBudgetAcceptedPatronages();
+//
+//	@Query("select avg(p.budget) from Patronage p group by acme.entities.patronage.Status.DENIED")
+//	Double avgBudgetDeniedPatronages();
+	
+// Deviation
+		
+//	@Query("select stdev(p.budget) from Patronage p group by acme.entities.patronage.Status.PROPOSED")
+//	Double devBudgetProposedPatronages();
+//
+//	@Query("select stdev(p.budget) from Patronage p group by acme.entities.patronage.Status.ACCEPTED")
+//	Double devBudgetAcceptedPatronages();
+//
+//	@Query("select stdev(p.budget) from Patronage p group by acme.entities.patronage.Status.DENIED")
+//	Double devBudgetDeniedPatronages();
+	
+	
+// Min
+		
+//	@Query("select min(p.budget) from Patronage p group by acme.entities.patronage.Status.PROPOSED")
+//	Double minBudgetProposedPatronages();
+	
+//	@Query("select min(p.budget) from Patronage p group by acme.entities.patronage.Status.ACCEPTED")
+//	Double minBudgetAcceptedPatronages();
+	
+//	@Query("select min(p.budget) from Patronage p group by acme.entities.patronage.Status.DENIED")
+//	Double minBudgetDeniedPatronages();
+	
+// Max
+	
+//	@Query("select max(p.budget) from Patronage p group by acme.entities.patronage.Status.PROPOSED")
+//	Double maxBudgetProposedPatronages();
+	
+//	@Query("select max(p.budget) from Patronage p group by acme.entities.patronage.Status.ACCEPTED")
+//	Double maxBudgetAcceptedPatronages();
+	
+//	@Query("select max(p.budget) from Patronage p group by acme.entities.patronage.Status.DENIED")
+//	Double maxBudgetDeniedPatronages();
+	
+	
+	
 	/*    @Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
     Double averageNumberOfJobsPerEmployer();
 
@@ -71,15 +119,6 @@ public interface PatronDashboardRepository extends AbstractRepository {
     
     @Query("select max(t.workloadInHours) from Task t")
     Double maximumWorkloadTasks();*/
-	
-	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED")
-	Double numberOfProposedPatronages();
-	
-	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED")
-	Double numberOfAcceptedPatronages();
-	
-	@Query("select 1.0 * count(p) from Patronage p where p.status = acme.entities.patronage.Status.DENIED")
-	Double numberOfDeniedPatronages();
 	
     //@Query("")
     //Double averageOfProposedPatronages();
