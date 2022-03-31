@@ -14,6 +14,9 @@ public interface PatronPatronageRepository extends AbstractRepository{
 	@Query("select p from Patronage p")
 	Collection<Patronage> findMany();
 	
+	@Query("select p from Patronage p where p.id = :id")
+	Patronage findOnePatronageById(int id);
+	
 	@Query("select p from Patron p where p.id = ?1")
     Patron PatronById(int id);
 	
