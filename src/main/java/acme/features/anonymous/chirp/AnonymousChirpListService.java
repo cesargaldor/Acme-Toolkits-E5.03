@@ -1,6 +1,11 @@
+
 package acme.features.anonymous.chirp;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collection;
+import java.util.Date;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,7 +51,13 @@ public class AnonymousChirpListService implements AbstractListService<Anonymous,
 
 		result = this.repository.findMany();
 
-		return result;
+		final LocalDate now = LocalDate.now();
+		final LocalDate minus30days = now.minusMonths(1);
+
+		final Date date = Date.from(minus30days.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+		return result.stream().filter(r -> r.getMoment().after(date)).collect(Collectors.toList());
+
 	}
 
 }
