@@ -1,5 +1,5 @@
 
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -13,16 +13,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.chirps.Chirp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousChirpListService implements AbstractListService<Anonymous, Chirp> {
+public class AnyChirpListService implements AbstractListService<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpRepository repository;
+	protected AnyChirpRepository repository;
 
 	// AbstractListService<Administrator, Chirp> interface --------------
 

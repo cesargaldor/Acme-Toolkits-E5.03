@@ -23,6 +23,12 @@ master.menu.anonymous.list-shouts = List shouts
 master.menu.anonymous.list-chirps = List chirps
 master.menu.anonymous.list-patronages = List patronages
 
+# master.menu.any #######################################################
+
+master.menu.any = Any
+master.menu.any.list-chirps = List chirps
+master.menu.any.list-patronages = List patronages
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

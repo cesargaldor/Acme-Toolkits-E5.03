@@ -23,6 +23,12 @@ master.menu.anonymous.list-shouts = Ver gritos
 master.menu.anonymous.list-chirps = Ver chirps
 master.menu.anonymous.list-patronages = Ver mecenazgos
 
+# master.menu.any #######################################################
+
+master.menu.any = Cualquiera
+master.menu.any.list-chirps = Ver chirps
+master.menu.any.list-patronages = Ver mecenazgos
+
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Autentificado

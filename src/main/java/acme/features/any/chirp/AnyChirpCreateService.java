@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import java.util.Date;
 
@@ -9,16 +9,16 @@ import acme.entities.chirps.Chirp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AnonymousChirpCreateService implements AbstractCreateService<Anonymous, Chirp> {
+public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpRepository repository;
+	protected AnyChirpRepository repository;
 
 	// AbstractCreateService<Administrator, Chirp> interface --------------
 
