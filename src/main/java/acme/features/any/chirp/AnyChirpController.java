@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import javax.annotation.PostConstruct;
 
@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.chirps.Chirp;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 
 @Controller
-@RequestMapping("/anonymous/chirp/")
-public class AnonymousChirpController extends AbstractController<Anonymous, Chirp> {
+@RequestMapping("/any/chirp/")
+public class AnyChirpController extends AbstractController<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpListService		listService;
+	protected AnyChirpListService		listService;
 
 	@Autowired
-	protected AnonymousChirpCreateService	createService;
+	protected AnyChirpCreateService		createService;
 
 	// Constructors -----------------------------------------------------------
 

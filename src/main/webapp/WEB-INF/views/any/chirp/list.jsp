@@ -16,11 +16,12 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list readonly="true">
-	<acme:list-column code="anonymous.chirp.list.label.moment" path="moment" width="20%"/>
-	<acme:list-column code="anonymous.chirp.list.label.author" path="author" width="20%"/>
-	<acme:list-column code="anonymous.chirp.list.label.title" path="title" width="60%"/>
+	<acme:list-column code="any.chirp.list.label.moment" path="moment" width="10%"/>
+	<acme:list-column code="any.chirp.list.label.author" path="author" width="10%"/>
+	<acme:list-column code="any.chirp.list.label.title" path="title" width="30%"/>
+	<acme:list-column code="any.chirp.list.label.body" path="body" width="50%"/>
 </acme:list>
 
-<acme:button code="anonymous.chirp.list.button.create" action="/anonymous/chirp/create"/>
+<acme:button code="any.chirp.list.button.create" action="/any/chirp/create"/>
 
 

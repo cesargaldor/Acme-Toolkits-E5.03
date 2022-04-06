@@ -1,6 +1,11 @@
-package acme.features.anonymous.chirp;
 
+package acme.features.any.chirp;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Collection;
+import java.util.Date;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,16 +13,16 @@ import org.springframework.stereotype.Service;
 import acme.entities.chirps.Chirp;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousChirpListService implements AbstractListService<Anonymous, Chirp> {
+public class AnyChirpListService implements AbstractListService<Any, Chirp> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousChirpRepository repository;
+	protected AnyChirpRepository repository;
 
 	// AbstractListService<Administrator, Chirp> interface --------------
 
@@ -46,7 +51,13 @@ public class AnonymousChirpListService implements AbstractListService<Anonymous,
 
 		result = this.repository.findMany();
 
-		return result;
+		final LocalDate now = LocalDate.now();
+		final LocalDate minus30days = now.minusMonths(1);
+
+		final Date date = Date.from(minus30days.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+		return result.stream().filter(r -> r.getMoment().after(date)).collect(Collectors.toList());
+
 	}
 
 }
