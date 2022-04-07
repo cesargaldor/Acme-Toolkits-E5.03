@@ -10,7 +10,7 @@
 	<acme:input-textarea code="any.component.form.label.description" path="description"/>
 	<acme:input-double code="any.component.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="any.component.form.label.optionalLink" path="optionalLink"/>
-	<acme:input-textbox code="any.component.form.label.inventor" path="component.inventor"/>
+	<!--<acme:input-textbox code="any.component.form.label.inventor" path="component.inventor"/>-->
 	
 	<jstl:if test="${!onlyInventor}">
 		<acme:submit code="any.component.form.button.create" action="/any/component/create"/>
