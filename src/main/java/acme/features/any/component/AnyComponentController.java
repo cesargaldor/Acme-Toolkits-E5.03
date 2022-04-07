@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.component;
+package acme.features.any.component;
 
 import javax.annotation.PostConstruct;
 
@@ -20,19 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.components.Component;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Anonymous;
+import acme.framework.roles.Any;
 
 @Controller
-@RequestMapping("/anonymous/component/")
-public class AnonymousComponentsController extends AbstractController<Anonymous, Component> {
+@RequestMapping("/any/component/")
+public class AnyComponentController extends AbstractController<Any, Component> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnonymousComponentsListService listService;
-
+	protected AnyComponentListService listService;
+	
 	@Autowired
-	protected AnonymousComponentsCreateService createService;
+	protected AnyComponentShowService showService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -40,7 +40,7 @@ public class AnonymousComponentsController extends AbstractController<Anonymous,
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
-		super.addCommand("create", this.createService);
+		super.addCommand("show", this.showService);
 	}
 
 }

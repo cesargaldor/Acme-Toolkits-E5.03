@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.anonymous.component;
+package acme.features.any.component;
 
 import java.util.Collection;
 
@@ -21,9 +21,12 @@ import acme.entities.components.Component;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousComponentsRepository extends AbstractRepository {
+public interface AnyComponentRepository extends AbstractRepository {
 
 	@Query("select c from Component c")
 	Collection<Component> findMany();
+
+	@Query("select c from Component c where c.id = :id")
+	Component findOneComponentById(Integer id);
 
 }

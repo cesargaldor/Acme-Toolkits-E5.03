@@ -12,8 +12,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.tools.Tool;
 import acme.framework.entities.AbstractEntity;
+import acme.roles.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -60,8 +60,9 @@ public class Component extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	@ManyToOne
-	Tool						tool;
+	@ManyToOne(optional=false)
+	@NotNull
+	protected Inventor 			inventor;
 	
 
 }

@@ -18,17 +18,20 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<!-- Anonimo -->
+		<!-- Anonimo 
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.all-jobs" action="/anonymous/job/list"/>			
 			<acme:menu-suboption code="master.menu.anonymous.list-shouts" action="/anonymous/shout/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-chirps" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/any/component/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-patronages" action="/anonymous/patronage/list"/>
 		</acme:menu-option>
+		-->
 		
 		<!-- Rol any -->
-		<acme:menu-option code="master.menu.any" access="hasRole('Any')">
+		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.list-components" action="/any/component/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->

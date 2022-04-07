@@ -1,0 +1,24 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.component.form.label.name = Nombre:
+any.component.form.label.code = Código:
+any.component.form.label.technology = Tecnología:
+any.component.form.label.description = Descripción:
+any.component.form.label.retailPrice = Precio:
+any.component.form.label.optionalLink = Link opcional
+any.component.form.label.inventor = Inventor
+any.component.form.button.create = Crear
+ 
+any.component.list.label.name = Nombre
+any.component.list.label.code = Código
+any.component.list.label.description = Descripción
+
+any.component.list.button.create = Crear componente
