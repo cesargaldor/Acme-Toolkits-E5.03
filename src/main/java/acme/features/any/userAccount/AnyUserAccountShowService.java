@@ -31,7 +31,7 @@ public class AnyUserAccountShowService implements AbstractShowService<Any, UserA
 		
 		UserAccount result;
 		final Integer id = request.getModel().getInteger("id");
-		
+				
 		result = this.repository.findUserAccountById(id);
 		
 		final boolean containsRoles = result.getRoles().stream().anyMatch(r->(r.getAuthorityName().equals("Patron"))||r.getAuthorityName().equals("Inventor"));
