@@ -27,6 +27,8 @@ master.menu.anonymous.list-components = Ver componentes
 # master.menu.any #######################################################
 
 master.menu.any = Cualquiera
+master.menu.any.list-inventors = Ver inventores
+master.menu.any.list-patrons = Ver patrones
 master.menu.any.list-chirps = Ver chirps
 master.menu.any.list-patronages = Ver mecenazgos
 master.menu.any.list-components = Ver componentes

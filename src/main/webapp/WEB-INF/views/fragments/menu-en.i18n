@@ -27,6 +27,8 @@ master.menu.anonymous.list-components = List components
 # master.menu.any #######################################################
 
 master.menu.any = Any
+master.menu.any.list-inventors = List inventors
+master.menu.any.list-patrons = List patrons
 master.menu.any.list-chirps = List chirps
 master.menu.any.list-patronages = List patronages
 master.menu.any.list-components = List components
