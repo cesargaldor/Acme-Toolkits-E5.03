@@ -31,7 +31,7 @@
 		<!-- Rol any -->
 		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
-			<acme:menu-suboption code="master.menu.any.list-components" action="/any/item/list"/>
+			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
