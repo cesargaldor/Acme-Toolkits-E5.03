@@ -29,7 +29,7 @@ master.menu.anonymous.list-items = Ver items
 master.menu.any = Cualquiera
 master.menu.any.list-chirps = Ver chirps
 master.menu.any.list-patronages = Ver mecenazgos
-master.menu.any.list-components = Ver componentes
+master.menu.any.list-items = Ver items
 
 # master.menu.authenticated #######################################################
 

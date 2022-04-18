@@ -29,7 +29,7 @@ master.menu.anonymous.list-items = List items
 master.menu.any = Any
 master.menu.any.list-chirps = List chirps
 master.menu.any.list-patronages = List patronages
-master.menu.any.list-components = List components
+master.menu.any.list-items = List items
 
 # master.menu.administrator ###################################################
 
