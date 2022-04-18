@@ -1,0 +1,13 @@
+key,tipo,name,code,technology,description,retail-price,optional-link,key:inventor
+item-01,TOOL,Tool1,ABC-123-A,Java,Esta es la descripción del tool1,GBP 76.10,https://www.twitter.com/,inventor-01
+item-02,TOOL,Tool2,ABC-123-B,JavaScript,Esta es la descripción del tool2,USD 10.50,https://www.twitter.com/,inventor-01
+item-03,TOOL,Tool3,ABC-123-C,PHP,Esta es la descripción del tool3,USD 9.54,https://www.twitter.com/,inventor-02
+item-04,TOOL,Tool4,ABC-123-D,Ruby,Esta es la descripción del tool4,GBP 21.19,https://www.twitter.com/,inventor-02
+item-05,TOOL,Tool5,ABC-123-E,C,Esta es la descripción del tool5,EUR 170.55,https://www.twitter.com/,inventor-01
+item-06,TOOL,Tool6,ABC-123-F,Typescript,Esta es la descripción del tool6,GBP 30.99,https://www.twitter.com/,inventor-02
+item-07,COMPONENT,Component1,ABC-123-G,C++,Esta es la descripción del componente1,USD 19.21,https://www.twitter.com/,inventor-01
+item-08,COMPONENT,Component2,ABC-123-H,HTML,Esta es la descripción del componente2,EUR 0.90,https://www.twitter.com/,inventor-01
+item-09,COMPONENT,Component3,ABC-123-I,CSS,Esta es la descripción del componente3,USD 34.75,https://www.twitter.com/,inventor-02
+item-10,COMPONENT,Component4,ABC-123-J,C#,Esta es la descripción del componente4,EUR 130.00,https://www.twitter.com/,inventor-02
+item-11,COMPONENT,Component5,ABC-123-K,Pascal,Esta es la descripción del componente5,GBP 740.35,https://www.twitter.com/,inventor-01
+item-12,COMPONENT,Component6,ABC-123-L,Rust,Esta es la descripción del componente6,USD 29.99,https://www.twitter.com/,inventor-02
