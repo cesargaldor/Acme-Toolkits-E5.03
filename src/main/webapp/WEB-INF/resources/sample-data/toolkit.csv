@@ -1,7 +1,7 @@
-key,code,description,assembly-notes,optional-link,key:inventor
-toolkit-01,ABC-123-A,Esta es la descripción del toolkit 1,Notas de montaje 1,https://assembly.com/,inventor-01
-toolkit-02,ABC-123-B,Esta es la descripción del toolkit 2,Notas de montaje 2,https://assembly.com/,inventor-01
-toolkit-03,ABC-123-C,Esta es la descripción del toolkit 3,Notas de montaje 3,https://assembly.com/,inventor-02
-toolkit-04,ABC-123-D,Esta es la descripción del toolkit 4,Notas de montaje 4,null,inventor-02
-toolkit-05,ABC-123-E,Esta es la descripción del toolkit 5,Notas de montaje 5,null,inventor-01
-toolkit-06,ABC-123-F,Esta es la descripción del toolkit 6,Notas de montaje 6,null,inventor-02
+key,code,title,description,assembly-notes,optional-link,key:inventor
+toolkit-01,ABC-123-A,Toolkit1,Esta es la descripción del toolkit 1,Notas de montaje 1,https://assembly.com/,inventor-01
+toolkit-02,ABC-123-B,Toolkit2,Esta es la descripción del toolkit 2,Notas de montaje 2,https://assembly.com/,inventor-01
+toolkit-03,ABC-123-C,Toolkit3,Esta es la descripción del toolkit 3,Notas de montaje 3,https://assembly.com/,inventor-02
+toolkit-04,ABC-123-D,Toolkit4,Esta es la descripción del toolkit 4,Notas de montaje 4,null,inventor-02
+toolkit-05,ABC-123-E,Toolkit5,Esta es la descripción del toolkit 5,Notas de montaje 5,null,inventor-01
+toolkit-06,ABC-123-F,Toolkit6,Esta es la descripción del toolkit 6,Notas de montaje 6,null,inventor-02

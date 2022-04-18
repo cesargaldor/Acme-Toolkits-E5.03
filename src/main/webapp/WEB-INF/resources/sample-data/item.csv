@@ -1,4 +1,4 @@
-key,tipo,name,code,technology,description,retail-price,optional-link,key:inventor
+key,type,name,code,technology,description,retail-price,optional-link,key:inventor
 item-01,TOOL,Tool1,ABC-123-A,Java,Esta es la descripción del tool1,GBP 76.10,https://www.twitter.com/,inventor-01
 item-02,TOOL,Tool2,ABC-123-B,JavaScript,Esta es la descripción del tool2,USD 10.50,https://www.twitter.com/,inventor-01
 item-03,TOOL,Tool3,ABC-123-C,PHP,Esta es la descripción del tool3,USD 9.54,https://www.twitter.com/,inventor-02
