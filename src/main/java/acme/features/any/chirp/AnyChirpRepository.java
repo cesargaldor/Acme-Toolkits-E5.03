@@ -1,4 +1,4 @@
-package acme.features.anonymous.chirp;
+package acme.features.any.chirp;
 
 import java.util.Collection;
 
@@ -9,7 +9,7 @@ import acme.entities.chirps.Chirp;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AnonymousChirpRepository extends AbstractRepository {
+public interface AnyChirpRepository extends AbstractRepository {
 
 	@Query("select c from Chirp c")
 	Collection<Chirp> findMany();

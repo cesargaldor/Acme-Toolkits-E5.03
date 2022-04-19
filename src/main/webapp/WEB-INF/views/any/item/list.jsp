@@ -15,12 +15,15 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
-<acme:list readonly="true">
-	<acme:list-column code="anonymous.chirp.list.label.moment" path="moment" width="20%"/>
-	<acme:list-column code="anonymous.chirp.list.label.author" path="author" width="20%"/>
-	<acme:list-column code="anonymous.chirp.list.label.title" path="title" width="60%"/>
+<acme:list readonly="false">
+	<acme:list-column code="any.item.list.label.type" path="type" width="20%"/>
+	<acme:list-column code="any.item.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="any.item.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="any.item.list.label.description" path="description" width="40%"/>
 </acme:list>
 
-<acme:button code="anonymous.chirp.list.button.create" action="/anonymous/chirp/create"/>
-
-
+<!-- 
+<jstl:if test="${!readonly}">
+	<acme:button code="any.component.list.button.create" action="/any/component/create"/>
+</jstl:if>
+ -->

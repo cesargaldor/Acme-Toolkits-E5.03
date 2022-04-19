@@ -18,22 +18,30 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
+		<!-- Anonimo 
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.all-jobs" action="/anonymous/job/list"/>			
 			<acme:menu-suboption code="master.menu.anonymous.list-shouts" action="/anonymous/shout/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.list-chirps" action="/anonymous/chirp/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.list-chirps" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/any/component/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.list-patronages" action="/anonymous/patronage/list"/>
-
+		</acme:menu-option>
+		-->
+		
+		<!-- Rol any -->
+		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
+			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
+			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 		</acme:menu-option>
 		
+		<!-- Rol autenticado -->
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.authenticated.money-exchage" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
-	
-		
+		<!-- Rol administrador -->
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">			
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-all" action="/administrator/announcement/list-all"/>
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-recent" action="/administrator/announcement/list-recent"/>			
@@ -47,6 +55,7 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 		</acme:menu-option>
 
+		<!-- Rol empleador -->
 		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">			
 			<acme:menu-suboption code="master.menu.employer.all-jobs" action="/employer/job/list-all"/>
 			<acme:menu-suboption code="master.menu.employer.my-jobs" action="/employer/job/list-mine"/>
@@ -54,6 +63,7 @@
 			<acme:menu-suboption code="master.menu.employer.my-applications" action="/employer/application/list"/>			
 		</acme:menu-option>
 
+		<!-- Rol trabajador -->
 		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
 			<acme:menu-suboption code="master.menu.worker.all-jobs" action="/worker/job/list-all"/>
 			<acme:menu-separator/>	
