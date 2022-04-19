@@ -1,4 +1,4 @@
-package acme.features.inventors.components;
+package acme.features.inventors.item;
 
 import javax.annotation.PostConstruct;
 
@@ -6,25 +6,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.AbstractController;
-
+import acme.framework.controllers.AbstractController;
+import acme.framework.roles.Inventor;
 @Controller
-@RequestMapping("/inventors/components/")
+@RequestMapping("/inventor/item/")
 
-public class InventorsComponentsController extends AbstractController<Inventor,Components>{
+
+public class InventorsItemController extends AbstractController<Inventor, Item>{
 
 	//Internal state  -------------------------------------------------------------------
 	@Autowired
-	protected InventorsComponentsListService listService;
+	protected InventorItemListService listService;
 
 	@Autowired
-	protected InventorsComponentsCreateService createService;
+	protected InventorItemCreateService createService;
 	
 	@Autowired
-	protected InventorsComponentsShowService showService;
+	protected InventorItemShowService showService;
 	
 	//Constructors ----------------------------------------------------------------------
 	
 	@PostConstruct
+	
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("create", this.createService);

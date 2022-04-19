@@ -1,0 +1,26 @@
+package acme.features.inventors.item;
+
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import acme.entities.Items.Item;
+import acme.framework.repositories.AbstractRepository;
+import acme.roles.Inventor;
+
+@Repository
+public interface InventorItemRepository extends AbstractRepository{
+	
+	@Query("select p from Item p")
+	Collection<Item> findMany();
+	
+	@Query("select p from Item p where p.id = :id")
+	Item findOneItemById(int id);
+	
+	@Query("select p from Inventor p where p.id = ?1")
+    Inventor InventorById(int id);
+	
+	@Query("select p from Item p where p.Inventor.id = ?1")
+    Collection<Item> findItemByInventorId(int id);
+}

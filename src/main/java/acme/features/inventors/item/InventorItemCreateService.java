@@ -1,5 +1,4 @@
-
-package acme.features.inventors.components;
+package acme.features.inventors.item;
 
 import java.util.Date;
 
@@ -10,30 +9,29 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 
-import acme.entities.components.Component;
+import acme.entities.Items.Item;
 import acme.roles.Inventor;
-
 @Service
-public class InventorsComponentsCreateService implements AbstractCreateService<Inventor, Component> {
+public class InventorItemCreateService implements AbstractCreateService<Inventor, Item> {
 
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected InventorComponentsRepository repository;
+	protected InventorItemRepository repository;
 
-	// AbstractCreateService<Administrator, Components> interface --------------
+	// AbstractCreateService<Administrator, Item> interface --------------
 
 
 	@Override
-	public boolean authorise(final Request<Components> request) {
+	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void bind(final Request<Components> request, final Components entity, final Errors errors) {
+	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -42,7 +40,7 @@ public class InventorsComponentsCreateService implements AbstractCreateService<I
 	}
 
 	@Override
-	public void unbind(final Request<Components> request, final Components entity, final Model model) {
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -51,17 +49,17 @@ public class InventorsComponentsCreateService implements AbstractCreateService<I
 	}
 
 	@Override
-	public Components instantiate(final Request<Components> request) {
+	public Item instantiate(final Request<Item> request) {
 		assert request != null;
 
-		Components result;
+		Item result;
 		Date moment;
 		//SACAR USER REGISTRADO
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Inventor p = this.repository.InventorById(id);
 		
 		moment = new Date(System.currentTimeMillis());
-		result = new Components();
+		result = new Item();
 		result.setMoment(moment);
 		result.setInventor(p);
 
@@ -69,7 +67,7 @@ public class InventorsComponentsCreateService implements AbstractCreateService<I
 	}
 
 	@Override
-	public void validate(final Request<Components> request, final Components entity, final Errors errors) {
+	public void validate(final Request<Item> request, final Item entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -77,7 +75,7 @@ public class InventorsComponentsCreateService implements AbstractCreateService<I
 	}
 
 	@Override
-	public void create(final Request<Components> request, final Components entity) {
+	public void create(final Request<Item> request, final Item entity) {
 
 		assert request != null;
 		assert entity != null;

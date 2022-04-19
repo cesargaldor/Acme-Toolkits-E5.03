@@ -1,35 +1,34 @@
-package acme.features.inventors.components;
-
+package acme.features.inventors.item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.roles.Inventor;
 
 @Service
-public class InventorsComponentsShowService {
+public class InventorItemShowService {
 
 	@Autowired
-	protected InventorComponentRepository repository;
+	protected InventorItemRepository repository;
 	
 	
 	@Override
-	public boolean authorise(final Request<Component> request) {
+	public boolean authorise(final Request<Item> request) {
 		assert request != null;
 		return true;
 	}
 
 	@Override
-	public Component findOne(final Request<Component> request) {
+	public Item findOne(final Request<Item> request) {
 		assert request != null;
-		Component result;
+		Item result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneComponentById(id);
+		result = this.repository.findOneItemById(id);
 		return result;
 	}
 
 	@Override
-	public void unbind(final Request<Component> request, final Component entity, final Model model) {
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
