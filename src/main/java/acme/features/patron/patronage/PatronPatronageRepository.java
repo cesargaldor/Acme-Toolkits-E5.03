@@ -18,5 +18,8 @@ public interface PatronPatronageRepository extends AbstractRepository{
     Patron PatronById(int id);
 	
 	@Query("select p from Patronage p where p.patron.id = ?1")
-    Collection<Patronage> findPatronageByPatronId(int id);
+	Patronage findPatronageByPatronId(int id);
+	
+	@Query("select p from Patronage p where p.patron.id = ?1")
+    Collection<Patronage> findPatronagesByPatronId(int id);
 }

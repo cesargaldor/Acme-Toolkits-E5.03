@@ -26,7 +26,12 @@
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
 	<acme:input-moment code="patron.patronage.form.label.moment" path="moment"/>			
 	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink"/>
+	<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>
 	
-	<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>	
+	<%--
+	<jstl:if test="${!readonly}">	
+		<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>
+	</jstl:if>
+	 --%>
 </acme:form>
 

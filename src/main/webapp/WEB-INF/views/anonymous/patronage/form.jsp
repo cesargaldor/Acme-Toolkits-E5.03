@@ -22,7 +22,10 @@
 	<acme:input-url code="anonymous.patronage.form.label.budget" path="budget"/>
 	<acme:input-url code="anonymous.patronage.form.label.moment" path="moment"/>			
 	<acme:input-url code="anonymous.patronage.form.label.optionalLink" path="optionalLink"/>
+	<acme:submit code="anonymous.patronage.form.button.create" action="/anonymous/patronage/create"/>
 	
-	<acme:submit code="anonymous.patronage.form.button.create" action="/anonymous/patronage/create"/>	
+	<%-- 
+	<acme:submit code="anonymous.patronage.form.button.create" action="/anonymous/patronage/list?masterId=${id}"/>
+	--%>	
 </acme:form>
 
