@@ -2,15 +2,17 @@ package acme.entities.toolKits;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.tools.Tool;
 import acme.framework.entities.AbstractEntity;
+import acme.roles.Inventor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -39,20 +41,20 @@ public class ToolKit extends AbstractEntity {
 		//description
 		@NotBlank
 		@Length(min = 1, max = 255)
-		protected String description;
+		protected String 			description;
 		
 		//assembly notes
 		@NotBlank
 		@Length(min = 1, max = 255)
-		protected String assemblyNotes;
+		protected String 			assemblyNotes;
 		
 		//optional link
 		@URL
 		protected String			optionalLink;
 
 		// Relationships ----------------------------------------------------------
-
-		//1 toolKit solo puede tener una instancia de una tool dada
-		@OneToOne
-		Tool tool;
+		@NotNull
+		@Valid
+		@ManyToOne(optional=false)
+		protected Inventor inventor;
 }
