@@ -60,7 +60,6 @@ public class Item extends AbstractEntity {
 	@URL
 	protected String				optionalLink;
 
-
 	//Relación con el inventor
 	@NotNull
 	@Valid
