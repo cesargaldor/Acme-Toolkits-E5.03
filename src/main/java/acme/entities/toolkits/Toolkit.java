@@ -1,4 +1,4 @@
-package acme.entities.toolKits;
+package acme.entities.toolkits;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +20,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-public class ToolKit extends AbstractEntity {
+public class Toolkit extends AbstractEntity {
 	
 	// Serialisation identifier -----------------------------------------------
 
