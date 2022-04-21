@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
@@ -69,10 +68,13 @@ public class Patronage extends AbstractEntity {
 	protected String			optionalLink;
 
 	// Relationships ----------------------------------------------------------
-	@ManyToOne
+	@NotNull
+	@ManyToOne(optional = false)
 	Patron						patron;
 	
-	@OneToOne
+	
+	@NotNull
+	@ManyToOne(optional = false)
 	Inventor					inventor;
 
 	@OneToMany
