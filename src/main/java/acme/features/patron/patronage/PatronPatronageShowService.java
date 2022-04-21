@@ -20,6 +20,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
+		//
 		return true;
 	}
 
@@ -29,7 +30,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		final Patronage result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result= this.repository.findPatronageByPatronId(id);
+		result= this.repository.findPatronageById(id);
 		
 		return result;
 	}
@@ -40,8 +41,10 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert entity != null;
 		assert model != null;
 		
+		model.setAttribute("patron", entity.getPatron().getUserAccount().getUsername());
+		model.setAttribute("onlyPatron", true);
+		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		model.setAttribute("readonly", true);
 	}
 
 		

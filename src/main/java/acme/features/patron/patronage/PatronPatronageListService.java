@@ -1,6 +1,7 @@
 package acme.features.patron.patronage;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,8 @@ public class PatronPatronageListService implements AbstractListService<Patron, P
 		public Collection<Patronage> findMany(final Request<Patronage> request) {
 			assert request != null;			
 			final Integer id = request.getPrincipal().getActiveRoleId();
-	        return this.repository.findPatronagesByPatronId(id);
+			//Filtramos patronages por ID de patron
+	        return this.repository.findMany().stream().filter(p -> p.getPatron().getId() == id).collect(Collectors.toList());
 
 		}
 }
