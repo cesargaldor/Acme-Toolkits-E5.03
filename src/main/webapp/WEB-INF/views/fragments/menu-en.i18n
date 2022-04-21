@@ -22,12 +22,14 @@ master.menu.anonymous.all-jobs = List jobs
 master.menu.anonymous.list-shouts = List shouts
 master.menu.anonymous.list-chirps = List chirps
 master.menu.anonymous.list-patronages = List patronages
+master.menu.anonymous.list-items = List items
 
 # master.menu.any #######################################################
 
 master.menu.any = Any
 master.menu.any.list-chirps = List chirps
 master.menu.any.list-patronages = List patronages
+master.menu.any.list-items = List items
 
 # master.menu.administrator ###################################################
 
