@@ -1,2 +1,10 @@
 key,key:user-account
+authenticated-employer-01,user-account-employer-01
+authenticated-employer-02,user-account-employer-02
+authenticated-employer-03,user-account-employer-03
+authenticated-worker-01,user-account-worker-01
+authenticated-worker-02,user-account-worker-02
 authenticated-patron-01,user-account-patron-01
+authenticated-patron-02,user-account-patron-02
+authenticated-inventor-01,user-account-inventor-01
+authenticated-inventor-02,user-account-inventor-02
