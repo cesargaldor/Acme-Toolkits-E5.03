@@ -1,0 +1,3 @@
+recordIndex,username,identityName,identitySurname,identityEmail,role
+0,patron1,Patron,Uno,patron1@mail.com,Patron
+1,patron2,Patron,Dos,patron2@mail.com,Patron
