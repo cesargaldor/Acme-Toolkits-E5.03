@@ -1,7 +1,0 @@
-key,name,code,technology,description,retailPrice,optionalLink,key:inventor
-component-01,Componente 1,ABC-123-A,Java,Esto es una descripción de un componente,22.5,https://www.youtube.com,inventor-01
-component-02,Componente 2,DEF-456-B,Javascript,Esto es una descripción de un componente 2,12.3, https://www.twitter.com,inventor-01
-component-03,Componente 3,GHI-789-C,PHP,Esto es una descripción de un componente 3,20.1,https://www.facebook.com,inventor-01
-component-04,Componente 4,JKL-123-D,Ruby,Esto es una descripción de un componente 4,12.2,https://www.instagram.com,inventor-02
-component-05,Componente 5,MNO-456-E,Html,Esto es una descripción de un componente 5,76.5,https://www.twitch.tv,inventor-02
-component-06,Componente 6,PQR-789-F,Css,Esto es una descripción de un componente 6,90.3,https://www.ev.us.es,inventor-02

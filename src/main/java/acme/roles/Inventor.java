@@ -1,17 +1,11 @@
 package acme.roles;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.components.Component;
-import acme.entities.patronage.Patronage;
 import acme.framework.roles.UserRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,10 +35,4 @@ public class Inventor extends UserRole {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@OneToOne
-	Patronage					patronage;
-	
-	@OneToMany
-	Collection<Component>		components;
 }

@@ -34,7 +34,7 @@
 			<acme:menu-suboption code="master.menu.any.list-patrons" action="/any/user-account/list-patron"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
-			<acme:menu-suboption code="master.menu.any.list-components" action="/any/component/list"/>
+			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
