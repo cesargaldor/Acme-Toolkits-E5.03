@@ -3,10 +3,12 @@ package acme.entities.patronageReport;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -30,15 +32,8 @@ public class PatronageReport extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	//status(enum)
-
-	/*
-	 * The system must store the following data about them: an automatic sequence number (not blank, matches pattern “〈patronage-code〉:〈serial-number〉”,
-	 * where “〈patronage-code〉” denotes the code of corresponding patronage and “〈serial-number〉” denotes a sequential number that starts at “0001” and
-	 * gets increased with every new patronage report), a creation moment (in the past), a memorandum (not blank, shorter than 256 characters),
-	 * and an optional link with further information.
-	 */
 	@NotBlank
+	@Column (unique=true)
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4}$")
 	protected String			numSeq;
 
@@ -54,7 +49,10 @@ public class PatronageReport extends AbstractEntity {
 	@URL
 	protected String			optionalLink;
 
-	@OneToOne
-	Patronage					patronage;
+	//Relationships ------------------------------------------------------------
+	@NotNull
+	@Valid
+	@ManyToOne(optional=false)
+	Patronage patronage;
 
 }
