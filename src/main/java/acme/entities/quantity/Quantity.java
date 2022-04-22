@@ -1,5 +1,6 @@
 package acme.entities.quantity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;

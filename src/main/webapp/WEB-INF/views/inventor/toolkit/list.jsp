@@ -21,3 +21,4 @@
     <acme:list-column code="inventor.toolkit.list.label.title" path="title" width="50%"/>
     
 </acme:list>
+
