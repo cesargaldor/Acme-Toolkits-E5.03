@@ -1,5 +1,6 @@
 package acme.features.inventors.item;
 
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,10 @@ public class InventorsItemController extends AbstractController<Inventor, Item>{
 	@Autowired
 	protected InventorItemShowService showService;
 	
+	@Autowired
+	protected ToolkitItemListService        toolkitItemListService;
+
+	
 	//Constructors ----------------------------------------------------------------------
 	
 	@PostConstruct
@@ -32,6 +37,9 @@ public class InventorsItemController extends AbstractController<Inventor, Item>{
 		super.addCommand("list", this.listService);
 		super.addCommand("create", this.createService);
 		super.addCommand("show", this.showService);
+		super.addCommand("list-toolkit", "list", this.toolkitItemListService);
+
+		
 
 	}
 }

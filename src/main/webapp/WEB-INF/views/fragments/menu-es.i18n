@@ -8,6 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
 ﻿# master.menu #################################################################
 
 master.menu.home = Inicio
@@ -67,6 +68,17 @@ master.menu.worker.my-applications = Ver mis solicitudes
 master.menu.patron = Patrón
 master.menu.patron.all-patronages = Ver todos mis patronages
 master.menu.patron.dashboard = Dashboard
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.chirp.list-recent = Ver chirps recientes
+master.menu.inventor.patronage.list-mine = Ver mis patrocinios
+master.menu.inventor.patronage-report.list-mine = Ver los reportes de mis patrocinios
+master.menu.inventor.item.list-mine-component = Ver mis Componentes
+master.menu.inventor.item.list-mine-tool = Ver mis Herramientas
+master.menu.inventor.toolkit.list-mine-toolkit = Ver mis kits de herramientas
+master.menu.inventor.item.list-mine = Ver mis Items
 
 # master.menu.user-account ####################################################
 
