@@ -58,7 +58,7 @@ public class InventorPatronageCreateService implements AbstractCreateService<Inv
 		Date moment;
 		//SACAR USER REGISTRADO
 		final Integer id = request.getPrincipal().getActiveRoleId();
-		final Patron p = this.repository.PatronById(id);
+		final Patron p = this.repository.InventorById(id);
 		
 		moment = new Date(System.currentTimeMillis());
 		result = new Patronage();
