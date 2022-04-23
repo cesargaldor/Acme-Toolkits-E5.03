@@ -30,6 +30,9 @@
 		
 		<!-- Rol any -->
 		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
+			<acme:menu-suboption code="master.menu.any.list-inventors" action="/any/user-account/list-inventor"/>
+			<acme:menu-suboption code="master.menu.any.list-patrons" action="/any/user-account/list-patron"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 		</acme:menu-option>
@@ -70,20 +73,21 @@
 			<acme:menu-suboption code="master.menu.worker.my-applications" action="/worker/application/list"/>
 		</acme:menu-option>
 		
-		<!-- Roles inventor y patron -->
+		<!-- Rol patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list"/>
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
-			
 		</acme:menu-option>
 		
+
+		<!-- Rol Inventor -->
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-		  	<acme:menu-suboption code="master.menu.inventor.chirp.list-recent" action="/any/chirp/list-recent"/>
-		  	<acme:menu-suboption code="master.menu.inventor.patronage.list-mine" action="/inventor/patronage/list-mine"/>
-		  	<acme:menu-suboption code="master.menu.inventor.patronage-report.list-mine" action="/inventor/patronage-report/list-mine"/>
-     		<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
-			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
+		  	<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
+		  	<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
+        <acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
+			  <acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			  <acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
       	<acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list"/>
 		</acme:menu-option>
 

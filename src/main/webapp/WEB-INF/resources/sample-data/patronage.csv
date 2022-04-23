@@ -1,9 +1,9 @@
-key,status,code,legalStuff,budget,moment,optionalLink,key:patron
-patronage-01,PROPOSED,ABC-123-A,Cantidad acordada,150.0,2022/05/12 12:32,http://youtube.com,patron-01
-patronage-02,PROPOSED,ABC-123-B,Cantidad acordada,1000.0,2022/05/12 13:32,http://youtube.com,patron-01
-patronage-03,ACCEPTED,ABC-123-C,Cantidad acordada,1500.0,2022/05/12 14:32,http://youtube.com,patron-01
-patronage-04,ACCEPTED,ABC-123-D,Cantidad acordada,230.0,2022/05/12 15:32,http://youtube.com,patron-01
-patronage-05,ACCEPTED,ABC-123-E,Cantidad acordada,670.0,2022/05/12 16:32,http://youtube.com,patron-01
-patronage-06,ACCEPTED,ABC-123-F,Cantidad acordada,120.0,2022/05/12 17:32,http://youtube.com,patron-01
-patronage-07,ACCEPTED,ABC-123-G,Cantidad acordada,80.0,2022/05/12 18:32,http://youtube.com,patron-01
-patronage-08,DENIED,ABC-123-H,Cantidad acordada,5432.0,2022/05/12 19:32,http://youtube.com,patron-01
+key,status,code,legalStuff,budget,moment,optionalLink,key:patron,key:inventor
+patronage-01,PROPOSED,ABC-123-A,Cantidad acordada,150.0,2022/05/12 12:32,http://youtube.com,patron-01,inventor-01
+patronage-02,PROPOSED,ABC-123-B,Cantidad acordada,1000.0,2022/05/12 13:32,http://youtube.com,patron-01,inventor-02
+patronage-03,ACCEPTED,ABC-123-C,Cantidad acordada,1500.0,2022/05/12 14:32,http://youtube.com,patron-01,inventor-01
+patronage-04,ACCEPTED,ABC-123-D,Cantidad acordada,230.0,2022/05/12 15:32,http://youtube.com,patron-01,inventor-01
+patronage-05,ACCEPTED,ABC-123-E,Cantidad acordada,670.0,2022/05/12 16:32,http://youtube.com,patron-01,inventor-01
+patronage-06,ACCEPTED,ABC-123-F,Cantidad acordada,120.0,2022/05/12 17:32,http://youtube.com,patron-01,inventor-01
+patronage-07,ACCEPTED,ABC-123-G,Cantidad acordada,80.0,2022/05/12 18:32,http://youtube.com,patron-01,inventor-02
+patronage-08,DENIED,ABC-123-H,Cantidad acordada,5432.0,2022/05/12 19:32,http://youtube.com,patron-01,inventor-02

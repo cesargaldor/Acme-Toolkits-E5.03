@@ -22,38 +22,42 @@ import lombok.Setter;
 @Getter
 public class Toolkit extends AbstractEntity {
 	
-	//Serialisation identifier
-	
-	protected static final long serialVersionUID = 1L;
-	
-	//Attributes  
-	
-	@NotBlank
-	@Column(unique = true)
-	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-	protected String 	code;
-	
-	@NotBlank
-	@Length(max=100)
-	protected String 	title;
-	
-	@NotBlank
-	@Length(max=255)
-	protected String 	description;
-	
-	@NotBlank
-	@Length(max=255)
-	protected String 	assemblyNote;
-	
-	@URL
-	protected String	optionalLink;
-	
-	protected boolean   draft;
-	
-	@ManyToOne(optional = false)
-    @Valid
-    @NotNull
-    protected Inventor inventor;
- 
+	// Serialisation identifier -----------------------------------------------
+
+		protected static final long	serialVersionUID	= 1L;
+
+		// Attributes -------------------------------------------------------------
+		
+		//code
+		@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
+		@Column(unique = true)
+		protected String			code;
+		
+		//title
+		@NotBlank
+		@Length(min = 1, max = 100)
+		protected String			title;
+
+		//description
+		@NotBlank
+		@Length(min = 1, max = 255)
+		protected String 			description;
+		
+		//assembly notes
+		@NotBlank
+		@Length(min = 1, max = 255)
+		protected String 			assemblyNotes;
+  
+    protected boolean   draft;
+		
+		//optional link
+		@URL
+		protected String			optionalLink;
+
+		// Relationships ----------------------------------------------------------
+		@NotNull
+		@Valid
+		@ManyToOne(optional=false)
+		protected Inventor inventor;
 }
 
