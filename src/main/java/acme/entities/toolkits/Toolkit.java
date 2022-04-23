@@ -47,6 +47,8 @@ public class Toolkit extends AbstractEntity {
 		@NotBlank
 		@Length(min = 1, max = 255)
 		protected String 			assemblyNotes;
+  
+    protected boolean   draft;
 		
 		//optional link
 		@URL
@@ -58,3 +60,4 @@ public class Toolkit extends AbstractEntity {
 		@ManyToOne(optional=false)
 		protected Inventor inventor;
 }
+
