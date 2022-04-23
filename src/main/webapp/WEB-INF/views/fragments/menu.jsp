@@ -83,7 +83,7 @@
 
 		<!-- Rol Inventor -->
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-		  	<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
+		  	<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
         <acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
 			  <acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>

@@ -16,11 +16,9 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 	protected InventorPatronageRepository repository;
 	
 	
-	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		//
 		return true;
 	}
 
@@ -31,7 +29,6 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		int id;
 		id = request.getModel().getInteger("id");
 		result= this.repository.findPatronageById(id);
-		
 		return result;
 	}
 
@@ -40,14 +37,9 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
-		
-		model.setAttribute("patron", entity.getPatron().getUserAccount().getUsername());
-		model.setAttribute("onlyPatron", true);
-		
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
+		//model.setAttribute("onlyPatron", true);
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");		
 	}
 
-		
-	
-	
 }
