@@ -79,6 +79,11 @@ master.menu.patron = Patron
 master.menu.patron.all-patronages = List all patronages
 master.menu.patron.dashboard = Dashboard
 
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.all-patronages = List all patronages
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

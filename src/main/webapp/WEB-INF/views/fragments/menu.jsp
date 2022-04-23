@@ -73,12 +73,19 @@
 			<acme:menu-suboption code="master.menu.worker.my-applications" action="/worker/application/list"/>
 		</acme:menu-option>
 		
-		<!-- Roles inventor y patron -->
+		<!-- Rol patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 			
 		</acme:menu-option>
+		
+		<!-- Rol inventor -->
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
+			
+		</acme:menu-option>
+		
 		
 	</acme:menu-left>
 

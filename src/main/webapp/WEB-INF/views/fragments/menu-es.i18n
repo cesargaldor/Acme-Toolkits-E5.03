@@ -70,6 +70,12 @@ master.menu.patron = Patrón
 master.menu.patron.all-patronages = Ver todos mis patronages
 master.menu.patron.dashboard = Dashboard
 
+# master.menu.patron ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.all-patronages = Ver todos mis patronages
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
