@@ -9,7 +9,6 @@ import acme.entities.items.Item;
 import acme.entities.quantity.Quantity;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.repositories.AbstractRepository;
-import acme.roles.Inventor;
 
 @Repository
 public interface InventorToolkitRepository extends AbstractRepository{

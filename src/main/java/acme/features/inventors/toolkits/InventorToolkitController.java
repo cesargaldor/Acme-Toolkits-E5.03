@@ -4,10 +4,10 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.AbstractController;
+
+import acme.entities.toolkits.Toolkit;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Inventor;
+import acme.roles.Inventor;
 
 @Controller
 public class InventorToolkitController extends AbstractController<Inventor, Toolkit>{

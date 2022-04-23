@@ -1,15 +1,15 @@
 package acme.features.inventors.toolkits;
 
-import java.security.Principal;
 import java.util.Collection;
-
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import acme.entities.toolkits.Toolkit;
 
+import acme.entities.toolkits.Toolkit;
+import acme.framework.components.models.Model;
+import acme.framework.controllers.Request;
+import acme.framework.entities.Principal;
+import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service

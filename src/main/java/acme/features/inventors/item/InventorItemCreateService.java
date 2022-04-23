@@ -1,16 +1,14 @@
 package acme.features.inventors.item;
 
 
-import java.util.Date;
-
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 
-import acme.entities.Items.Item;
+import acme.entities.items.Item;
+import acme.framework.components.models.Model;
+import acme.framework.controllers.Errors;
+import acme.framework.controllers.Request;
+import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 @Service
 public class InventorItemCreateService implements AbstractCreateService<Inventor, Item> {
@@ -54,14 +52,11 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert request != null;
 
 		Item result;
-		Date moment;
 		//SACAR USER REGISTRADO
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Inventor p = this.repository.InventorById(id);
 		
-		moment = new Date(System.currentTimeMillis());
 		result = new Item();
-		result.setMoment(moment);
 		result.setInventor(p);
 
 		return result;
