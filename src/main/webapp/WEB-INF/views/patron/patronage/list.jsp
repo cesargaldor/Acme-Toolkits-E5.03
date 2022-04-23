@@ -16,13 +16,13 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list readonly="false">
-	<acme:list-column code="patron.patronage.list.label.status" path="status" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.code" path="code" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.legalStuff" path="legalStuff" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="patron.patronage.list.label.moment" path="moment" width="10%"/>
-	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="10%"/>
-	
+	<acme:list-column code="patron.patronage.list.label.status" path="status" width="14%"/>
+	<acme:list-column code="patron.patronage.list.label.code" path="code" width="14%"/>
+	<acme:list-column code="patron.patronage.list.label.legalStuff" path="legalStuff" width="14%"/>
+	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="14%"/>
+	<acme:list-column code="patron.patronage.list.label.moment" path="moment" width="14%"/>
+	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="14%"/>
+	<!--<acme:list-column code="patron.patronage.list.label.inventor" path="inventor" width="14%"/>-->
 </acme:list>
 
 <!-- <acme:button code="patron.patronage.list.label.button.create" action="/patron/patronage/create"/> -->
