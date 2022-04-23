@@ -74,10 +74,16 @@ master.menu.worker.all-jobs = List all jobs
 master.menu.worker.my-applications = List my applications
 
 # master.menu.patron ##########################################################
-
 master.menu.patron = Patron
-master.menu.patron.all-patronages = List all patronages
-master.menu.patron.dashboard = Dashboard
+master.menu.patron.patronage.list = List my patronages
+master.menu.patron.patronageReport.list = List my patronage reports
+master.menu.patron.dashboard = Patron dashboard
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronage.list = List my patronages
+master.menu.inventor.patronageReport.list = List my patronage reports
 
 # master.menu.user-account ####################################################
 

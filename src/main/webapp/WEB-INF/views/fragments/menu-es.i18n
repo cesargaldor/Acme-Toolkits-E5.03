@@ -65,10 +65,16 @@ master.menu.worker.all-jobs = Ver todos los trabajos
 master.menu.worker.my-applications = Ver mis solicitudes
 
 # master.menu.patron ##########################################################
+master.menu.patron = Patron
+master.menu.patron.patronage.list = Ver mis patrocinios
+master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
+master.menu.patron.dashboard = Dashboard de patrón
 
-master.menu.patron = Patrón
-master.menu.patron.all-patronages = Ver todos mis patronages
-master.menu.patron.dashboard = Dashboard
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.patronage.list = Ver mis patrocinios
+master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
 
 # master.menu.user-account ####################################################
 

@@ -75,7 +75,7 @@
 		
 		<!-- Rol patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list"/>
 			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list"/>
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
@@ -85,6 +85,7 @@
 		  	<acme:menu-suboption code="master.menu.inventor.patronage.list" action="/inventor/patronage/list"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
 		</acme:menu-option>
+		
 		
 	</acme:menu-left>
 
