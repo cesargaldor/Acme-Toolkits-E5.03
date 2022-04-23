@@ -1,0 +1,3 @@
+key,numSeq,creationMoment,memorandum,optionalLink,key:patronage
+patronage-report-01,ABC-123-A:0001,2022/02/01 11:00,Ejemplo de memorandum,null,patronage-01
+patronage-report-02,ABC-123-A:0002,2022/02/01 11:05,Ejemplo de memorandum,https://youtube.com,patronage-02
