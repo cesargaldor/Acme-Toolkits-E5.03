@@ -47,7 +47,7 @@ public class InventorPatronageListService implements AbstractListService<Invento
 		assert request != null;
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		//Filtramos patronages por ID de patron
-		return this.repository.findMany().stream().filter(p -> p.getPatron().getId() == id).collect(Collectors.toList());
+		return this.repository.findMany().stream().filter(p -> p.getInventor().getId() == id).collect(Collectors.toList());
 
 	}
 }
