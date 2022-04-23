@@ -22,7 +22,6 @@
 	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="14%"/>
 	<acme:list-column code="patron.patronage.list.label.moment" path="moment" width="14%"/>
 	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="14%"/>
-	<!--<acme:list-column code="patron.patronage.list.label.inventor" path="inventor" width="14%"/>-->
 </acme:list>
 
 <!-- <acme:button code="patron.patronage.list.label.button.create" action="/patron/patronage/create"/> -->

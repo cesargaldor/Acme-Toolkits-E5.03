@@ -68,6 +68,7 @@ master.menu.worker.my-applications = Ver mis solicitudes
 master.menu.patron = Patron
 master.menu.patron.patronage.list = Ver mis patrocinios
 master.menu.patron.patronageReport.list = Ver los reportes de mis patrocinios
+master.menu.patron.dashboard = Dashboard de patrón
 
 # master.menu.inventor ##########################################################
 
