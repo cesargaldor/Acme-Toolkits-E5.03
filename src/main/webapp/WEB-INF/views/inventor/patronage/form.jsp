@@ -22,7 +22,8 @@
 	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment" readonly="true"/>			
 	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
 	
-	<!--<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>-->
+
+	<!--<acme:submit code="inventor.patronage.form.label.button.create" action="/inventor/patronage/create"/>-->
 	
 	<!--<jstl:if test="${onlyPatron}">-->	
 		<acme:input-select code="inventor.patronage.form.label.status" path="status" readonly="true">

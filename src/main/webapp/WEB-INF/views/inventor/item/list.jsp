@@ -16,12 +16,14 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list readonly="false">
-	<acme:list-column code="patron.patronage.list.label.status" path="status" width="14%"/>
-	<acme:list-column code="patron.patronage.list.label.code" path="code" width="14%"/>
-	<acme:list-column code="patron.patronage.list.label.legalStuff" path="legalStuff" width="14%"/>
-	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="14%"/>
-	<acme:list-column code="patron.patronage.list.label.moment" path="moment" width="14%"/>
-	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="14%"/>
+	<acme:list-column code="inventor.item.list.label.type" path="type" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.name" path="name" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.code" path="code" width="20%"/>
+	<acme:list-column code="inventor.item.list.label.description" path="description" width="40%"/>
 </acme:list>
 
-<!-- <acme:button code="patron.patronage.list.label.button.create" action="/patron/patronage/create"/> -->
+<!-- 
+<jstl:if test="${!readonly}">
+	<acme:button code="any.component.list.button.create" action="/any/component/create"/>
+</jstl:if>
+ -->

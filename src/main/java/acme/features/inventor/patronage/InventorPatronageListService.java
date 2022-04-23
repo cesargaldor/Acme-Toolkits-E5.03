@@ -31,14 +31,13 @@ public class InventorPatronageListService implements AbstractListService<Invento
 		return this.repository.findMany().stream().filter(p -> p.getInventor().getId() == id).collect(Collectors.toList());
 	}
 
+
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
 //		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
-
 }

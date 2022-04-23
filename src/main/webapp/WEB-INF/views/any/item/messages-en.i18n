@@ -18,7 +18,7 @@ any.item.form.label.optionalLink = Optional link
 any.item.form.label.inventor = Inventor
 any.item.form.button.create = Create
  
- any.item.list.label.type = Type
+any.item.list.label.type = Type
 any.item.list.label.name = Name
 any.item.list.label.code = Code
 any.item.list.label.description = Description

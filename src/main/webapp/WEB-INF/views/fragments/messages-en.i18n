@@ -48,12 +48,6 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.money-exchage = Money exchange
 
-# master.menu.patron ##########################################################
-master.menu.patron = Patron
-master.menu.patron.patronage.list = List patronages
-master.menu.patron.patronageReport.list = List patronage reports
-
-
 # master.menu.employer ########################################################
 
 master.menu.employer = Employer

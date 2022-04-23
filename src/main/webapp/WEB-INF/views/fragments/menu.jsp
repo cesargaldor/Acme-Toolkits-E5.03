@@ -75,16 +75,23 @@
 		
 		<!-- Rol patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
+			<acme:menu-suboption code="master.menu.patron.patronage.list" action="/patron/patronage/list"/>
 			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list"/>
 			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
 		</acme:menu-option>
 		
+
 		<!-- Rol Inventor -->
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 		  	<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
+        <acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
+			  <acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			  <acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
+      	<acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list"/>
 		</acme:menu-option>
+
+		
 		
 	</acme:menu-left>
 

@@ -12,15 +12,12 @@ import acme.roles.Inventor;
 @Service
 public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
 
-	
 	@Autowired
 	protected InventorPatronageRepository repository;
 	
 	
-	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
-
 		assert request != null;
 		return true;
 	}
@@ -32,8 +29,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		int id;
 		id = request.getModel().getInteger("id");
 		result= this.repository.findPatronageById(id);
-		
-		return result;		
+		return result;
 	}
 
 	@Override
@@ -41,10 +37,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
-		
-		model.setAttribute("inventor", entity.getPatron().getUserAccount().getUsername());
+		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 		//model.setAttribute("onlyPatron", true);
-		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");		
 	}
 
