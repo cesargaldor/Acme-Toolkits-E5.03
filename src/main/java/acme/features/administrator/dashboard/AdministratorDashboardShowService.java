@@ -12,73 +12,66 @@
 
 package acme.features.administrator.dashboard;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.forms.Dashboard;
-import acme.framework.components.models.Model;
-import acme.framework.controllers.Request;
-import acme.framework.roles.Administrator;
-import acme.framework.services.AbstractShowService;
-
 @Service
-public class AdministratorDashboardShowService implements AbstractShowService<Administrator, Dashboard> {
+public class AdministratorDashboardShowService /*implements AbstractShowService<Administrator, Dashboard>*/ {
 
-	// Internal state ---------------------------------------------------------
-
-	@Autowired
-	protected AdministratorDashboardRepository repository;
-
-	// AbstractShowService<Administrator, Dashboard> interface ----------------
-
-
-	@Override
-	public boolean authorise(final Request<Dashboard> request) {
-		assert request != null;
-
-		return true;
-	}
-
-	@Override
-	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		request.unbind(entity, model, //
-			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
-			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
-			"ratioOfRejectedApplications", "ratioOfAcceptedApplications");
-	}
-
-	@Override
-	public Dashboard findOne(final Request<Dashboard> request) {
-		assert request != null;
-
-		Dashboard result;
-		Double averageNumberOfApplicationsPerEmployer;
-		Double averageNumberOfApplicationsPerWorker;
-		Double averageNumberOfJobsPerEmployer;
-		Double ratioOfPendingApplications;
-		Double ratioOfAcceptedApplications;
-		Double ratioOfRejectedApplications;
-
-		averageNumberOfApplicationsPerEmployer = this.repository.averageNumberOfApplicationsPerEmployer();
-		averageNumberOfApplicationsPerWorker = this.repository.averageNumberOfApplicationsPerWorker();
-		averageNumberOfJobsPerEmployer = this.repository.averageNumberOfJobsPerEmployer();
-		ratioOfPendingApplications = this.repository.ratioOfPendingApplications();
-		ratioOfAcceptedApplications = this.repository.ratioOfAcceptedApplications();
-		ratioOfRejectedApplications = this.repository.ratioOfRejectedApplications();
-
-		result = new Dashboard();
-		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
-		result.setAverageNumberOfApplicationsPerWorker(averageNumberOfApplicationsPerWorker);
-		result.setAverageNumberOfJobsPerEmployer(averageNumberOfJobsPerEmployer);
-		result.setRatioOfPendingApplications(ratioOfPendingApplications);
-		result.setRatioOfAcceptedApplications(ratioOfAcceptedApplications);
-		result.setRatioOfRejectedApplications(ratioOfRejectedApplications);
-
-		return result;
-	}
+//	// Internal state ---------------------------------------------------------
+//
+//	@Autowired
+//	protected AdministratorDashboardRepository repository;
+//
+//	// AbstractShowService<Administrator, Dashboard> interface ----------------
+//
+//
+//	@Override
+//	public boolean authorise(final Request<Dashboard> request) {
+//		assert request != null;
+//
+//		return true;
+//	}
+//
+//	@Override
+//	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
+//		assert request != null;
+//		assert entity != null;
+//		assert model != null;
+//
+//		request.unbind(entity, model, //
+//			"averageNumberOfJobsPerEmployer", "averageNumberOfApplicationsPerWorker", // 
+//			"avegageNumberOfApplicationsPerEmployer", "ratioOfPendingApplications", //
+//			"ratioOfRejectedApplications", "ratioOfAcceptedApplications");
+//	}
+//
+//	@Override
+//	public Dashboard findOne(final Request<Dashboard> request) {
+//		assert request != null;
+//
+//		Dashboard result;
+//		Double averageNumberOfApplicationsPerEmployer;
+//		Double averageNumberOfApplicationsPerWorker;
+//		Double averageNumberOfJobsPerEmployer;
+//		Double ratioOfPendingApplications;
+//		Double ratioOfAcceptedApplications;
+//		Double ratioOfRejectedApplications;
+//
+//		averageNumberOfApplicationsPerEmployer = this.repository.averageNumberOfApplicationsPerEmployer();
+//		averageNumberOfApplicationsPerWorker = this.repository.averageNumberOfApplicationsPerWorker();
+//		averageNumberOfJobsPerEmployer = this.repository.averageNumberOfJobsPerEmployer();
+//		ratioOfPendingApplications = this.repository.ratioOfPendingApplications();
+//		ratioOfAcceptedApplications = this.repository.ratioOfAcceptedApplications();
+//		ratioOfRejectedApplications = this.repository.ratioOfRejectedApplications();
+//
+//		result = new Dashboard();
+//		result.setAvegageNumberOfApplicationsPerEmployer(averageNumberOfApplicationsPerEmployer);
+//		result.setAverageNumberOfApplicationsPerWorker(averageNumberOfApplicationsPerWorker);
+//		result.setAverageNumberOfJobsPerEmployer(averageNumberOfJobsPerEmployer);
+//		result.setRatioOfPendingApplications(ratioOfPendingApplications);
+//		result.setRatioOfAcceptedApplications(ratioOfAcceptedApplications);
+//		result.setRatioOfRejectedApplications(ratioOfRejectedApplications);
+//
+//		return result;
+//	}
 
 }

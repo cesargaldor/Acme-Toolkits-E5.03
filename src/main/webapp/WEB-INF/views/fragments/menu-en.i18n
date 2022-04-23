@@ -60,18 +60,6 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.money-exchage = Money exchange
 
-# master.menu.employer ########################################################
-
-master.menu.employer = Employer
-master.menu.employer.all-jobs = List all jobs
-master.menu.employer.my-jobs = List my jobs
-master.menu.employer.my-applications = List my applications
-
-# master.menu.worker ##########################################################
-
-master.menu.worker = Worker
-master.menu.worker.all-jobs = List all jobs
-master.menu.worker.my-applications = List my applications
 
 # master.menu.patron ##########################################################
 

@@ -12,30 +12,27 @@
 
 package acme.features.administrator.dashboard;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.framework.repositories.AbstractRepository;
-
 @Repository
-public interface AdministratorDashboardRepository extends AbstractRepository {
+public interface AdministratorDashboardRepository /*extends AbstractRepository*/ {
 
-	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
-	Double averageNumberOfJobsPerEmployer();
-
-	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
-	Double averageNumberOfApplicationsPerWorker();
-
-	@Query("select avg(select count(a) from Application a where exists(select j from Job j where j.employer.id = e.id and a.job.id = j.id)) from Employer e")
-	Double averageNumberOfApplicationsPerEmployer();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.PENDING")
-	Double ratioOfPendingApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.ACCEPTED")
-	Double ratioOfAcceptedApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.REJECTED")
-	Double ratioOfRejectedApplications();
+//	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
+//	Double averageNumberOfJobsPerEmployer();
+//
+//	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
+//	Double averageNumberOfApplicationsPerWorker();
+//
+//	@Query("select avg(select count(a) from Application a where exists(select j from Job j where j.employer.id = e.id and a.job.id = j.id)) from Employer e")
+//	Double averageNumberOfApplicationsPerEmployer();
+//
+//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.PENDING")
+//	Double ratioOfPendingApplications();
+//
+//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.ACCEPTED")
+//	Double ratioOfAcceptedApplications();
+//
+//	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.REJECTED")
+//	Double ratioOfRejectedApplications();
 
 }
