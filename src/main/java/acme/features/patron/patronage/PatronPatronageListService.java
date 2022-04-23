@@ -1,3 +1,4 @@
+
 package acme.features.patron.patronage;
 
 import java.util.Collection;
@@ -13,38 +14,40 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Patron;
 
 @Service
-public class PatronPatronageListService implements AbstractListService<Patron, Patronage>{
+public class PatronPatronageListService implements AbstractListService<Patron, Patronage> {
 
 	// Internal state ---------------------------------------------------------
 
-		@Autowired
-		protected PatronPatronageRepository repository;
+	@Autowired
+	protected PatronPatronageRepository repository;
 
-		// AbstractListService<Administrator, Patronage> interface --------------
+	// AbstractListService<Administrator, Patronage> interface --------------
 
 
-		@Override
-		public boolean authorise(final Request<Patronage> request) {
-			assert request != null;
+	@Override
+	public boolean authorise(final Request<Patronage> request) {
+		assert request != null;
 
-			return true;
-		}
+		return true;
+	}
 
-		@Override
-		public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-			assert request != null;
-			assert entity != null;
-			assert model != null;
+	@Override
+	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
 
-			request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		}
+//		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 
-		@Override
-		public Collection<Patronage> findMany(final Request<Patronage> request) {
-			assert request != null;			
-			final Integer id = request.getPrincipal().getActiveRoleId();
-			//Filtramos patronages por ID de patron
-	        return this.repository.findMany().stream().filter(p -> p.getPatron().getId() == id).collect(Collectors.toList());
+	}
 
-		}
+	@Override
+	public Collection<Patronage> findMany(final Request<Patronage> request) {
+		assert request != null;
+		final Integer id = request.getPrincipal().getActiveRoleId();
+		//Filtramos patronages por ID de patron
+		return this.repository.findMany().stream().filter(p -> p.getPatron().getId() == id).collect(Collectors.toList());
+
+	}
 }

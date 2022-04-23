@@ -16,13 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list readonly="false">
-	<acme:list-column code="patron.patronageReport.list.label.numSeq" path="munSeq" width="20%"/>
-	<acme:list-column code="patron.patronageReport.list.label.moment" path="moment" width="20%"/>
+	<acme:list-column code="patron.patronageReport.list.label.numSeq" path="numSeq" width="20%"/>
+	<acme:list-column code="patron.patronageReport.list.label.creationMoment" path="creationMoment" width="20%"/>
 	<acme:list-column code="patron.patronageReport.list.label.memorandum" path="memorandum" width="20%"/>
-	<acme:list-column code="patron.patronageReport.list.label.budget" path="budget" width="20%"/>
-	<acme:list-column code="patron.patronageReport.list.label.moment" path="moment" width="10%"/>
 	<acme:list-column code="patron.patronageReport.list.label.optionalLink" path="optionalLink" width="10%"/>
-	
 </acme:list>
 
-<acme:button code="patron.patronageReport.list.label.button.create" action="/patron/patronage/create"/>
+<!--<acme:button code="patron.patronageReport.list.label.button.create" action="/patron/patronage/create"/>-->
