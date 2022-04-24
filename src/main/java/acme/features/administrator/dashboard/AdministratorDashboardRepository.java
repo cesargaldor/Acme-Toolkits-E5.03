@@ -35,7 +35,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 		+ " i.retailPrice.currency")
 	List<Object[]> statsRetailPriceOfItem(Type type);
 	
-	@Query("select p.status, avg(p.budget.amount), stddev(p.budget.amount), min(p.budget.amount), max(p.budget.amount) from Patronage p group by p.status")
-	List<Object[]> statsBudgetOfStatusPatronages();
-
+	//@Query("select p.status, avg(p.budget.amount),stddev(p.budget.amount), min(p.budget.amount),max(p.budget.amount) from Patronage p group by p.status")
+	//List<Object[]> statsBudgetOfStatusPatronages();
+	 
 }

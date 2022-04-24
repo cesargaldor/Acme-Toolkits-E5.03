@@ -65,5 +65,4 @@ public class AuthenticatedAnnouncementListService implements AbstractListService
 		assert model != null;
 		request.unbind(entity, model, "moment", "title", "flag");
 	}
-
 }

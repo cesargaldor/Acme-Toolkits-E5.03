@@ -1,7 +1,6 @@
 
 package acme.features.administrator.configuration;
 
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;

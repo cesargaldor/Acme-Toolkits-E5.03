@@ -11,6 +11,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import lombok.Getter;
@@ -48,8 +49,11 @@ public class Toolkit extends AbstractEntity {
 		@Length(min = 1, max = 255)
 		protected String 			assemblyNotes;
   
-		protected boolean   draft;
+		protected boolean  			 draft;
 		
+		//Total price
+		
+		protected Money 			totalPrice;
 		//optional link
 		@URL
 		protected String			optionalLink;

@@ -10,7 +10,7 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page language="java" import="acme.framework.helpers.PrincipalHelper,acme.roles.Patron,acme.roles.Inventor"%>
+<%@page language="java" import="acme.framework.helpers.PrincipalHelper"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
@@ -36,28 +36,15 @@
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.any.component.list" action="/any/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.any.tool.list" action="/any/item/list?type=TOOL"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.any.toolkit.list" action="/any/toolkit/list"/>
-			
+			<acme:menu-suboption code="master.menu.anonymous.toolkit.list" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
-			
-			<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/any/chirp/list-recent"/>
-			<acme:menu-suboption code="master.menu.any.chirp.list-recent" action="/any/chirp/list-recent"/>
+			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.component.list" action="/any/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.authenticated.tool.list" action="/any/item/list?type=TOOL"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.toolkit.list" action="/any/toolkit/list"/>
-			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.money-exchage" action="/authenticated/money-exchange/perform"/>
-			<acme:menu-suboption code="master.menu.authenticated.user-account.list" action="/any/user-account/list"/>
-			<acme:menu-suboption code="master.menu.authenticated.system-configuration.show" action="/authenticated/system-configuration/show?id=129"/>
-			
+			<acme:menu-suboption code="master.menu.authenticated.money-excmajorhage" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
 		<!-- Rol administrador -->
@@ -65,13 +52,29 @@
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-all" action="/administrator/announcement/list-all"/>
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-recent" action="/administrator/announcement/list-recent"/>			
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
+		</acme:menu-option>
+
+		<!-- Rol empleador -->
+		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">			
+			<acme:menu-suboption code="master.menu.employer.all-jobs" action="/employer/job/list-all"/>
+			<acme:menu-suboption code="master.menu.employer.my-jobs" action="/employer/job/list-mine"/>
+			<acme:menu-separator/>			
+			<acme:menu-suboption code="master.menu.employer.my-applications" action="/employer/application/list"/>			
+		</acme:menu-option>
+
+		<!-- Rol trabajador -->
+		<acme:menu-option code="master.menu.worker" access="hasRole('Worker')">
+			<acme:menu-suboption code="master.menu.worker.all-jobs" action="/worker/job/list-all"/>
+			<acme:menu-separator/>	
+			<acme:menu-suboption code="master.menu.worker.my-applications" action="/worker/application/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol patron -->
@@ -83,14 +86,17 @@
 		
 
 		<!-- Rol Inventor -->
-		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">	
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+		  	<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
-       		<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
-		 	<acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
-      		<acme:menu-separator/>
-      		<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
+        <acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
+			  <acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			  <acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
+      	<acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list"/>
 		</acme:menu-option>
 
+		
+		
 	</acme:menu-left>
 
 	<acme:menu-right>
@@ -99,6 +105,11 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
+			<acme:menu-suboption code="master.menu.user-account.become-employer" action="/authenticated/employer/create" access="!hasRole('Employer')"/>
+			<acme:menu-suboption code="master.menu.user-account.employer" action="/authenticated/employer/update" access="hasRole('Employer')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
+			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
+	
 			<acme:menu-suboption code="master.menu.user-account.become-inventor" action="/authenticated/inventor/create" access="!hasRole('Inventor')"/>
 			<acme:menu-suboption code="master.menu.user-account.inventor" action="/authenticated/inventor/update" access="hasRole('Inventor')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-patron" action="/authenticated/patron/create" access="!hasRole('Patron')"/>

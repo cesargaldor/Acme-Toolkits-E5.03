@@ -1,0 +1,26 @@
+# i18n-es.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.announcement.form.label.moment= Fecha:
+administrator.announcement.form.label.title = Título:
+administrator.announcement.form.label.body = Mensaje:
+administrator.announcement.form.label.flag = Estado:
+administrator.announcement.form.label.optionalLink = Información:
+administrator.announcement.form.label.confirmation = Confirme que el anuncio es correcto
+administrator.announcement.form.label.button.create = Crear
+
+administrator.announcement.list.label.moment= Fecha:
+administrator.announcement.list.label.title = Título:
+administrator.announcement.list.label.body = Mensaje:
+administrator.announcement.list.label.flag = Estado:
+administrator.announcement.list.label.optionalLink = Información:
+administrator.announcement.list.label.confirmation = Confirme que el anuncio es correcto
+administrator.announcement.list.label.button.create = Crear
+ 

@@ -65,5 +65,9 @@ public class Item extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected Inventor				inventor;
+	
+	public static Boolean positiveMoney(final Money m) {
+		return m.getAmount()>=0;
+	}
 
 }

@@ -63,7 +63,6 @@ public class Announcement extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	//@ManyToOne
-	//Administrator administrator;
+
 
 }
