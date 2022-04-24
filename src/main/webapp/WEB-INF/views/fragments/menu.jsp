@@ -36,7 +36,7 @@
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.anonymous.toolkit.list" action="/any/toolkit/list"/>
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
@@ -44,7 +44,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.money-excmajorhage" action="/authenticated/money-exchange/perform"/>
+			<acme:menu-suboption code="master.menu.authenticated.money-exchange" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
 		<!-- Rol administrador -->
