@@ -43,30 +43,26 @@ public class AuthenticatedAnnouncementListService implements AbstractListService
 		return true;
 	}
 
-	@Override
-	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "status");
-	}
 
 	@Override
 	public Collection<Announcement> findMany(final Request<Announcement> request) {
 		assert request != null;
 
 		Collection<Announcement> result;
-		Calendar calendar;
+		final Calendar c = Calendar.getInstance();
 		Date deadline;
-
-		calendar = Calendar.getInstance();
-		calendar.add(Calendar.MONTH, -1);
-		deadline = calendar.getTime();
-
+		c.add(Calendar.MONTH, -1);
+		deadline = c.getTime();
 		result = this.repository.findRecentAnnouncements(deadline);
-
 		return result;
 	}
-
+	
+	@Override
+	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		request.unbind(entity, model, "moment", "title", "flag");
+	}
 }

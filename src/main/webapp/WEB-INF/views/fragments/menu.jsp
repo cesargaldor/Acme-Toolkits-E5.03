@@ -35,13 +35,16 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.money-exchage" action="/authenticated/money-exchange/perform"/>
+			<acme:menu-suboption code="master.menu.authenticated.money-exchange" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
 		<!-- Rol administrador -->
@@ -49,7 +52,8 @@
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-all" action="/administrator/announcement/list-all"/>
 			<acme:menu-suboption code="master.menu.administrator.announcement.list-recent" action="/administrator/announcement/list-recent"/>			
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>

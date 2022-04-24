@@ -15,15 +15,15 @@ public class InventorToolkitController extends AbstractController<Inventor, Tool
 	//Internal state 
 	
 	@Autowired
-	protected InventorToolkitListService	listService;
+	protected InventorToolkitListService	listMineService;
 	
 	@Autowired
-	protected InventorToolkitShowService	showService;
+	protected InventorToolkitShowService	showMineService;
 	
 	@PostConstruct
 	protected void initialise() {
-		super.addCommand("show", this.showService);
-		super.addCommand("list-mine-toolkits","list", this.listService);
+		super.addCommand("show", this.showMineService);
+		super.addCommand("list-mine-toolkits","list", this.listMineService);
 	}
 	
 }

@@ -33,6 +33,7 @@ master.menu.any.list-patrons = List patrons
 master.menu.any.list-chirps = List chirps
 master.menu.any.list-patronages = List patronages
 master.menu.any.list-items = List items
+master.menu.any.list-toolkits = List toolkits
 
 # master.menu.administrator ###################################################
 
@@ -45,6 +46,7 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.configuration = System configuration
 
 # master.menu.user-account ####################################################
 
@@ -59,7 +61,8 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
-master.menu.authenticated.money-exchage = Money exchange
+master.menu.authenticated.money-exchange = Money exchange
+master.menu.authenticated.configuration = System configuration
 
 # master.menu.employer ########################################################
 
