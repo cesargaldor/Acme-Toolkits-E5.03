@@ -1,32 +1,26 @@
 
 package acme.features.administrator.configuration;
 
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.configuration.Configuration;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Administrator;
 
 @Controller
-@RequestMapping("/administrator/configuration/")
 public class AdministratorConfigurationController extends AbstractController<Administrator, Configuration> {
 
 	// Internal state ---------------------------------------------------------
-
-//	@Autowired
-//	protected AdministratorConfigurationListService	listService;
-//	
-//	@Autowired
-//	private AdministratorConfigurationShowService showService;
-
-	// Constructors -----------------------------------------------------------
-
-
-//	@PostConstruct
-//	private void initialise() {
-//		super.addCommand("list", this.listService);
-//		//super.addCommand("show", this.showService);
-//	}
-
+    @Autowired
+    protected AdministratorConfigurationShowService    showService;
+    
+    @PostConstruct
+    protected void initialise() {
+        super.addCommand("show", this.showService);
+    }
+	
 }

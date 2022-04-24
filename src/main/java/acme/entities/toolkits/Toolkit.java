@@ -48,7 +48,7 @@ public class Toolkit extends AbstractEntity {
 		@Length(min = 1, max = 255)
 		protected String 			assemblyNotes;
   
-    protected boolean   draft;
+		protected boolean   draft;
 		
 		//optional link
 		@URL

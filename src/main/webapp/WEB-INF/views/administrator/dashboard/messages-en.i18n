@@ -1,17 +1,19 @@
-# i18n-en.i18n
-#
-# Copyright (C) 2012-2022 Rafael Corchuelo.
-#
-# In keeping with the traditional purpose of furthering education and research, it is
-# the policy of the copyright owner to permit non-commercial use and redistribution of
-# this software. It has been tested carefully, but it is not guaranteed for any particular
-# purposes.  The copyright owner does not offer any warranties or representations, nor do
-# they accept any liabilities with respect to them.
+administrator.dashboard.form.title.components= Components
+administrator.dashboard.form.label.number-of-components= Number of Components
 
-administrator.dashboard.form.title.general-indicators = General indicators
-administrator.dashboard.form.title.application-statuses = Application statuses  
+administrator.dashboard.form.title.tools = Tools
+administrator.dashboard.form.label.number-of-tools = Number of Tools
 
-administrator.dashboard.form.label.average-number-jobs-employer =  Average number of jobs per employer
-administrator.dashboard.form.label.average-number-applications-worker =  Average number of applications per worker
-administrator.dashboard.form.label.average-number-applications-employer = Average number of applications per employer
+administrator.dashboard.form.title.patronages = Patronages
+administrator.dashboard.form.label.proposed-patronages= Proposed Patronages
+administrator.dashboard.form.label.accepted-patronages = Accepted Patronages
+administrator.dashboard.form.label.denied-patronages = Denied Patronages
+administrator.dashboard.form.label.status = Status
 
+administrator.dashboard.form.title.stats = Stats
+administrator.dashboard.form.label.technology= Technology
+administrator.dashboard.form.label.currency = Currency
+administrator.dashboard.form.label.average-value = Average
+administrator.dashboard.form.label.deviation-value = Deviation
+administrator.dashboard.form.label.minimum-value= Minimum
+administrator.dashboard.form.label.maximum-value = Maximum

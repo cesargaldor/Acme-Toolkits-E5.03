@@ -1,102 +1,200 @@
-<%--
-- form.jsp
--
-- Copyright (C) 2012-2022 Rafael Corchuelo.
--
-- In keeping with the traditional purpose of furthering education and research, it is
-- the policy of the copyright owner to permit non-commercial use and redistribution of
-- this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not offer any warranties or representations, nor do
-- they accept any liabilities with respect to them.
---%>
-
 <%@page language="java"%>
-
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
+
+<h2><acme:message code="administrator.dashboard.form.title.components"/></h2>
+
+<table class="table table-sm">
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.number-of-components"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfComponents}"/>
+		</td>
+	</tr>
+</table>
+
+<h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
+
+<table class="table table-sm">
+	<jstl:forEach var="entry" items="${statsRetailPriceOfComponents}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.technology"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key.first}"/>
+			</td>
+		
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key.second}"/>
+			</td>
+		
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.average-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.average}"/>
+			</td>
+			
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.deviation-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.deviation}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.minimum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.minumun}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.maximum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.maximun}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
+
+
 <h2>
-	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
+	<acme:message code="administrator.dashboard.form.title.tools"/>
 </h2>
 
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-number-jobs-employer"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-tools"/>
 		</th>
 		<td>
-			<acme:print value="${averageNumberOfJobsPerEmployer}"/>
+			<acme:print value="${numberOfTools}"/>
 		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-number-applications-worker"/>
-		</th>
-		<td>
-			<acme:print value="${averageNumberOfApplicationsPerWorker}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-number-applications-employer"/>
-		</th>
-		<td>
-			<acme:print value="${avegageNumberOfApplicationsPerEmployer}"/>
-		</td>
-	</tr>	
 </table>
 
+<h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
+
+<table class="table table-sm">
+	<jstl:forEach var="entry" items="${statsRetailPriceOfTools}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.technology"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key.first}"/>
+			</td>
+		
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.currency"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key.second}"/>
+			</td>
+		
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.average-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.average}"/>
+			</td>
+			
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.deviation-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.deviation}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.minimum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.minumun}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.maximum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.maximun}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
+
+
+
+
 <h2>
-	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
+	<acme:message code="administrator.dashboard.form.title.patronages"/>
 </h2>
 
-<div>
-	<canvas id="canvas"></canvas>
-</div>
+<table class="table table-sm">
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.proposed-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfPropsedPatronages}"/>
+		</td>
+		
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.accepted-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfAcceptedPatronages}"/>
+		</td>
+		
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.denied-patronages"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfDeniedPatronages}"/>
+		</td>
+	</tr>
+</table>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		var data = {
-			labels : [
-					"PENDING", "ACCEPTED", "REJECTED"
-			],
-			datasets : [
-				{
-					data : [
-						<jstl:out value="${ratioOfPendingApplications}"/>, 
-						<jstl:out value="${ratioOfAcceptedApplications}"/>, 
-						<jstl:out value="${ratioOfRejectedApplications}"/>
-					]
-				}
-			]
-		};
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 1.0
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-	
-		var canvas, context;
-	
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-</script>
+<h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
 
-<acme:return/>
-
+<table class="table table-sm">
+	<jstl:forEach var="entry" items="${statsBudgetOfStatusPatronages}">
+		<tr>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.status"/>
+			</th>
+			<td>
+				<acme:print value="${entry.key}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.average-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.average}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.deviation-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.deviation}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.minimum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.minumun}"/>
+			</td>
+			<th scope="row">
+				<acme:message code="administrator.dashboard.form.label.maximum-value"/>
+			</th>
+			<td>
+				<acme:print value="${entry.value.maximun}"/>
+			</td>
+		</tr>
+	</jstl:forEach>
+</table>
