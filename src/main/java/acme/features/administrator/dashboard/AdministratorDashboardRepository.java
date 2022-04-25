@@ -12,30 +12,30 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.items.Type;
+import acme.entities.patronage.Status;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
-
-	@Query("select avg(select count(j) from Job j where j.employer.id = e.id) from Employer e")
-	Double averageNumberOfJobsPerEmployer();
-
-	@Query("select avg(select count(a) from Application a where a.worker.id = w.id) from Worker w")
-	Double averageNumberOfApplicationsPerWorker();
-
-	@Query("select avg(select count(a) from Application a where exists(select j from Job j where j.employer.id = e.id and a.job.id = j.id)) from Employer e")
-	Double averageNumberOfApplicationsPerEmployer();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.PENDING")
-	Double ratioOfPendingApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.ACCEPTED")
-	Double ratioOfAcceptedApplications();
-
-	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.jobs.ApplicationStatus.REJECTED")
-	Double ratioOfRejectedApplications();
-
+	
+	@Query("select count(i) from Item i where i.type = :type")
+	int numberOfItem(Type type);
+	@Query("select count(p) from Patronage p where p.status = :status")
+	int numberOfStatusPatronages(Status status);
+	
+	@Query("select i.technology, i.retailPrice.currency, avg(i.retailPrice.amount),"
+		+ " stddev(i.retailPrice.amount), min(i.retailPrice.amount),"
+		+ " max(i.retailPrice.amount) from Item i where i.type = :type group by i.technology,"
+		+ " i.retailPrice.currency")
+	List<Object[]> statsRetailPriceOfItem(Type type);
+	
+//	@Query("select p.status, avg(p.budget.amount),stddev(p.budget.amount), min(p.budget.amount),max(p.budget.amount) from Patronage p group by p.status")
+//	List<Object[]> statsBudgetOfStatusPatronages();
+	 
 }

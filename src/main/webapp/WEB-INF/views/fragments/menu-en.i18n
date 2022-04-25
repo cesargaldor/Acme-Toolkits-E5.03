@@ -8,6 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
 # master.menu #################################################################
 
 master.menu.home = Home
@@ -22,6 +23,17 @@ master.menu.anonymous.all-jobs = List jobs
 master.menu.anonymous.list-shouts = List shouts
 master.menu.anonymous.list-chirps = List chirps
 master.menu.anonymous.list-patronages = List patronages
+master.menu.anonymous.list-items = List items
+
+# master.menu.any #######################################################
+
+master.menu.any = Any
+master.menu.any.list-inventors = List inventors
+master.menu.any.list-patrons = List patrons
+master.menu.any.list-chirps = List chirps
+master.menu.any.list-patronages = List patronages
+master.menu.any.list-items = List items
+master.menu.any.list-toolkits = List toolkits
 
 # master.menu.administrator ###################################################
 
@@ -34,6 +46,7 @@ master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
+master.menu.administrator.configuration = System configuration
 
 # master.menu.user-account ####################################################
 
@@ -48,7 +61,8 @@ master.menu.user-account.become-consumer = Become a consumer
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.announcement.list = List announcements
-master.menu.authenticated.money-exchage = Money exchange
+master.menu.authenticated.money-exchange = Money exchange
+master.menu.authenticated.configuration = System configuration
 
 # master.menu.employer ########################################################
 
@@ -64,10 +78,21 @@ master.menu.worker.all-jobs = List all jobs
 master.menu.worker.my-applications = List my applications
 
 # master.menu.patron ##########################################################
-
 master.menu.patron = Patron
 master.menu.patron.all-patronages = List all patronages
-master.menu.patron.dashboard = Dashboard
+master.menu.patron.patronageReport.list = List patronage reports
+master.menu.patron.dashboard = Patron dashboard
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.all-patronages = List my patronages
+master.menu.inventor.patronageReport.list = List my patronage reports
+master.menu.inventor.chirp.list-recent = List recent chirps
+master.menu.inventor.item.list-mine-component = List my Components
+master.menu.inventor.item.list-mine-tool = List my Tools
+master.menu.inventor.toolkit.list-mine-toolkit = List my Toolkits
+master.menu.inventor.item.list-mine = List my Items
 
 # master.menu.user-account ####################################################
 

@@ -1,8 +1,8 @@
 key,moment,title,body,flag,optionalLink
-announcement-01,2000/01/01 00:00,Very old announcement,This is the oldest announcement in the system.,true,null
-announcement-02,2022/01/22 00:00,The system's restarted,The system's been restarted after updating it.,true,null
-announcement-03,2022/01/22 00:10,The system's restarted again We're sorry,the update didn't work well.,true,http://www.us.es
-announcement-04,2022/01/22 09:00,Great discount,You may now benefit from our great volume discount!,false,http://www.acme-jobs.com/discount
-announcement-05,2022/01/02 12:00,The system's working well,The system's gone through extensive testing and it works pretty well.,false,null
+announcement-01,2022/03/12 00:00,Very old announcement,This is the oldest announcement in the system.,true,null
+announcement-02,2022/04/23 00:00,The system's restarted,The system's been restarted after updating it.,true,null
+announcement-03,2022/04/15 00:10,The system's restarted again We're sorry,the update didn't work well.,true,http://www.us.es
+announcement-04,2022/03/13 09:00,Great discount,You may now benefit from our great volume discount!,false,http://www.acme-jobs.com/discount
+announcement-05,2022/04/08 12:00,The system's working well,The system's gone through extensive testing and it works pretty well.,false,null
 announcement-06,1970/09/07 22:30,The creator's birth date,This message was published long ago on the creator's birthday.,false,https://www.kidscanfly.ca/wp-content/uploads/2020/08/happy-birthday.jpeg
-announcement-07,2012/01/01 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org
+announcement-07,2022/04/11 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org

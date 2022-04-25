@@ -1,0 +1,6 @@
+administrator.configuration.form.label.default-currency = Default currency:
+administrator.configuration.form.label.accepted-currencies = Accepted currencies:
+administrator.configuration.form.label.strong-spam-terms = Strong spam terms:
+administrator.configuration.form.label.strong-spam-threshold = Strong spam threshold:
+administrator.configuration.form.label.weak-spam-words = Weak spam Words:
+administrator.configuration.form.label.weak-spam-threshold = Weak spam threshold:
