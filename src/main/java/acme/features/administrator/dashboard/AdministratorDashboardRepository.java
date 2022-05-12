@@ -16,6 +16,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.items.Type;
+import acme.entities.patronage.Status;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -25,9 +26,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	int numberOfItem(Type type);
 	
 	//Consulta para mostrar la cantidad de cada patronage segun su status
-	/*@Query("select count(p) from Patronage p where p.status = :status")
+	@Query("select count(p) from Patronage p where p.status = :status")
 	int numberOfStatusPatronages(Status status);
 	
+	/*
 	@Query("select i.technology, i.retailPrice.currency, avg(i.retailPrice.amount),"
 		+ " stddev(i.retailPrice.amount), min(i.retailPrice.amount),"
 		+ " max(i.retailPrice.amount) from Item i where i.type = :type group by i.technology,"

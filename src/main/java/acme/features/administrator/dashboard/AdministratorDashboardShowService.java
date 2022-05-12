@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Type;
+import acme.entities.patronage.Status;
 import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -32,10 +33,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			final AdministratorDashboard result = new AdministratorDashboard();
 			
 			final int numberOfComponents = this.repository.numberOfItem(Type.COMPONENT);
-//			final int numberOfTools = this.repository.numberOfItem(Type.TOOL);
-//			final int numberOfPropsedPatronages = this.repository.numberOfStatusPatronages(Status.PROPOSED);
-//			final int numberOfAcceptedPatronages = this.repository.numberOfStatusPatronages(Status.ACCEPTED);
-//			final int numberOfDeniedPatronages =  this.repository.numberOfStatusPatronages(Status.DENIED);
+			final int numberOfTools = this.repository.numberOfItem(Type.TOOL);
+			final int numberOfPropsedPatronages = this.repository.numberOfStatusPatronages(Status.PROPOSED);
+			final int numberOfAcceptedPatronages = this.repository.numberOfStatusPatronages(Status.ACCEPTED);
+			final int numberOfDeniedPatronages =  this.repository.numberOfStatusPatronages(Status.DENIED);
 //			
 //			final Map<Pair<String,String>, Stats> statsRetailPriceOfComponents = new HashMap<>();
 //			final List<Object[]> listStatsRetailPriceOfComponents = this.repository.statsRetailPriceOfItem(Type.COMPONENT);
@@ -81,13 +82,13 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 //			}
 //			
 			result.setNumberOfComponents(numberOfComponents);
-//			result.setNumberOfTools(numberOfTools);
+			result.setNumberOfTools(numberOfTools);
 //			result.setStatsRetailPriceOfComponents(statsRetailPriceOfComponents);
 //			result.setStatsRetailPriceOfTools(statsRetailPriceOfTools);
 //			
-//			result.setNumberOfAcceptedPatronages(numberOfAcceptedPatronages);
-//			result.setNumberOfPropsedPatronages(numberOfPropsedPatronages);
-//			result.setNumberOfDeniedPatronages(numberOfDeniedPatronages);
+			result.setNumberOfAcceptedPatronages(numberOfAcceptedPatronages);
+			result.setNumberOfPropsedPatronages(numberOfPropsedPatronages);
+			result.setNumberOfDeniedPatronages(numberOfDeniedPatronages);
 //			result.setStatsBudgetOfStatusPatronages(statsBudgetOfStatusPatronages);
 			
 			return result;
@@ -98,13 +99,11 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			assert entity != null;
 			assert model != null;
 			
-			request.unbind(entity, model, 	"numberOfComponents"/*, 
+			request.unbind(entity, model, 	"numberOfComponents", 
 											"numberOfTools", 
-											"statsRetailPriceOfComponents", 
-											"statsRetailPriceOfTools", 
 											"numberOfPropsedPatronages", 
 											"numberOfAcceptedPatronages", 
-											"numberOfDeniedPatronages", 
+											"numberOfDeniedPatronages"/*, 
 											"statsBudgetOfStatusPatronages"*/);
 		}
 }
