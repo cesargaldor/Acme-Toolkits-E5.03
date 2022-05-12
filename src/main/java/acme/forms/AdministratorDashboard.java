@@ -25,11 +25,6 @@ public class AdministratorDashboard implements Serializable {
 	Map<Pair<String,String>, Stats>         statsRetailPriceOfComponents;
 	Map<Pair<String,String>, Stats>         statsRetailPriceOfTools;
 	
-	// Patronages
-	
-	int										numberOfPropsedPatronages;
-	int										numberOfAcceptedPatronages;
-	int										numberOfDeniedPatronages;
 	
 	Map<Status,Stats>						statsBudgetOfStatusPatronages;
 }

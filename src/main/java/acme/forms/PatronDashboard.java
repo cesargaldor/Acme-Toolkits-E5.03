@@ -30,9 +30,9 @@ public class PatronDashboard implements Serializable {
 
 		// Attributes -------------------------------------------------------------
 
-		int							totalNumberOfProposedPatronages;
-		int							totalNumberOfAcceptedPatronages;
-		int							totalNumberOfDeniedPatronages;
+		int							numberOfProposedPatronages;
+		int							numberOfAcceptedPatronages;
+		int							numberOfDeniedPatronages;
 
 		Map<Status,Stats>			statsBudgetOfStatusPatronages;
 
