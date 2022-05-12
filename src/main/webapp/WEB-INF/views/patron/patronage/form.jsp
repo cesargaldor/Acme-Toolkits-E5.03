@@ -21,6 +21,7 @@
 	<acme:input-money code="patron.patronage.form.label.budget" path="budget" readonly="true"/>
 	<acme:input-moment code="patron.patronage.form.label.moment" path="moment" readonly="true"/>			
 	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
+	<acme:input-textbox code="patron.patronage.form.label.inventor.username" path="username" readonly="${true}"/>
 	
 	<!--<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>-->
 	

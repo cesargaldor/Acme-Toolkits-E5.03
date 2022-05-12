@@ -18,8 +18,11 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Inventor tiene autorización.
 		assert request != null;
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Inventor.class);
+		return result;
 	}
 
 	@Override
@@ -37,8 +40,8 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
-		//model.setAttribute("onlyPatron", true);
+		final String username = entity.getPatron().getUserAccount().getUsername();
+		model.setAttribute("username", username);
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");		
 	}
 

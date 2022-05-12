@@ -24,7 +24,7 @@ patron.patronage.form.label.legalStuff = Legal Stuff:
 patron.patronage.form.label.budget = Budget:
 patron.patronage.form.label.moment = Moment:
 patron.patronage.form.label.optionalLink = Optional link:
-patron.patronage.form.label.inventor = Inventor:
+patron.patronage.form.label.inventor.username = Inventor:
 patron.patronage.form.label.button.create = Create patronage
 
 patron.patronage.form.label.status.PROPOSED = PROPOSED

@@ -19,9 +19,11 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Patron tiene autorización.
 		assert request != null;
-		//
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Patron.class);
+		return result;
 	}
 
 	@Override
@@ -41,8 +43,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert entity != null;
 		assert model != null;
 		
-		model.setAttribute("patron", entity.getPatron().getUserAccount().getUsername());
-		model.setAttribute("onlyPatron", true);
+		final String username = entity.getInventor().getUserAccount().getUsername();
+		model.setAttribute("username", username);
 		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}

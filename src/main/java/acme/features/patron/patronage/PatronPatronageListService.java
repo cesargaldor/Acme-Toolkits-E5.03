@@ -26,9 +26,11 @@ public class PatronPatronageListService implements AbstractListService<Patron, P
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Patron tiene autorización.
 		assert request != null;
-
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Patron.class);
+		return result;
 	}
 
 	@Override

@@ -21,8 +21,11 @@ public class InventorPatronageListService implements AbstractListService<Invento
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Inventor tiene autorización.
 		assert request != null;
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Inventor.class);
+		return result;
 	}
 	@Override
 	public Collection<Patronage> findMany(final Request<Patronage> request) {
