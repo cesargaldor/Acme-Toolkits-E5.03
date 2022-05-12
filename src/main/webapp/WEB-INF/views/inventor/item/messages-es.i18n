@@ -18,7 +18,9 @@ inventor.item.form.label.optionalLink = Link opcional
 inventor.item.form.label.inventor = Inventor
 inventor.item.form.button.create = Crear
 
-inventor.item.list.label.type = Tipo
+inventor.item.list.label.type = Tipo:
 inventor.item.list.label.name = Nombre
-inventor.item.list.label.code = Código
-inventor.item.list.label.description = Descripción
+inventor.item.list.label.code = Código:
+inventor.item.list.label.technology = Tecnología:
+inventor.item.list.label.retailPrice = Precio:
+inventor.item.list.label.published = Publicado:

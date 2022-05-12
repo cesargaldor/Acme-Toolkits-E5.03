@@ -59,6 +59,9 @@ public class Item extends AbstractEntity {
 	//optional link
 	@URL
 	protected String				optionalLink;
+	
+	//published
+	protected boolean published;
 
 	//Relación con el inventor
 	@NotNull
