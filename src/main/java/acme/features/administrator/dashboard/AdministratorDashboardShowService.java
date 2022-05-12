@@ -3,6 +3,7 @@ package acme.features.administrator.dashboard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.items.Type;
 import acme.forms.AdministratorDashboard;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -30,7 +31,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			assert request != null;
 			final AdministratorDashboard result = new AdministratorDashboard();
 			
-//			final int numberOfComponents = this.repository.numberOfItem(Type.COMPONENT);
+			final int numberOfComponents = this.repository.numberOfItem(Type.COMPONENT);
 //			final int numberOfTools = this.repository.numberOfItem(Type.TOOL);
 //			final int numberOfPropsedPatronages = this.repository.numberOfStatusPatronages(Status.PROPOSED);
 //			final int numberOfAcceptedPatronages = this.repository.numberOfStatusPatronages(Status.ACCEPTED);
@@ -79,7 +80,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 //				statsBudgetOfStatusPatronages.put((Status)arrayList[0], stat);
 //			}
 //			
-//			result.setNumberOfComponents(numberOfComponents);
+			result.setNumberOfComponents(numberOfComponents);
 //			result.setNumberOfTools(numberOfTools);
 //			result.setStatsRetailPriceOfComponents(statsRetailPriceOfComponents);
 //			result.setStatsRetailPriceOfTools(statsRetailPriceOfTools);
@@ -97,14 +98,14 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			assert entity != null;
 			assert model != null;
 			
-			request.unbind(entity, model, 	"numberOfComponents", 
+			request.unbind(entity, model, 	"numberOfComponents"/*, 
 											"numberOfTools", 
 											"statsRetailPriceOfComponents", 
 											"statsRetailPriceOfTools", 
 											"numberOfPropsedPatronages", 
 											"numberOfAcceptedPatronages", 
 											"numberOfDeniedPatronages", 
-											"statsBudgetOfStatusPatronages");
+											"statsBudgetOfStatusPatronages"*/);
 		}
 }
 
