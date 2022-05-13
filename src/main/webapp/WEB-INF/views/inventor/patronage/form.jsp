@@ -20,18 +20,17 @@
 	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
 	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="true"/>
 	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment" readonly="true"/>
-	<acme:input-textbox code="inventor.patronage.form.label.patron.username" path="username" readonly="${true}"/>			
+	<acme:input-textbox code="inventor.patronage.form.label.patron.username" path="username" readonly="${true}"/>
+	<acme:input-email code="inventor.patronage.form.label.patron.email" path="email" readonly="${true}"/>			
+	<acme:input-textbox code="inventor.patronage.form.label.patron.fullName" path="username" readonly="${true}"/>			
+				
 	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
 	
-
-	<!--<acme:submit code="inventor.patronage.form.label.button.create" action="/inventor/patronage/create"/>-->
-	
-	<!--<jstl:if test="${onlyPatron}">-->	
 		<acme:input-select code="inventor.patronage.form.label.status" path="status" readonly="true">
 			<acme:input-option code="inventor.patronage.form.label.status.PROPOSED" value="PROPOSED"/>
 			<acme:input-option code="inventor.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
 			<acme:input-option code="inventor.patronage.form.label.status.DENIED" value="DENIED"/>
 		</acme:input-select>
-	<!--</jstl:if>-->
+
 </acme:form>
 

@@ -25,6 +25,8 @@ inventor.patronage.form.label.budget = Budget:
 inventor.patronage.form.label.moment = Moment:
 inventor.patronage.form.label.optionalLink = Optional link:
 inventor.patronage.form.label.patron.username = Patron:
+inventor.patronage.form.label.patron.email = Email:
+inventor.patronage.form.label.patron.fullName = Full name:
 inventor.patronage.form.label.button.create = Create patronage
 
 inventor.patronage.form.label.status.PROPOSED = PROPOSED

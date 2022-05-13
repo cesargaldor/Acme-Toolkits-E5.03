@@ -41,7 +41,11 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null;
 		assert model != null;
 		final String username = entity.getPatron().getUserAccount().getUsername();
+		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
+		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
 		model.setAttribute("username", username);
+		model.setAttribute("email", email);
+		model.setAttribute("fullName", fullName);
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");		
 	}
 
