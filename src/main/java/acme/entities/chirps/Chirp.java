@@ -35,7 +35,7 @@ public class Chirp extends AbstractEntity {
 	protected String			title;
 
 	@NotBlank
-	@Length(min=1, max=101)
+	@Length(min=1, max=100)
 	protected String			author;
 
 	@NotBlank
