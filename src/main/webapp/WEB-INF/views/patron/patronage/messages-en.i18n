@@ -28,6 +28,8 @@ patron.patronage.form.label.inventor.username = Inventor:
 patron.patronage.form.label.inventor.email = Email:
 patron.patronage.form.label.inventor.fullName = Full Name:
 patron.patronage.form.label.button.create = Create patronage
+patron.patronage.form.label.button.update = Update patronage
+
 
 patron.patronage.form.label.status.PROPOSED = PROPOSED
 patron.patronage.form.label.status.ACCEPTED  = ACCEPTED

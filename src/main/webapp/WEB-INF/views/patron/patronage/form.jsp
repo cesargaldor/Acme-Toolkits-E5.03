@@ -16,9 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-
-	
-	
+	<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
+	<acme:input-moment code="patron.patronage.form.label.moment" path="moment"/>			
+	<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink"/>
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
 			<acme:input-textarea code="patron.patronage.form.label.code" path="code"/>
@@ -34,19 +35,11 @@
 				<acme:input-option code="patron.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
 				<acme:input-option code="patron.patronage.form.label.status.DENIED" value="DENIED"/>
 			</acme:input-select>
-			<acme:submit code="patron.patronage.form.button.create" action="/patron/patronage/create"/>
-			
-			
-			
+			<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>
 		</jstl:when>
 		
-		<jstl:when test="${command == 'show'}">
-		
+		<jstl:when test="${acme:anyOf(command, 'show, update')}">		
 			<acme:input-textarea code="patron.patronage.form.label.code" path="code" readonly="true"/>
-			<acme:input-textbox code="patron.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
-			<acme:input-money code="patron.patronage.form.label.budget" path="budget" readonly="true"/>
-			<acme:input-moment code="patron.patronage.form.label.moment" path="moment" readonly="true"/>			
-			<acme:input-url code="patron.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.username" path="username" readonly="true"/>
 			<acme:input-email code="patron.patronage.form.label.inventor.email" path="email" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.fullName" path="fullName" readonly="true"/>
@@ -55,16 +48,15 @@
 				<acme:input-option code="patron.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
 				<acme:input-option code="patron.patronage.form.label.status.DENIED" value="DENIED"/>
 			</acme:input-select>
-
-
+			<acme:submit code="patron.patronage.form.label.button.update" action="/patron/patronage/update"/>
 		</jstl:when>
 		
-		
+	
 		
 		
 	</jstl:choose>
 	
-	
+
 	
 
 	

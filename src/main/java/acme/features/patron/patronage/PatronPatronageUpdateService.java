@@ -11,7 +11,7 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
 
 @Service
-public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage>{
+public class PatronPatronageUpdateService implements AbstractUpdateService<Patron, Patronage>{
 
 	
 	@Autowired
@@ -30,33 +30,30 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 
 	@Override
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
-
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		
-		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "published");
-		
-		
+		final String username = entity.getInventor().getUserAccount().getUsername();
+		model.setAttribute("username", username);
+		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
+		model.setAttribute("fullName", fullName);
+		final String email = entity.getInventor().getUserAccount().getIdentity().getEmail();
+		model.setAttribute("email", email);
 	}
 
 	@Override
 	public Patronage findOne(final Request<Patronage> request) {
-
 		assert request != null;
-		final Patronage res;
+		Patronage res;
 		int id;
 		id = request.getModel().getInteger("id");
 		res = this.repository.findPatronageById(id);
@@ -73,12 +70,9 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
-
 		assert request != null;
 		assert entity != null;
-		entity.setPublished(false);
 		this.repository.save(entity);
-		
 	}
 
 }
