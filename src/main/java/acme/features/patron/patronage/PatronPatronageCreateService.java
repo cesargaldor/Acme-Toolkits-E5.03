@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
+import acme.roles.Inventor;
 import acme.roles.Patron;
 
 @Service
@@ -26,9 +28,11 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un Patron tiene autorización
 		assert request != null;
-
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Patron.class);
+		return result;
 	}
 
 	@Override
@@ -38,6 +42,9 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert errors != null;
 
 		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		final String username = request.getModel().getString("username");
+        final Inventor inventor = this.repository.findInventorByUsername(username);
+        entity.setInventor(inventor);
 	}
 
 	@Override
@@ -55,7 +62,7 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		Patronage result;
 		Date moment;
-		//SACAR USER REGISTRADO
+		//Sacamos patron por id
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Patron p = this.repository.PatronById(id);
 		
@@ -63,6 +70,8 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		result = new Patronage();
 		result.setMoment(moment);
 		result.setPatron(p);
+		result.setPublished(true);
+		result.setStatus(Status.PROPOSED);
 
 		return result;
 	}

@@ -25,4 +25,4 @@
 	
 </acme:list>
 
-<!-- <acme:button code="patron.patronage.list.label.button.create" action="/patron/patronage/create"/> -->
+<acme:button code="patron.patronage.list.label.button.create" action="/patron/patronage/create"/>
