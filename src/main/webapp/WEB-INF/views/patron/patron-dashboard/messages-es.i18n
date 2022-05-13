@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 patron.dashboard.form.title.general-indicators = Indicadores generales
+patron.dashboard.form.title.statistics = Estadísticas
 patron.dashboard.form.title.patronages-statuses = Estados de patrocinio
 patron.dashboard.form.label.number-of-proposed-patronages =  Número de patrocinios propuestos
 patron.dashboard.form.label.number-of-accepted-patronages =  Número de patrocinios aceptados
@@ -16,4 +17,9 @@ patron.dashboard.form.label.number-of-denied-patronages =  Número de patrocinio
 patron.dashboard.form.label.average-of-proposed-patronages = Media de patrocinios propuestos
 patron.dashboard.form.label.average-of-accepted-patronages = Media de patrocinios aceptados
 patron.dashboard.form.label.average-of-denied-patronages = Media de patrocinios rechazados
-
+patron.dashboard.form.label.status = Estado
+patron.dashboard.form.label.currency = Divisa
+patron.dashboard.form.label.average = Media
+patron.dashboard.form.label.deviation = Desviación
+patron.dashboard.form.label.minimum = Mínimo
+patron.dashboard.form.label.maximum = Máximo

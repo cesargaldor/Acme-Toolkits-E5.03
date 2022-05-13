@@ -15,9 +15,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -52,8 +52,8 @@ public class Patronage extends AbstractEntity {
 
 	//budget
 	@NotNull
-	@Range(min = 1)
-	protected Double			budget;
+	//@Valid
+	protected Money			budget;
 
 	//period of time
 	@Temporal(TemporalType.TIMESTAMP)

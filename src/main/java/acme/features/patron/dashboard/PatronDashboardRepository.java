@@ -12,6 +12,8 @@
 
 package acme.features.patron.dashboard;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -22,10 +24,11 @@ public interface PatronDashboardRepository extends AbstractRepository {
 	//Consulta para filtrar patronages por el status
 	@Query("select count(p) from Patronage p where p.status = ':status'")
 	int numberOfStatusPatronages(String status);
+
 	
 	//Consulta para seleccionar estadísticas agrupadas por status y currency
-//	@Query("select p.status, p.budget.currency, avg(p.budget.amount), stddev(p.budget.amount), min(p.budget.amount), max(p.budget.amount) from Patronage p group by p.status, p.budget.currency")
-//	List<Object[]> statsBudgetOfStatusPatronages();
+	@Query("select p.status, p.budget.currency, avg(p.budget.amount), stddev(p.budget.amount), min(p.budget.amount), max(p.budget.amount) from Patronage p group by p.status, p.budget.currency")
+	List<Object[]> statsBudgetOfStatusPatronages();
 
 	 
 }

@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 patron.dashboard.form.title.general-indicators = General indicators
+patron.dashboard.form.title.statistics = Statistics
 patron.dashboard.form.title.patronages-statuses = Patronage statuses  
 patron.dashboard.form.label.number-of-proposed-patronages =  Number of proposed patronages
 patron.dashboard.form.label.number-of-accepted-patronages =  Number of accepted patronages
@@ -16,4 +17,9 @@ patron.dashboard.form.label.number-of-denied-patronages =  Number of denied patr
 patron.dashboard.form.label.average-of-proposed-patronages = Average of proposed patronages
 patron.dashboard.form.label.average-of-accepted-patronages = Average of accepted patronages
 patron.dashboard.form.label.average-of-denied-patronages = Average of denied patronages
-
+patron.dashboard.form.label.status = Status
+patron.dashboard.form.label.currency = Currency
+patron.dashboard.form.label.average = Average
+patron.dashboard.form.label.deviation = Deviation
+patron.dashboard.form.label.minimum = Minimum
+patron.dashboard.form.label.maximum = Maximum

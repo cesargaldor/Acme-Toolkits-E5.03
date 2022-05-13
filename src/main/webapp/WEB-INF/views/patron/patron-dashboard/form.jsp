@@ -1,4 +1,4 @@
-<%--
+ <%--
 - form.jsp
 -
 - Copyright (C) 2012-2022 Rafael Corchuelo.
@@ -45,54 +45,41 @@
 		<td>
 			<acme:print value="${numberOfDeniedPatronages}" /></td>
 	</tr>
-	
-	
-	<tr>
-		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-of-proposed-patronages" />
-		</th>
-		<td>
-			<acme:print value="${averageOfProposedPatronages}" /></td>
-	</tr>
-	
-	<tr>
-		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-of-accepted-patronages" />
-		</th>
-		<td>
-			<acme:print value="${averageOfAcceptedPatronages}" /></td>
-	</tr>
-	
-	<tr>
-		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-of-denied-patronages" />
-		</th>
-		<td>
-			<acme:print value="${averageOfDeniedPatronages}" /></td>
-	</tr>
-	
-	
-
-	<%-- 
-	<tr>
-		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-number-applications-worker"/>
-		</th>
-		<td>
-			<acme:print value="${averageNumberOfApplicationsPerWorker}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="patron.dashboard.form.label.average-number-applications-employer"/>
-		</th>
-		<td>
-			<acme:print value="${avegageNumberOfApplicationsPerEmployer}"/>
-		</td>
-	</tr>	
-	--%>
-	
 </table>
+
+<h2>
+	<acme:message code="patron.dashboard.form.title.statistics"/>
+</h2>
+
+<table class="table table-sm">
+
+	<jstl:forEach var="entry" items="${statsBudgetOfStatusPatronages}">
+		<tr>
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.status" /></th>
+			<td><acme:print value="${entry.key.first}" /></td>
+
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.currency" /></th>
+			<td><acme:print value="${entry.key.second}" /></td>
+
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.average" /></th>
+			<td><acme:print value="${entry.value.average}" /></td>
+
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.deviation" /></th>
+			<td><acme:print value="${entry.value.deviation}" /></td>
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.minimum" /></th>
+			<td><acme:print value="${entry.value.minumun}" /></td>
+			<th scope="row"><acme:message
+					code="patron.dashboard.form.label.maximum" /></th>
+			<td><acme:print value="${entry.value.maximun}" /></td>
+		</tr>
+	</jstl:forEach>
+</table>
+
 
 <h2>
 	<acme:message code="patron.dashboard.form.title.patronages-statuses"/>

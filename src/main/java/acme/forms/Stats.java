@@ -17,11 +17,11 @@ public class Stats extends AbstractDatatype{
 
 	// Attributes -------------------------------------------------------------
 	
+	protected Double minumun;
+	protected Double maximun;
 	protected Double average;
-	
 	protected Double deviation;
 	
-	protected Double minumun;
 	
-	protected Double maximun;
+	
 }
