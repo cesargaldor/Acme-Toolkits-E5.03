@@ -53,6 +53,26 @@ public class AnyUserAccountCreate extends TestHarness {
 	}
 
 	@ParameterizedTest
+	@CsvFileSource(resources = "/any/user-account/become-patron-error.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void becomePatronError(final int recordIndex, final String username, final String password, final String company, final String statement, final String link) {
+
+		super.signIn(username, password);
+		super.clickOnMenu("Account", "Become a patron");
+
+		super.checkFormExists();
+
+		super.fillInputBoxIn("company", company);
+		super.fillInputBoxIn("statement", statement);
+		super.fillInputBoxIn("link", link);
+		super.clickOnSubmit("Register");
+
+		super.checkErrorsExist();
+
+		super.signOut();
+	}
+
+	@ParameterizedTest
 	@CsvFileSource(resources = "/any/user-account/become-inventor-success.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void becomeInventorSuccess(final int recordIndex, final String username, final String password, final String company, final String statement, final String link) {
@@ -68,6 +88,26 @@ public class AnyUserAccountCreate extends TestHarness {
 		super.clickOnSubmit("Register");
 
 		super.checkNotErrorsExist();
+
+		super.signOut();
+	}
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/any/user-account/become-inventor-error.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void becomeInventorError(final int recordIndex, final String username, final String password, final String company, final String statement, final String link) {
+
+		super.signIn(username, password);
+		super.clickOnMenu("Account", "Become a inventor");
+
+		super.checkFormExists();
+
+		super.fillInputBoxIn("company", company);
+		super.fillInputBoxIn("statement", statement);
+		super.fillInputBoxIn("link", link);
+		super.clickOnSubmit("Register");
+
+		super.checkErrorsExist();
 
 		super.signOut();
 	}
