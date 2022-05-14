@@ -38,7 +38,7 @@
 			<acme:submit code="patron.patronage.form.label.button.create" action="/patron/patronage/create"/>
 		</jstl:when>
 		
-		<jstl:when test="${acme:anyOf(command, 'show, update')}">		
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete')}">		
 			<acme:input-textarea code="patron.patronage.form.label.code" path="code" readonly="true"/>
 			<acme:input-textbox code="patron.patronage.form.label.inventor.username" path="username" readonly="true"/>
 			<acme:input-email code="patron.patronage.form.label.inventor.email" path="email" readonly="true"/>
@@ -49,6 +49,8 @@
 				<acme:input-option code="patron.patronage.form.label.status.DENIED" value="DENIED"/>
 			</acme:input-select>
 			<acme:submit code="patron.patronage.form.label.button.update" action="/patron/patronage/update"/>
+			<acme:submit code="patron.patronage.form.label.button.delete" action="/patron/patronage/delete"/>
+			
 		</jstl:when>
 		
 	
