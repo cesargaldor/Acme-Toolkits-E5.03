@@ -16,15 +16,15 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textarea code="inventor.patronage.form.label.code" path="code" readonly="true"/>
-	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
-	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="true"/>
-	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment" readonly="true"/>
-	<acme:input-textbox code="inventor.patronage.form.label.patron.username" path="username" readonly="${true}"/>
-	<acme:input-email code="inventor.patronage.form.label.patron.email" path="email" readonly="${true}"/>			
-	<acme:input-textbox code="inventor.patronage.form.label.patron.fullName" path="username" readonly="${true}"/>			
+	<acme:input-textarea code="inventor.patronage.form.label.code" path="code"/>
+	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff"/>
+	<acme:input-money code="inventor.patronage.form.label.budget" path="budget"/>
+	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment"/>
+	<acme:input-textbox code="inventor.patronage.form.label.patron.username" path="username"/>
+	<acme:input-email code="inventor.patronage.form.label.patron.email" path="email"/>			
+	<acme:input-textbox code="inventor.patronage.form.label.patron.fullName" path="username"/>			
 				
-	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
+	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink"/>
 	
 		<acme:input-select code="inventor.patronage.form.label.status" path="status" readonly="true">
 			<acme:input-option code="inventor.patronage.form.label.status.PROPOSED" value="PROPOSED"/>
