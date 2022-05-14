@@ -22,4 +22,4 @@
 	<acme:list-column code="inventor.patronageReport.list.label.optionalLink" path="optionalLink" width="10%"/>
 </acme:list>
 
-<!--<acme:button code="patron.patronageReport.list.label.button.create" action="/patron/patronage/create"/>-->
+<acme:button code="inventor.patronageReport.list.label.button.create" action="/inventor/patronage-report/create"/>
