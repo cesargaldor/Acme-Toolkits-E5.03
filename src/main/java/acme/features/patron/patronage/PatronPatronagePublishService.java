@@ -24,37 +24,29 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		final boolean res;
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findPatronageById(id);
-		res = request.getPrincipal().hasRole(Patron.class) && patronage.isPublished();
+		res = request.getPrincipal().hasRole(Patron.class) && !patronage.isPublished();
 		return res;
 	}
 
 	@Override
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
-
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		
-		
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-
 		assert request != null;
 		assert entity != null;
-		assert model != null;
-		
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "published");
-		
-		
+		assert model != null;		
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
+		model.setAttribute("confirmation", false);
 	}
 
 	@Override
 	public Patronage findOne(final Request<Patronage> request) {
-
 		assert request != null;
 		final Patronage res;
 		int id;
@@ -68,17 +60,14 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 	}
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
-
 		assert request != null;
 		assert entity != null;
 		entity.setPublished(false);
 		this.repository.save(entity);
-		
 	}
 
 }
