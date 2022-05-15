@@ -26,9 +26,11 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		boolean res;
 		final Integer id;
 		final Patronage patronage;
-		id = request.getModel().getInteger("id");
-		patronage = this.repository.findPatronageById(id);
-		res = request.getPrincipal().getActiveRoleId() == patronage.getInventor().getId();
+//		id = request.getModel().getInteger("id");
+//		patronage = this.repository.findPatronageById(id);
+//		res = request.getPrincipal().getActiveRoleId() == patronage.getInventor().getId();
+		
+		res = request.getPrincipal().hasRole(Inventor.class);
 		return res;
 	}
 
@@ -46,7 +48,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert entity != null;
 		assert model != null;		
 		request.unbind(entity, model, "numSeq","creationMoment","memorandum","optionalLink");
-		model.setAttribute("id", request.getModel().getAttribute("id"));
+		//model.setAttribute("id", request.getModel().getAttribute("id"));
 		model.setAttribute("numSeq", entity.getNumSeq());
 	}
 
@@ -55,19 +57,19 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 
 		assert request != null;
 		final PatronageReport res;
-		final Patronage patronage;
+		final Patronage patronage = new Patronage();
 		final Integer id;
 		final Date creationMoment;
 		final String numPatronageReports;
-		id= request.getModel().getInteger("id");
-		patronage = this.repository.findPatronageById(id);
+//		id= request.getModel().getInteger("id");
+//		patronage = this.repository.findPatronageById(id);
 		creationMoment = new Date(System.currentTimeMillis());
 		//Sacamos patronage reports por id de patronage
-		numPatronageReports = Integer.toString(this.repository.findPatronageReportsByPatronageId(id).size()+1);
+//		numPatronageReports = Integer.toString(this.repository.findPatronageReportsByPatronageId(id).size()+1);
 		res = new PatronageReport();
 		res.setPatronage(patronage);
 		res.setCreationMoment(creationMoment);
-		res.setNumSeq("ABC-123-A:000" + numPatronageReports);
+//		res.setNumSeq("ABC-123-A:000" + numPatronageReports);
 		return res;
 	}
 
