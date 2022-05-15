@@ -28,6 +28,8 @@ patron.patronage.form.label.inventor.email = Correo:
 patron.patronage.form.label.inventor.fullName = Nombre completo:
 patron.patronage.form.label.button.update = Actualizar patrocinio
 patron.patronage.form.label.button.delete = Borrar patrocinio
+patron.patronage.form.label.button.publish = Publicar patrocinio
+
 
 patron.patronage.form.label.status.PROPOSED = PROPUESTO
 patron.patronage.form.label.status.ACCEPTED  = ACEPTADO
