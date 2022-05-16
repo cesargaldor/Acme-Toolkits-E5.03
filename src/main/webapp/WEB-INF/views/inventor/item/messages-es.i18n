@@ -8,19 +8,29 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.item.form.label.type = Tipo:
-inventor.item.form.label.name = Nombre:
-inventor.item.form.label.code = Código:
-inventor.item.form.label.technology = Tecnología:
-inventor.item.form.label.description = Descripción:
-inventor.item.form.label.retailPrice = Precio:
-inventor.item.form.label.optionalLink = Link opcional
-inventor.item.form.label.inventor = Inventor
-inventor.item.form.button.create = Crear
+Inventor.Item.list.label.status = Estado:
+Inventor.Item.list.label.code = Código:
+Inventor.Item.list.label.legalStuff = Legal:
+Inventor.Item.list.label.budget = Cantidad:
+Inventor.Item.list.label.moment = Fecha:
+Inventor.Item.list.label.optionalLink = Más información (Opcional):
+Inventor.Item.list.label.inventor = Inventor:
+Inventor.Item.list.label.button.create = Crear patrocinio
 
-inventor.item.list.label.type = Tipo:
-inventor.item.list.label.name = Nombre
-inventor.item.list.label.code = Código:
-inventor.item.list.label.technology = Tecnología:
-inventor.item.list.label.retailPrice = Precio:
-inventor.item.list.label.published = Publicado:
+Inventor.Item.form.label.status = Estado:
+Inventor.Item.form.label.code = Código:
+Inventor.Item.form.label.legalStuff = Legal:
+Inventor.Item.form.label.budget = Cantidad:
+Inventor.Item.form.label.moment = Fecha:
+Inventor.Item.form.label.optionalLink = Más información (Opcional):
+Inventor.Item.form.label.inventor.username = Inventor:
+Inventor.Item.form.label.inventor.email = Correo:
+Inventor.Item.form.label.inventor.fullName = Nombre completo:
+Inventor.Item.form.label.button.update = Actualizar patrocinio
+Inventor.Item.form.label.button.delete = Borrar patrocinio
+Inventor.Item.form.label.button.publish = Publicar patrocinio
+
+
+Inventor.Item.form.label.status.PROPOSED = PROPUESTO
+Inventor.Item.form.label.status.ACCEPTED  = ACEPTADO
+Inventor.Item.form.label.status.DENIED = DENEGADO
