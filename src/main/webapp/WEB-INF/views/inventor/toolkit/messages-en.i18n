@@ -8,13 +8,31 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.toolkit.form.label.code = Code:
-inventor.toolkit.form.label.title = Title:
-inventor.toolkit.form.label.description = Description:
-inventor.toolkit.form.label.assembleNotes = Assemble Notes
-inventor.toolkit.form.label.link = Optional Link:
+Inventor.Toolkit.list.label.status = Status:
+Inventor.Toolkit.list.label.code = Code:
+Inventor.Toolkit.list.label.legalStuff = Legal Stuff:
+Inventor.Toolkit.list.label.budget = Budget:
+Inventor.Toolkit.list.label.moment = Moment:
+Inventor.Toolkit.list.label.optionalLink = Optional link:
+Inventor.Toolkit.list.label.inventor = Inventor:
+Inventor.Toolkit.list.label.button.create = Create Toolkit
 
-inventor.toolkit.form.button.items = Items
 
-inventor.toolkit.list.label.code = Code
-inventor.toolkit.list.label.title = Title
+Inventor.Toolkit.form.label.status = Status:
+Inventor.Toolkit.form.label.code = Code:
+Inventor.Toolkit.form.label.legalStuff = Legal Stuff:
+Inventor.Toolkit.form.label.budget = Budget:
+Inventor.Toolkit.form.label.moment = Moment:
+Inventor.Toolkit.form.label.optionalLink = Optional link:
+Inventor.Toolkit.form.label.inventor.username = Inventor:
+Inventor.Toolkit.form.label.inventor.email = Email:
+Inventor.Toolkit.form.label.inventor.fullName = Full Name:
+Inventor.Toolkit.form.label.button.create = Create Toolkit
+Inventor.Toolkit.form.label.button.update = Update Toolkit
+Inventor.Toolkit.form.label.button.delete = Delete Toolkit
+Inventor.Toolkit.form.label.button.publish = Publish Toolkit
+
+
+Inventor.Toolkit.form.label.status.PROPOSED = PROPOSED
+Inventor.Toolkit.form.label.status.ACCEPTED  = ACCEPTED
+Inventor.Toolkit.form.label.status.DENIED = DENIED

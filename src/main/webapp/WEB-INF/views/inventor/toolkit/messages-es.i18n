@@ -8,13 +8,29 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.toolkit.form.label.code = Codigo:
-inventor.toolkit.form.label.title = Titulo:
-inventor.toolkit.form.label.description = Descripción:
-inventor.toolkit.form.label.assembleNotes = Notas de ensamblaje:
-inventor.toolkit.form.label.link = Link opcional:
+Inventor.Toolkit.list.label.status = Estado:
+Inventor.Toolkit.list.label.code = Código:
+Inventor.Toolkit.list.label.legalStuff = Legal:
+Inventor.Toolkit.list.label.budget = Cantidad:
+Inventor.Toolkit.list.label.moment = Fecha:
+Inventor.Toolkit.list.label.optionalLink = Más información (Opcional):
+Inventor.Toolkit.list.label.inventor = Inventor:
+Inventor.Toolkit.list.label.button.create = Crear patrocinio
 
-inventor.toolkit.form.button.items = Objetos:
+Inventor.Toolkit.form.label.status = Estado:
+Inventor.Toolkit.form.label.code = Código:
+Inventor.Toolkit.form.label.legalStuff = Legal:
+Inventor.Toolkit.form.label.budget = Cantidad:
+Inventor.Toolkit.form.label.moment = Fecha:
+Inventor.Toolkit.form.label.optionalLink = Más información (Opcional):
+Inventor.Toolkit.form.label.inventor.username = Inventor:
+Inventor.Toolkit.form.label.inventor.email = Correo:
+Inventor.Toolkit.form.label.inventor.fullName = Nombre completo:
+Inventor.Toolkit.form.label.button.update = Actualizar patrocinio
+Inventor.Toolkit.form.label.button.delete = Borrar patrocinio
+Inventor.Toolkit.form.label.button.publish = Publicar patrocinio
 
-inventor.toolkit.list.label.code = Código:
-inventor.toolkit.list.label.title = Título:
+
+Inventor.Toolkit.form.label.status.PROPOSED = PROPUESTO
+Inventor.Toolkit.form.label.status.ACCEPTED  = ACEPTADO
+Inventor.Toolkit.form.label.status.DENIED = DENEGADO

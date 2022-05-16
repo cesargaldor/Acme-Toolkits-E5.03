@@ -6,7 +6,7 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.items.Item;
+import acme.entities.items.Toolkit;
 import acme.entities.quantity.Quantity;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -14,21 +14,21 @@ import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
 @Service 
-public class ToolkitItemListService implements AbstractListService<Inventor, Item>{
+public class ToolkitItemListService implements AbstractListService<Inventor, Toolkit>{
 
     @Autowired
     protected InventorToolkitRepository repository;
 
     @Override
-    public boolean authorise(final Request<Item> request) {
+    public boolean authorise(final Request<Toolkit> request) {
         assert request != null; 
 
         return true; 
     }
 
     @Override
-    public Collection<Item> findMany(final Request<Item> request) {
-        final Collection<Item> result = new HashSet<>();
+    public Collection<Toolkit> findMany(final Request<Toolkit> request) {
+        final Collection<Toolkit> result = new HashSet<>();
         int toolkitId;
 
         toolkitId = request.getModel().getInteger("id");
@@ -36,7 +36,7 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
 
         for(final Quantity quantity: quantities) {
             final int id=quantity.getId();
-            final Collection<Item> items=this.repository.findManyItemsByQuantityId(id);
+            final Collection<Toolkit> items=this.repository.findManyItemsByQuantityId(id);
             result.addAll(items);
         }
 
@@ -44,7 +44,7 @@ public class ToolkitItemListService implements AbstractListService<Inventor, Ite
     }
 
     @Override
-    public void unbind(final Request<Item> request, final Item entity, final Model model) {
+    public void unbind(final Request<Toolkit> request, final Toolkit entity, final Model model) {
         assert request != null; 
         assert entity != null; 
         assert model != null; 
