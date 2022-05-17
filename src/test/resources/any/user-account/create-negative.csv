@@ -1,0 +1,3 @@
+recordIndex,username,password,confirmation,name,surname,email,phone,accept
+0,usua,qwerty,qwerty,Usuario,Uno,usuario1@gmail.com,+34698554123,false
+1,usuario2,qwer,qwerty123,Usuario,Dos,usuario2gmail.com,+34 666 555444,false
