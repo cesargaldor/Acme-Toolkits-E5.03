@@ -1,3 +1,3 @@
-recordIndex,username,password,company,statement,link
-0,inventor1,inventor1,,Quiero ser inventor,
-1,inventor2,inventor2,Compañía 2,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor io sit,inventor,
+recordIndex,username,password,confirmation,name,surname,email,phone,accept,company,statement,link
+0,usuario3,qwerty,qwerty,Usuario,Tres,usuario3@gmail.com,,true,,Esto es un statement,,
+1,usuario4,qwerty123,qwerty123,Usuario,Cuatro,usuario4@gmail.com,+34 666 555444,true,Compañia 2,,,
