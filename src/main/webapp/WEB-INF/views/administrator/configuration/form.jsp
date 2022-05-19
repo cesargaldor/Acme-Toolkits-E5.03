@@ -11,4 +11,7 @@
     <acme:input-textbox code="administrator.configuration.form.label.weak-spam-words" path="weakSpam"/>
     <acme:input-double code="administrator.configuration.form.label.weak-spam-threshold" path="weakThreshold"/>
 
+<acme:submit test="${acme:anyOf(command, 'show, update')}" code="administrator.Configuration.form.button.update" action="/administrator/configuration/update"/>
+
+
 </acme:form>
