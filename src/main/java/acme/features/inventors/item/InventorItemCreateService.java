@@ -1,19 +1,17 @@
 
 package acme.features.inventors.item;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Item.Item;
-import acme.entities.Item.Status;
+import acme.entities.items.Item;
+import acme.entities.items.Type;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
-import acme.roles.Inventor;
+
 
 @Service
 public class InventorItemCreateService implements AbstractCreateService<Inventor, Item> {
@@ -30,9 +28,8 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 	public boolean authorise(final Request<Item> request) {
 		//Comprobamos que solo un Inventor tiene autorización
 		assert request != null;
-		boolean result;
-		result = request.getPrincipal().hasRole(Inventor.class);
-		return result;
+		request.getModel();
+		return true;
 	}
 
 	@Override
@@ -40,11 +37,11 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		final String username = request.getModel().getString("username");
-        final Inventor inventor = this.repository.findInventorByUsername(username);
-        entity.setInventor(inventor);
+		
+		Type type;
+		type = Type.COMPONENT;
+		entity.setType(type);
+		request.bind(entity, errors, "name", "type", "code","technology","description","retailPrice","optionalLink","published");
 	}
 
 	@Override
@@ -53,27 +50,19 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		request.unbind(entity, model, "name", "type", "code","technology","description","retailPrice","optionalLink","published");
+		model.setAttribute("readonly", false);
 	}
 
 	@Override
 	public Item instantiate(final Request<Item> request) {
 		assert request != null;
-
-		Item result;
-		Date moment;
-		//Sacamos Inventor por id
-		final Integer id = request.getPrincipal().getActiveRoleId();
-		final Inventor p = this.repository.InventorById(id);
-		
-		moment = new Date(System.currentTimeMillis());
-		result = new Item();
-		result.setMoment(moment);
-		result.setInventor(p);
-		result.setPublished(true);
-		result.setStatus(Status.PROPOSED);
-
-		return result;
+		Item item;
+		Inventor inventor;
+		inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
+		item = new Item();
+		item.setInventor(inventor);
+		return item;
 	}
 
 	@Override
