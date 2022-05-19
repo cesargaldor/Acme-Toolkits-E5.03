@@ -3,7 +3,7 @@ package acme.features.inventors.toolkits;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.Toolkit.Toolkit;
+import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,17 +15,14 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 
 	
 	@Autowired
-	protected PatronPatronageRepository repository;
+	protected InventorToolkitRepository repository;
 	
 	
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
-		final boolean res;
-		final int id = request.getModel().getInteger("id");
-		final Toolkit Toolkit = this.repository.findPatronageById(id);
-		res = request.getPrincipal().hasRole(Inventor.class) && !Toolkit.isPublished();
-		return res;
+		
+		return true;
 	}
 
 	@Override
@@ -33,7 +30,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "legalStuff", "budget", "moment", "optionalLink");
+		request.bind(entity, errors, "code", "title", "description", "assemblyNotes", "moreInfo", "totalPrice");
 	}
 
 	@Override
@@ -41,13 +38,9 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
-		final String username = entity.getInventor().getUserAccount().getUsername();
-		model.setAttribute("username", username);
-		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
-		model.setAttribute("fullName", fullName);
-		final String email = entity.getInventor().getUserAccount().getIdentity().getEmail();
-		model.setAttribute("email", email);
+		
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "moreInfo", "totalPrice");
+		model.setAttribute("readonly", false);
 	}
 
 	@Override
@@ -56,7 +49,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		Toolkit res;
 		int id;
 		id = request.getModel().getInteger("id");
-		res = this.repository.findPatronageById(id);
+		res = this.repository.findOneToolkitById(id);
 		return res;
 	}
 
