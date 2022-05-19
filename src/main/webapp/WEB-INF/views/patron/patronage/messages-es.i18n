@@ -35,3 +35,6 @@ patron.patronage.form.label.button.publish = Publicar patrocinio
 patron.patronage.form.label.status.PROPOSED = PROPUESTO
 patron.patronage.form.label.status.ACCEPTED  = ACEPTADO
 patron.patronage.form.label.status.DENIED = DENEGADO
+
+
+patron.patronage.form.error.duplicatedCode = El código introducido ya existe

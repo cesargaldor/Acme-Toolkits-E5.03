@@ -37,3 +37,6 @@ patron.patronage.form.label.button.publish = Publish patronage
 patron.patronage.form.label.status.PROPOSED = PROPOSED
 patron.patronage.form.label.status.ACCEPTED  = ACCEPTED
 patron.patronage.form.label.status.DENIED = DENIED
+
+
+patron.patronage.form.error.duplicatedCode = This code already exists

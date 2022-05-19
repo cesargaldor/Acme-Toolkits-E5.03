@@ -81,7 +81,12 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+		
+		if (!errors.hasErrors("code")) {
+			Patronage p;
+			p = this.repository.findPatronageByCode(entity.getCode());
+			errors.state(request, p == null, "code", "patron.patronage.form.error.duplicatedCode");
+		}
 	}
 
 	@Override
