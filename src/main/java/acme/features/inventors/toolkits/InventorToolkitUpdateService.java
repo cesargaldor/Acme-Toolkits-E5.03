@@ -30,7 +30,7 @@ public class InventorToolkitUpdateService implements AbstractUpdateService<Inven
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "code", "title", "description", "assemblyNotes", "moreInfo", "totalPrice");
+		request.bind(entity, errors, "code", "title", "description", "assemblyNotes", "optionalLink", "totalPrice");
 	}
 
 	@Override

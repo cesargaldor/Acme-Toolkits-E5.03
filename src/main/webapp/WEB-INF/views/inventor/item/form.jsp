@@ -9,7 +9,6 @@
 	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
 	<acme:input-textbox code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
-	<acme:input-double code="inventor.item.form.label.retailPrice" path="retailPrice"/>
+	<acme:input-money code="inventor.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="inventor.item.form.label.optionalLink" path="optionalLink"/>
-	<acme:input-textbox code="inventor.item.form.label.inventor" path="inventor"/>
 </acme:form>

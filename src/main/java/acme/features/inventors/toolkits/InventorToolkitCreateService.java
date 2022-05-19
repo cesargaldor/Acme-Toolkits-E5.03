@@ -25,11 +25,9 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
-		//Comprobamos que solo un Inventor tiene autorización
 		assert request != null;
-		boolean result;
-		result = request.getPrincipal().hasRole(Inventor.class);
-		return result;
+		request.getModel();
+		return true;
 	}
 
 	@Override
@@ -38,7 +36,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "code", "title", "description", "assemblyNotes", "moreInfo", "totalPrice");
+		request.bind(entity, errors, "code", "title", "description", "assemblyNotes", "optionalLink", "totalPrice","draft");
 		
 	}
 
@@ -48,7 +46,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "moreInfo", "totalPrice");
+		request.unbind(entity, model, "code", "title", "description", "assemblyNotes", "optionalLink", "totalPrice","draft");
 		model.setAttribute("readonly", false);
 	}
 
@@ -68,11 +66,9 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		Inventor inventor;
 		inventor = this.repository.findInventorById(request.getPrincipal().getActiveRoleId());
 		toolkit.setInventor(inventor);
-		
-		
+	
 		return toolkit;
-		
-		
+			
 	}
 
 	@Override
