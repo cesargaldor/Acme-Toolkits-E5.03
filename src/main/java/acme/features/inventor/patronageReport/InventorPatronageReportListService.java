@@ -32,7 +32,6 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		
 		Collection<PatronageReport> result;
 		Principal principal;
-
 		principal = request.getPrincipal();
         result = this.repository.findPatronagesReports(principal.getUsername());
 		return result;
@@ -45,7 +44,7 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		assert model != null;
 		
 		model.setAttribute("numSeq", entity.getNumSeq());
-		request.unbind(entity, model, "numSeq","creationMoment", "memorandum","optionalLink");
+		request.unbind(entity, model, "numSeq","creationMoment");
 		
 	}
 

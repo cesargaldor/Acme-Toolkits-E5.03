@@ -5,7 +5,6 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.patronage.Patronage;
 import acme.entities.patronageReport.PatronageReport;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -23,13 +22,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		boolean res;
-		final Integer id;
-		final Patronage patronage;
-//		id = request.getModel().getInteger("id");
-//		patronage = this.repository.findPatronageById(id);
-//		res = request.getPrincipal().getActiveRoleId() == patronage.getInventor().getId();
-		
+		final boolean res;
 		res = request.getPrincipal().hasRole(Inventor.class);
 		return res;
 	}
@@ -47,31 +40,26 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		assert entity != null;
 		assert model != null;		
-		request.unbind(entity, model, "numSeq","creationMoment","memorandum","optionalLink");
-		//model.setAttribute("id", request.getModel().getAttribute("id"));
-		model.setAttribute("numSeq", entity.getNumSeq());
+		request.unbind(entity, model, "memorandum","optionalLink");
+		
+		if (entity.getPatronage() != null) {
+			final String code = entity.getPatronage().getCode();
+			model.setAttribute("code", code);
+		}
+		//model.setAttribute("numSeq", entity.getNumSeq());
 	}
 
 	@Override
 	public PatronageReport instantiate(final Request<PatronageReport> request) {
-
 		assert request != null;
-		final PatronageReport res;
-		final Patronage patronage = new Patronage();
-		final Integer id;
-		final Date creationMoment;
-		final String numPatronageReports;
-//		id= request.getModel().getInteger("id");
-//		patronage = this.repository.findPatronageById(id);
-		creationMoment = new Date(System.currentTimeMillis());
-		//Sacamos patronage reports por id de patronage
-//		numPatronageReports = Integer.toString(this.repository.findPatronageReportsByPatronageId(id).size()+1);
+		PatronageReport res;
 		res = new PatronageReport();
-		res.setPatronage(patronage);
-		res.setCreationMoment(creationMoment);
-//		res.setNumSeq("ABC-123-A:000" + numPatronageReports);
+		Date moment;
+		moment = new Date(System.currentTimeMillis() - 1);
+		res.setCreationMoment(moment);	
 		return res;
 	}
+
 
 	@Override
 	public void validate(final Request<PatronageReport> request, final PatronageReport entity, final Errors errors) {

@@ -19,10 +19,10 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 	
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
-
 		assert request != null;
-		
-		return true;
+		Boolean res;
+		res = request.getPrincipal().hasRole(Inventor.class);
+		return res;
 	}
 
 	@Override
@@ -44,7 +44,10 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "numSeq","creationMoment","memorandum","optionalLink");		
+		request.unbind(entity, model, "numSeq","creationMoment","memorandum","optionalLink");	
+		final String code = entity.getPatronage().getCode();
+		model.setAttribute("code", code);
+		model.setAttribute("readonly", true);
 	}
 
 }
