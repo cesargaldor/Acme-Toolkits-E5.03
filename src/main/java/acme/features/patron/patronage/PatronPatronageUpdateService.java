@@ -41,7 +41,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code", "legalStuff", "budget", "moment", "optionalLink");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
 		final String username = entity.getInventor().getUserAccount().getUsername();
 		model.setAttribute("username", username);
 		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();

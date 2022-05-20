@@ -43,6 +43,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert model != null;		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
 		model.setAttribute("confirmation", false);		
+
 	}
 
 	@Override
@@ -68,7 +69,6 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert entity != null;
 		entity.setPublished(false);
 		this.repository.save(entity);
-		
 	}
 
 }
