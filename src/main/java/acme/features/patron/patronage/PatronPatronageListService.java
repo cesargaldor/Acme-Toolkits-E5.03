@@ -2,7 +2,6 @@
 package acme.features.patron.patronage;
 
 import java.util.Collection;
-import java.util.Locale;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,15 +39,10 @@ public class PatronPatronageListService implements AbstractListService<Patron, P
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
-		final boolean isPublished = !entity.isPublished();
-		String aux = "";
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment","isPublished");
+		final boolean isPublished = entity.isPublished();
+		model.setAttribute("isPublished", isPublished);
 		
-		if (isPublished) {
-			if (request.getLocale().equals(Locale.ENGLISH)) { aux = "Yes";} 
-			else { aux = "Sí";}
-		} else { aux = "No";}
-		model.setAttribute("isPublished", aux);
 	}
 
 	@Override
