@@ -41,7 +41,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		Type type;
 		type = Type.COMPONENT;
 		entity.setType(type);
-		request.bind(entity, errors, "name", "type", "code","technology","description","retailPrice","optionalLink","published");
+		request.bind(entity, errors, "name", "type", "code","technology","description","retailPrice","optionalLink");
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "type", "code","technology","description","retailPrice","optionalLink","published");
+		request.unbind(entity, model, "name", "type", "code","technology","description","retailPrice","optionalLink");
 		model.setAttribute("readonly", false);
 	}
 

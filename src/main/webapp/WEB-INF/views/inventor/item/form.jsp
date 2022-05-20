@@ -34,7 +34,6 @@
 	<acme:input-textbox code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textbox code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.retailPrice" path="retailPrice"/>
-	<acme:input-checkbox code="inventor.item.form.label.published" path="published"/>
 	<acme:input-url code="inventor.item.form.label.optionalLink" path="optionalLink"/>
 	
 	
@@ -42,7 +41,7 @@
 		<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create"/>
 	</jstl:if>
 	
-	<jstl:if test="${command == 'show' && published == 'false'}">
+	<jstl:if test="${command == 'show'}">
 		<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
 		<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
 	</jstl:if>

@@ -28,8 +28,8 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		
 		id = request.getModel().getInteger("id");
 		item = this.repository.findOneItemById(id);
-		res = item.isPublished();
-		return !res;
+		res = request.getPrincipal().hasRole(Inventor.class);
+		return res;
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "type", "name", "code", "technology","description","retailPrice","optionalLink","published");
+		request.bind(entity, errors, "type", "name", "code", "technology","description","retailPrice","optionalLink");
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "type", "name", "code", "technology","description","retailPrice","optionalLink","published");
+		request.unbind(entity, model, "type", "name", "code", "technology","description","retailPrice","optionalLink");
 		
 	}
 

@@ -8,10 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.item.list.label.name = Nombre:
-inventor.item.list.label.code = Código:
-inventor.item.list.label.technology = Tecnología:
-inventor.item.list.label.description = Descripción:
+
 inventor.item.list.button.create = Crear nuevo Objeto:
 
 inventor.item.form.label.name = Nombre:
@@ -35,4 +32,9 @@ inventor.item.form.error.incorrect-description = Descripción tiene que ser infe
 
 inventor.item.form.error.duplicated = Ya existe un artículo con este código
 inventor.item.form.error.negative-retailPrice = El precio unitario no puede ser negativo
-inventor.item.form.error.incorrect-currency = Moneda incorrecta. Sólo son aceptables las divisas EUR, USD y GBP 
+inventor.item.form.error.incorrect-currency = Moneda incorrecta. Sólo son aceptables las divisas EUR, USD y GBP
+
+inventor.component.list.label.name = Nombre:
+inventor.component.list.label.code = Código:
+inventor.component.list.label.technology = Tecnología:
+inventor.component.list.label.description = Descripción: 
