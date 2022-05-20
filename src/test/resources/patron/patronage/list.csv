@@ -1,7 +1,5 @@
-recordIndex,name,code,techonology,description,retailPrice,optionalLink
-0,Componente 1,ABC-123-A,Java,Esto es una descripción de un componente,22.50,https://www.youtube.com
-1,Componente 2,DEF-456-B,Javascript,Esto es una descripción de un componente 2,12.30, https://www.twitter.com
-2,Componente 3,GHI-789-C,PHP,Esto es una descripción de un componente 3,20.10,https://www.facebook.com
-3,Componente 4,JKL-123-D,Ruby,Esto es una descripción de un componente 4,12.20,https://www.instagram.com
-4,Componente 5,MNO-456-E,Html,Esto es una descripción de un componente 5,76.50,https://www.twitch.tv
-5,Componente 6,PQR-789-F,Css,Esto es una descripción de un componente 6,90.30,https://www.ev.us.es
+recordIndex,status,code,legalStuff,budget,moment,isPublished
+0,ACCEPTED,ABC-123-D,Cantidad acordada,EUR 230.00,2022/05/21 15:32,true
+1,ACCEPTED,ABC-123-E,Cantidad acordada,USD 670.00,2022/05/22 16:32,false
+2,ACCEPTED,ABC-123-F,Cantidad acordada,EUR 120.00,2022/05/22 17:32,false
+3,ACCEPTED,ABC-123-G,Cantidad acordada,EUR 80.00,2022/05/22 18:32,false
