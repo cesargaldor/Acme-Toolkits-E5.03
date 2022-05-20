@@ -27,4 +27,8 @@ public interface PatronPatronageRepository extends AbstractRepository{
 	//Consulta que devuelve un inventor dado su username
 	@Query("select i from Inventor i where i.userAccount.username = :username")
 	Inventor findInventorByUsername(String username);
+	
+	//Consulta para buscar un patronage dado un code
+	@Query("select p from Patronage p where p.code like :code")
+	Patronage findPatronageByCode(String code);
 }

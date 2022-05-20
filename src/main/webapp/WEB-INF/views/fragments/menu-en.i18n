@@ -79,7 +79,7 @@ master.menu.worker.my-applications = List my applications
 
 # master.menu.patron ##########################################################
 master.menu.patron = Patron
-master.menu.patron.all-patronages = List all patronages
+master.menu.patron.all-patronages =List all patronages
 master.menu.patron.patronageReport.list = List patronage reports
 master.menu.patron.dashboard = Patron dashboard
 

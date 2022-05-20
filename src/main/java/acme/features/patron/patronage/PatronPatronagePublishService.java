@@ -42,7 +42,8 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert entity != null;
 		assert model != null;		
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
-		model.setAttribute("confirmation", false);
+		model.setAttribute("confirmation", false);		
+
 	}
 
 	@Override
