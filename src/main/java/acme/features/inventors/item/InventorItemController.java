@@ -15,13 +15,13 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 
 	//Internal state  -------------------------------------------------------------------
 	@Autowired
-	protected InventorItemListService listMineService;
+	protected InventorItemListMineService listMineService;
 	
 	@Autowired
-	protected InventorItemShowService showMineService;
+	protected InventorItemShowMineService showMineService;
 
 	@Autowired
-	protected InventorComponentUpdateService updateService;
+	protected InventorItemUpdateService updateService;
 	
 	
 	@Autowired

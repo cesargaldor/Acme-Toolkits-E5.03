@@ -8,31 +8,20 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-Inventor.Item.list.label.status = Status:
-Inventor.Item.list.label.code = Code:
-Inventor.Item.list.label.legalStuff = Legal Stuff:
-Inventor.Item.list.label.budget = Budget:
-Inventor.Item.list.label.moment = Moment:
-Inventor.Item.list.label.optionalLink = Optional link:
-Inventor.Item.list.label.inventor = Inventor:
-Inventor.Item.list.label.button.create = Create Item
+inventor.component.list.label.name = Name
+inventor.component.list.label.code = Code
+inventor.component.list.label.technology = Technology
+inventor.component.list.label.description = Description
+inventor.item.list.button.create = Create new Item
 
-
-Inventor.Item.form.label.status = Status:
-Inventor.Item.form.label.code = Code:
-Inventor.Item.form.label.legalStuff = Legal Stuff:
-Inventor.Item.form.label.budget = Budget:
-Inventor.Item.form.label.moment = Moment:
-Inventor.Item.form.label.optionalLink = Optional link:
-Inventor.Item.form.label.inventor.username = Inventor:
-Inventor.Item.form.label.inventor.email = Email:
-Inventor.Item.form.label.inventor.fullName = Full Name:
-Inventor.Item.form.label.button.create = Create Item
-Inventor.Item.form.label.button.update = Update Item
-Inventor.Item.form.label.button.delete = Delete Item
-Inventor.Item.form.label.button.publish = Publish Item
-
-
-Inventor.Item.form.label.status.PROPOSED = PROPOSED
-Inventor.Item.form.label.status.ACCEPTED  = ACCEPTED
-Inventor.Item.form.label.status.DENIED = DENIED
+inventor.item.form.label.name = Name
+inventor.item.form.label.code = Code
+inventor.item.form.label.type = Type
+inventor.item.form.label.technology = Technology
+inventor.item.form.label.description = Description
+inventor.item.form.label.retailPrice = Retail Price
+inventor.item.form.label.published = Post
+inventor.item.form.label.more-info = More Info
+inventor.item.form.button.create = Create
+inventor.item.form.button.update = Update
+inventor.item.form.button.delete = Delete
