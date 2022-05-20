@@ -26,7 +26,7 @@ public class AdministratorConfigurationShowService  implements AbstractShowServi
 	@Override
 	public Configuration findOne(final Request<Configuration> request) {
 		assert request != null;
-		Configuration result;
+		final Configuration result;
 		result = this.repository.findConfiguration();
 		return result;
 	}

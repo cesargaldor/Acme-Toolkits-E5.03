@@ -6,4 +6,4 @@ administrator.configuration.form.label.weak-spam-words = Palabras débiles de sp
 administrator.configuration.form.label.weak-spam-threshold = Umbral de spam débil:
 
 
-administrator.Configuration.form.button.update = Actualizar
+administrator.configuration.form.button.update = Actualizar

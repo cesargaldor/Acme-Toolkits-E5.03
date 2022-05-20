@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.configuration.Configuration;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.controllers.Request;
-import acme.framework.controllers.Response;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractUpdateService;
 
@@ -71,13 +68,13 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		this.repository.save(entity);
 	}
 	
-	@Override
-	public void onSuccess(final Request<Configuration> request, final Response<Configuration> response) {
-		assert request != null;
-		assert response != null;
-
-		if (request.isMethod(HttpMethod.POST)) {
-			PrincipalHelper.handleUpdate();
-		}
-	}
+//	@Override
+//	public void onSuccess(final Request<Configuration> request, final Response<Configuration> response) {
+//		assert request != null;
+//		assert response != null;
+//
+//		if (request.isMethod(HttpMethod.POST)) {
+//			PrincipalHelper.handleUpdate();
+//		}
+//	}
 }
