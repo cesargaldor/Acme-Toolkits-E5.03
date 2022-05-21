@@ -19,7 +19,7 @@
 	    	<acme:input-textarea code="inventor.patronageReport.form.label.creationMoment" path="creationMoment"/>
 	    	<acme:input-textarea code="inventor.patronageReport.form.label.memorandum" path="memorandum"/>
 	    	<acme:input-url code="inventor.patronageReport.form.label.optionalLink" path="optionalLink"/>
-	   		<acme:input-checkbox code="inventor.patronage-report.form.label.confirmation" path="confirmation" />
+	   		<acme:input-checkbox code="inventor.patronageReport.form.label.confirmation" path="confirmation" />
 	   		<acme:submit code="inventor.patronageReport.form.label.button.create" action="/inventor/patronage-report/create"/>
 	    </jstl:when>
     	

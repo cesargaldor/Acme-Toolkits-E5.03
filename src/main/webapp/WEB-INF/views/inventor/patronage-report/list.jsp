@@ -18,7 +18,6 @@
 <acme:list readonly="false">
 	<acme:list-column code="inventor.patronageReport.list.label.numSeq" path="numSeq" width="20%"/>
 	<acme:list-column code="inventor.patronageReport.list.label.creationMoment" path="creationMoment" width="20%"/>
-	<acme:list-column code="inventor.patronageReport.list.label.optionalLink" path="optionalLink" width="10%"/>
 </acme:list>
 
 <acme:button code="inventor.patronageReport.list.label.button.create" action="/inventor/patronage-report/create"/>

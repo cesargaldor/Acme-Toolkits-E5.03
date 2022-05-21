@@ -20,3 +20,5 @@ inventor.patronageReport.form.label.numSeq = Sequence Number:
 inventor.patronageReport.form.label.creationMoment = Creation Moment:
 inventor.patronageReport.form.label.memorandum = Memorandum:
 inventor.patronageReport.form.label.optionalLink = Link with further information:
+
+inventor.patronageReport.form.label.confirmation = Confirmation
