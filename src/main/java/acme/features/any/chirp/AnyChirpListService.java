@@ -40,6 +40,7 @@ public class AnyChirpListService implements AbstractListService<Any, Chirp> {
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("readonly", true);
 		request.unbind(entity, model, "title", "author", "body", "moment", "email");
 	}
 

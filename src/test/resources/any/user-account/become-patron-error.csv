@@ -1,0 +1,3 @@
+recordIndex,username,password,confirmation,name,surname,email,phone,accept,company,statement,link
+0,usuario3,qwerty,qwerty,Usuario,Tres,usuario3@gmail.com,,true,,Esto es un statement,,
+1,usuario4,qwerty123,qwerty123,Usuario,Cuatro,usuario4@gmail.com,+34 666 555444,true,Compañia 2,,,
