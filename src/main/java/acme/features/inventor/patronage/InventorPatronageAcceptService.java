@@ -36,7 +36,6 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "status");
 	}
 
 	@Override
@@ -48,6 +47,8 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		final boolean prop = entity.getStatus().equals(Status.PROPOSED);
 		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
 		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
+		final Status status = entity.getStatus();
+		model.setAttribute("status", status);
 		model.setAttribute("proposed", prop);
 		model.setAttribute("fullName", fullName);
 		model.setAttribute("email", email);
