@@ -1,4 +1,4 @@
-package acme.features.inventors.toolkits;
+package acme.features.inventor.toolkit;
 
 import java.util.Collection;
 
@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.items.Item;
-import acme.entities.quantity.Quantity;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
@@ -20,8 +19,8 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	@Query("select distinct iq.toolkit from Quantity iq, Item i where iq.item.id=i.id and i.inventor.id = :inventorId")
 	Collection<Toolkit> findManyToolkitsByInventorId(int inventorId);
 	
-	@Query("select iq from ItemQuantity iq where iq.toolkit.id = :masterId")
-	Collection<Quantity> findItemQuantitiesOfToolkit(int masterId);
+//	@Query("select iq from ItemQuantity iq where iq.toolkit.id = :masterId")
+//	Collection<Quantity> findItemQuantitiesOfToolkit(int masterId);
 		
 	@Query("select i from Inventor i where i.id = :inventorId")
 	Inventor findInventorById(int inventorId);

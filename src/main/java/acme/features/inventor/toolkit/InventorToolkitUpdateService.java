@@ -1,4 +1,4 @@
-package acme.features.inventors.toolkits;
+package acme.features.inventor.toolkit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

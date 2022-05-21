@@ -1,4 +1,4 @@
-package acme.features.inventors.toolkits;
+package acme.features.inventor.toolkit;
 
 import java.util.Collection;
 
@@ -21,8 +21,9 @@ public class InventorToolkitListMineService implements AbstractListService<Inven
     @Override
     public boolean authorise(final Request<Toolkit> request) {
         assert request != null; 
-
-        return true; 
+        boolean res;
+        res = request.getPrincipal().hasRole(Inventor.class);
+        return res; 
     }
 
     @Override
