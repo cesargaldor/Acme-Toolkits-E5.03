@@ -38,8 +38,7 @@ master.menu.any.list-toolkits = List toolkits
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.announcement.list-all = List all announcements
-master.menu.administrator.announcement.list-recent = List recent announcements
+master.menu.administrator.announcement = List all announcemets
 master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
