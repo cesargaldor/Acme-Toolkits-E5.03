@@ -1,35 +1,32 @@
-
-package acme.features.inventor.patronage;
-
-import java.util.Date;
+package acme.features.patron.patronage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.services.AbstractCreateService;
-import acme.roles.Inventor;
+import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
 
 @Service
-public class InventorPatronageCreateService implements AbstractCreateService<Inventor, Patronage> {
+public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage>{
 
-	// Internal state ---------------------------------------------------------
-
+	
 	@Autowired
-	protected InventorPatronageRepository repository;
-
-	// AbstractCreateService<Administrator, Patronage> interface --------------
-
-
+	protected PatronPatronageRepository repository;
+	
+	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-
-		return true;
+		final boolean res;
+		final int id = request.getModel().getInteger("id");
+		final Patronage patronage = this.repository.findPatronageById(id);
+		res = request.getPrincipal().hasRole(Patron.class) && !patronage.isPublished();
+		return res;
 	}
 
 	@Override
@@ -37,7 +34,6 @@ public class InventorPatronageCreateService implements AbstractCreateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
@@ -45,27 +41,20 @@ public class InventorPatronageCreateService implements AbstractCreateService<Inv
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;
 		assert entity != null;
-		assert model != null;
+		assert model != null;		
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
+		model.setAttribute("confirmation", false);		
 
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
 	@Override
-	public Patronage instantiate(final Request<Patronage> request) {
+	public Patronage findOne(final Request<Patronage> request) {
 		assert request != null;
-
-		Patronage result;
-		Date moment;
-		//SACAR USER REGISTRADO
-		final Integer id = request.getPrincipal().getActiveRoleId();
-		final Patron p = this.repository.InventorById(id);
-		
-		moment = new Date(System.currentTimeMillis());
-		result = new Patronage();
-		result.setMoment(moment);
-		result.setPatron(p);
-
-		return result;
+		final Patronage res;
+		int id;
+		id = request.getModel().getInteger("id");
+		res = this.repository.findPatronageById(id);
+		return res;
 	}
 
 	@Override
@@ -73,17 +62,16 @@ public class InventorPatronageCreateService implements AbstractCreateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 	}
 
 	@Override
-	public void create(final Request<Patronage> request, final Patronage entity) {
+	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
-
+		entity.setPublished(true);
+		final Status status = entity.getStatus();
+		entity.setStatus(status);
 		this.repository.save(entity);
 	}
-
-
 
 }

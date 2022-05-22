@@ -64,6 +64,9 @@ public class Patronage extends AbstractEntity {
 	//optional link
 	@URL
 	protected String			optionalLink;
+	
+	//Checks if a patronage is published or not
+	protected boolean           isPublished;
 
 	// Relationships ----------------------------------------------------------
 	@NotNull
