@@ -1,4 +1,3 @@
-
 package acme.features.patron.patronage;
 
 import java.util.Date;
@@ -41,7 +40,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 
-
 		if (this.repository.getAllInventors().isEmpty()) {
 			request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 		} else {
@@ -71,7 +69,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		Patronage result;
 		Date moment;
 
-=======
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Patron p = this.repository.PatronById(id);
 		moment = new Date(System.currentTimeMillis());
