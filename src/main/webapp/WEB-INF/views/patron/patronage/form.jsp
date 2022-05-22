@@ -17,16 +17,13 @@
 
 <acme:form>
 
-	<jstl:choose>
 	
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
-			<acme:input-select code="patron.patronage.form.label.status" path="status">
+			<acme:input-select code="patron.patronage.form.label.status" path="status" readonly="${true}">
 				<acme:input-option code="PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}" />
 				<acme:input-option code="ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}" />
 				<acme:input-option code="DENIED" value="DENIED" selected="${status == 'DENIED'}" />
 			</acme:input-select>	    
-		</jstl:when>
-	</jstl:choose>
+	
 	
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">	

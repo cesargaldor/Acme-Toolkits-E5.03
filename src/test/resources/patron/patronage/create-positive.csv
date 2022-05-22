@@ -1,5 +1,5 @@
 recordIndex,status,code,legalStuff,budget,moment,optionalLink,username
-0,PROPOSED,GAS-123-A,Cantidad acordada,USD 150.0,2022/05/22 12:32,http://youtube.com,Inventor1
-1,PROPOSED,GAS-123-B,Cantidad acordada,EUR 1000.0,2022/05/21 13:32,null,Inventor2
-2,ACCEPTED,GAS-123-C,Cantidad acordada,EUR 1500.0,2022/05/23 14:32,http://youtube.com,Inventor1
-3,ACCEPTED,GAS-123-D,Cantidad acordada,EUR 230.0,2022/05/21 15:32,null,Inventor1
+0,PROPOSED,GAS-123-A,Cantidad acordada,USD 150.0,2022/05/27 12:32,http://youtube.com,Inventor1
+1,PROPOSED,GAS-123-B,Cantidad acordada,EUR 1000.0,2022/05/27 13:32,null,Inventor2
+2,ACCEPTED,GAS-123-C,Cantidad acordada,EUR 1500.0,2022/05/27 14:32,http://youtube.com,Inventor1
+3,ACCEPTED,GAS-123-D,Cantidad acordada,EUR 230.0,2022/05/27 15:32,null,Inventor1
