@@ -24,7 +24,9 @@
 	<acme:input-textbox code="administrator.announcement.form.label.moment" path="moment" readonly = "true"/>	
 	<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>	
 	<acme:input-url code="administrator.announcement.form.label.optionalLink" path="optionalLink"/>	
+	<jstl:if test="${command == 'create'}">
 		<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
-	<acme:submit test="${command == 'create'}" code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
-
+		<acme:submit test="${command == 'create'}" code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
+	</jstl:if>
 </acme:form>
+
