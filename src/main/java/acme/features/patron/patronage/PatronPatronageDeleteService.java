@@ -21,9 +21,7 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
 		final boolean res;
-		final int id = request.getModel().getInteger("id");
-		final Patronage patronage = this.repository.findPatronageById(id);
-		res = request.getPrincipal().hasRole(Patron.class) && patronage.isPublished();
+		res = request.getPrincipal().hasRole(Patron.class);
 		return res;
 	}
 
@@ -42,7 +40,7 @@ public class PatronPatronageDeleteService implements AbstractDeleteService<Patro
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "published");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
 		final String username = entity.getInventor().getUserAccount().getUsername();
 		model.setAttribute("username", username);
 		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();

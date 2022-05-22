@@ -24,7 +24,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		final boolean res;
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findPatronageById(id);
-		res = request.getPrincipal().hasRole(Patron.class) /*&& patronage.isPublished()*/;
+		res = request.getPrincipal().hasRole(Patron.class) && !patronage.isPublished();
 		return res;
 	}
 
@@ -33,7 +33,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		request.bind(entity, errors, "status","legalStuff", "budget", "moment", "optionalLink");
 	}
 
 	@Override
@@ -41,7 +41,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "published");
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
 		final String username = entity.getInventor().getUserAccount().getUsername();
 		model.setAttribute("username", username);
 		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
@@ -65,7 +65,6 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 	}
 
 	@Override

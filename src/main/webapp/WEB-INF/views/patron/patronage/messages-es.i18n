@@ -16,6 +16,7 @@ patron.patronage.list.label.moment = Fecha:
 patron.patronage.list.label.optionalLink = Más información (Opcional):
 patron.patronage.list.label.inventor = Inventor:
 patron.patronage.list.label.button.create = Crear patrocinio
+patron.patronage.list.label.isPublished = Publicado
 
 patron.patronage.form.label.status = Estado:
 patron.patronage.form.label.code = Código:
@@ -23,12 +24,18 @@ patron.patronage.form.label.legalStuff = Legal:
 patron.patronage.form.label.budget = Cantidad:
 patron.patronage.form.label.moment = Fecha:
 patron.patronage.form.label.optionalLink = Más información (Opcional):
+patron.patronage.form.label.inventors = Inventores:
 patron.patronage.form.label.inventor.username = Inventor:
 patron.patronage.form.label.inventor.email = Correo:
-patron.patronage.form.label.inventor.fullName = Nombre completo:
+patron.patronage.form.label.inventor.name = Nombre completo:
 patron.patronage.form.label.button.update = Actualizar patrocinio
 patron.patronage.form.label.button.delete = Borrar patrocinio
+patron.patronage.form.label.button.publish = Publicar patrocinio
+
 
 patron.patronage.form.label.status.PROPOSED = PROPUESTO
 patron.patronage.form.label.status.ACCEPTED  = ACEPTADO
 patron.patronage.form.label.status.DENIED = DENEGADO
+
+
+patron.patronage.form.error.duplicatedCode = El código introducido ya existe

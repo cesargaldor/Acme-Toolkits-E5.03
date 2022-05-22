@@ -1,4 +1,5 @@
-package acme.features.patron.patronage;
+
+package acme.features.inventor.patronage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,23 +10,24 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
-import acme.roles.Patron;
+import acme.roles.Inventor;
 
 @Service
-public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage>{
+public class InventorPatronageUpdateService implements AbstractUpdateService<Inventor, Patronage> {
 
-	
 	@Autowired
-	protected PatronPatronageRepository repository;
-	
-	
+	protected InventorPatronageRepository repository;
+
+
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		final boolean res;
-		final int id = request.getModel().getInteger("id");
+		boolean res;
+		//Buscamos patronage por id y solo permitimos acceso a un inventor
+		final Integer id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findPatronageById(id);
-		res = request.getPrincipal().hasRole(Patron.class) && !patronage.isPublished();
+		//Comprobamos que además el status del patronage es PROPOSED
+		res = request.getPrincipal().hasRole(Inventor.class) && patronage.getStatus().equals(Status.PROPOSED);
 		return res;
 	}
 
@@ -34,24 +36,30 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		
+		request.bind(entity ,errors, "status");
+
 	}
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
 		assert request != null;
 		assert entity != null;
-		assert model != null;		
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "isPublished");
-		model.setAttribute("confirmation", false);		
-
+		assert model != null;
+		request.bind(model, null, "status", "code", "legalStuff", "budget", "moment","optionalLink");
+		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
+		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
+		model.setAttribute("fullName", fullName);
+		model.setAttribute("email", email);
+		model.setAttribute("readonly", false);
+		model.setAttribute("confirmation", false);
 	}
 
 	@Override
 	public Patronage findOne(final Request<Patronage> request) {
 		assert request != null;
-		final Patronage res;
-		int id;
+		Patronage res;
+		final Integer id;
 		id = request.getModel().getInteger("id");
 		res = this.repository.findPatronageById(id);
 		return res;
@@ -59,18 +67,17 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 
 	@Override
 	public void validate(final Request<Patronage> request, final Patronage entity, final Errors errors) {
+
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
 	}
 
 	@Override
 	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
-		entity.setPublished(true);
-		final Status status = entity.getStatus();
-		entity.setStatus(status);
 		this.repository.save(entity);
 	}
 

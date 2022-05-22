@@ -21,7 +21,7 @@
 	<acme:list-column code="patron.patronage.list.label.legalStuff" path="legalStuff" width="12%"/>
 	<acme:list-column code="patron.patronage.list.label.budget" path="budget" width="12%"/>
 	<acme:list-column code="patron.patronage.list.label.moment" path="moment" width="12%"/>
-	<acme:list-column code="patron.patronage.list.label.optionalLink" path="optionalLink" width="12%"/>
+	<acme:list-column code="patron.patronage.list.label.isPublished" path="isPublished" width="12%"/>
 	
 </acme:list>
 

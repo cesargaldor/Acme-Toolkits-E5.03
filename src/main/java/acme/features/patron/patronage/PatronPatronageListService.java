@@ -39,9 +39,10 @@ public class PatronPatronageListService implements AbstractListService<Patron, P
 		assert entity != null;
 		assert model != null;
 
-//		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment","isPublished");
+		final boolean isPublished = entity.isPublished();
+		model.setAttribute("isPublished", isPublished);
+		
 	}
 
 	@Override
