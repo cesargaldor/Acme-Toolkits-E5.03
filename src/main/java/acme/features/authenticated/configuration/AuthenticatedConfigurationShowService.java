@@ -26,7 +26,7 @@ public class AuthenticatedConfigurationShowService implements AbstractShowServic
 	public Configuration findOne(final Request<Configuration> request) {
 		assert request != null;
 		Configuration result;
-		result = this.repository.findConfiguration();
+		result = this.repository.findConfiguration().stream().findFirst().get();
 		return result;
 	}
 
