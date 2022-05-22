@@ -20,6 +20,7 @@
     <acme:list-column code="inventor.toolkit.list.label.code" path="code" width="10%"/>
     <acme:list-column code="inventor.toolkit.list.label.title" path="title" width="10%"/>
     <acme:list-column code="inventor.toolkit.list.label.description" path="description" width="80%"/>
+    <acme:list-column code="inventor.toolkit.list.label.quantity" path="quantity" width="10%"/>
     
 </acme:list>
 

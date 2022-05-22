@@ -24,6 +24,9 @@
 	<acme:input-textbox code="inventor.toolkit.form.label.assemblyNotes" path="assemblyNotes"/>
 	<acme:input-money code="inventor.toolkit.form.label.totalPrice" path="totalPrice"/>
 	<acme:input-url code="inventor.toolkit.form.label.optionalLink" path="optionalLink"/>
+	<acme:input-textbox code="inventor.toolkit.form.label.items" path="items"/>
+	<acme:input-double code="inventor.toolkit.form.label.quantity" path="quantity"/>
+	
 	
 
 
