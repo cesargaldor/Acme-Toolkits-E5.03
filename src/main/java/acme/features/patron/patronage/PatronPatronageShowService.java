@@ -40,6 +40,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
+		
 		final String username = entity.getInventor().getUserAccount().getUsername();
 		final String email = entity.getInventor().getUserAccount().getIdentity().getEmail();
 		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
