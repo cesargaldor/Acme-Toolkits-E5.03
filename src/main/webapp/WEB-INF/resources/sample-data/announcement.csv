@@ -1,8 +1,16 @@
 key,moment,title,body,flag,optionalLink
-announcement-01,2022/03/12 00:00,Very old announcement,This is the oldest announcement in the system.,true,null
+announcement-01,1000/01/01 00:00,Very old announcement,This is the oldest announcement in the system.,true,null
 announcement-02,2022/04/23 00:00,The system's restarted,The system's been restarted after updating it.,true,null
 announcement-03,2022/04/15 00:10,The system's restarted again We're sorry,the update didn't work well.,true,http://www.us.es
 announcement-04,2022/03/13 09:00,Great discount,You may now benefit from our great volume discount!,false,http://www.acme-jobs.com/discount
 announcement-05,2022/04/08 12:00,The system's working well,The system's gone through extensive testing and it works pretty well.,false,null
 announcement-06,1970/09/07 22:30,The creator's birth date,This message was published long ago on the creator's birthday.,false,https://www.kidscanfly.ca/wp-content/uploads/2020/08/happy-birthday.jpeg
 announcement-07,2022/04/11 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org
+announcement-08,2022/04/11 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org
+announcement-09,2022/04/11 00:00,Announcement to check critical,This Announcement is to check critical true and null,true,null
+announcement-10,2022/04/11 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org
+announcement-11,2022/04/11 00:00,The framework's birthday,This message celebrates the framework bithday,true,https://www.acme.org
+announcementchinese-12,2012/01/01 00:00,着一家如,	度等合大 大度
+announcementarabic-13,2022/04/11 00:00,مرحبا ي,script-example in title,null,null
+announcementscript-14,2013/12/30 00:00,<script>alert</script>,null,null
+announcementscript-15,2013/12/30 00:00,script-example in titles,cript-example in body,null,null

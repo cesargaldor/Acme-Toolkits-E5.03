@@ -58,7 +58,7 @@ public class AdministratorAnnouncementCreateService implements AbstractCreateSer
 		result.setTitle("");
 		result.setMoment(moment);
 		result.setBody("");
-		result.setFlag(false);
+		//result.setFlag(false);
 		result.setOptionalLink("");;
 
 		return result;
