@@ -21,14 +21,14 @@ public class InventorPatronageController extends AbstractController<Inventor, Pa
 	protected InventorPatronageShowService showService;
 	
 	@Autowired
-	protected InventorPatronageAcceptService acceptService;
+	protected InventorPatronageUpdateService updateService;
 	
 	//Constructors ----------------------------------------------------------------------	
 	@PostConstruct
 	protected void initialise() {
 		super.addCommand("list", this.listService);
 		super.addCommand("show", this.showService);
-		super.addCommand("accept", "update", this.acceptService);
+		super.addCommand("update", this.updateService);
 	}
 	
 }

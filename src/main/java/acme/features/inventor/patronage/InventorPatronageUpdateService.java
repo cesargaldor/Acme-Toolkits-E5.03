@@ -13,7 +13,7 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageAcceptService implements AbstractUpdateService<Inventor, Patronage> {
+public class InventorPatronageUpdateService implements AbstractUpdateService<Inventor, Patronage> {
 
 	@Autowired
 	protected InventorPatronageRepository repository;
@@ -36,6 +36,9 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		request.bind(entity ,errors, "status");
+
 	}
 
 	@Override
@@ -43,13 +46,9 @@ public class InventorPatronageAcceptService implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.bind(model, null, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		final boolean prop = entity.getStatus().equals(Status.PROPOSED);
+		request.bind(model, null, "status", "code", "legalStuff", "budget", "moment","optionalLink");
 		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
 		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
-		final Status status = entity.getStatus();
-		model.setAttribute("status", status);
-		model.setAttribute("proposed", prop);
 		model.setAttribute("fullName", fullName);
 		model.setAttribute("email", email);
 		model.setAttribute("readonly", false);

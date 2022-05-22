@@ -46,13 +46,13 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		final String username = entity.getPatron().getUserAccount().getUsername();
 		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
 		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
-		final boolean proposed = entity.getStatus().equals(Status.PROPOSED);
+		final Status status = entity.getStatus();
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		model.setAttribute("proposed", proposed);
+		model.setAttribute("status", status);
 		model.setAttribute("username", username);
 		model.setAttribute("email", email);
 		model.setAttribute("fullName", fullName);
-		model.setAttribute("readonly", true);
+//		model.setAttribute("readonly", true);
 		model.setAttribute("confirmation", false);
 	}
 

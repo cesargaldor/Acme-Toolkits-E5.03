@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
-import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractListService;
@@ -43,8 +42,8 @@ public class InventorPatronageListService implements AbstractListService<Invento
 		assert model != null;
 //		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		final Status status = entity.getStatus();
-		model.setAttribute("status", status);
+///		final Status status = entity.getStatus();
+//		model.setAttribute("status", status);
 
 	}
 }
