@@ -24,7 +24,7 @@ public class AdministratorConfigurationController extends AbstractController<Adm
     @PostConstruct
     protected void initialise() {
         super.addCommand("show", this.showService);
-        super.addCommand("update", this.showService);
+        super.addCommand("update", this.updateService);
     }
 	
 }
