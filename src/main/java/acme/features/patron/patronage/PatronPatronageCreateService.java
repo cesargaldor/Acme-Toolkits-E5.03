@@ -41,10 +41,16 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		final String username = request.getModel().getString("username");
-        final Inventor inventor = this.repository.findInventorByUsername(username);
-        entity.setInventor(inventor);
+
+		if (this.repository.getAllInventors().isEmpty()) {
+			request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		} else {
+			final String id = request.getModel().getAttribute("inventorId").toString();
+			final Inventor inventor = this.repository.getInventorById(Integer.valueOf(id));
+			entity.setInventor(inventor);
+			request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "inventorId");
+		}
+
 	}
 
 	@Override
@@ -53,6 +59,8 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("onlyCreate", true);
+		model.setAttribute("inventors", this.repository.getAllInventors());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
@@ -62,15 +70,17 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		Patronage result;
 		Date moment;
-		//Sacamos patron por id
+
+=======
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Patron p = this.repository.PatronById(id);
-		
 		moment = new Date(System.currentTimeMillis());
+
 		result = new Patronage();
 		result.setMoment(moment);
 		result.setPatron(p);
-		result.setPublished(true);
+
+		result.setPublished(false);
 		result.setStatus(Status.PROPOSED);
 
 		return result;
@@ -82,6 +92,11 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 
+		if (!errors.hasErrors("code")) {
+			Patronage p;
+			p = this.repository.findPatronageByCode(entity.getCode());
+			errors.state(request, p == null, "code", "patron.patronage.form.error.duplicatedCode");
+		}
 	}
 
 	@Override
@@ -91,7 +106,5 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		this.repository.save(entity);
 	}
-
-
 
 }

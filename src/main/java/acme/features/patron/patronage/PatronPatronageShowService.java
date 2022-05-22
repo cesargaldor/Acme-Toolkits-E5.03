@@ -47,7 +47,8 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		model.setAttribute("email", email);
 		model.setAttribute("fullName", fullName);
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		if(entity.isPublished()) {model.setAttribute("readonly", true);}
+
+		model.setAttribute("readonly", entity.isPublished());
 	}
 
 		
