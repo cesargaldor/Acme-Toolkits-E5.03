@@ -49,8 +49,8 @@
 		
 		<!-- Rol administrador -->
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">			
-			<acme:menu-suboption code="master.menu.administrator.announcement.list-all" action="/administrator/announcement/list-all"/>
-			<acme:menu-suboption code="master.menu.administrator.announcement.list-recent" action="/administrator/announcement/list-recent"/>			
+			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>

@@ -16,19 +16,17 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form readonly="${readonly}">
-	<acme:input-moment code="administrator.announcement.form.label.moment" path="moment"/>	
-	<acme:input-textarea code="administrator.announcement.form.label.title" path="title"/>	
-	<acme:input-textbox code="administrator.announcement.form.label.body" path="body"/>	
-		
-	<acme:input-textbox code="administrator.announcement.form.label.optionalLink" path="optionalLink"/>	
+	<acme:input-textbox code="administrator.announcement.form.label.title" path="title"/>	
 	<acme:input-select code="administrator.announcement.form.label.flag" path="flag">
-		<acme:input-option code="INFO" value="INFO" selected="${status == 'INFO'}"/>
-		<acme:input-option code="WARNING" value="WARNING" selected="${status == 'WARNING'}"/>
-		<acme:input-option code="IMPORTANT" value="IMPORTANT" selected="${status == 'IMPORTANT'}"/>
+		<acme:input-option code="NOT CRITICAL" value="false" selected="${flag == false}"/>
+		<acme:input-option code="CRITICAL" value="true" selected="${flag == true}"/>
 	</acme:input-select>
-	
-	<jstl:if test="${!readonly}">
+	<acme:input-textbox code="administrator.announcement.form.label.moment" path="moment" readonly = "true"/>	
+	<acme:input-textarea code="administrator.announcement.form.label.body" path="body"/>	
+	<acme:input-url code="administrator.announcement.form.label.optionalLink" path="optionalLink"/>	
+	<jstl:if test="${command == 'create'}">
 		<acme:input-checkbox code="administrator.announcement.form.label.confirmation" path="confirmation"/>
-		<acme:submit code="administrator.announcement.form.label.button.create" action="/administrator/announcement/create"/>
+		<acme:submit test="${command == 'create'}" code="administrator.announcement.form.button.create" action="/administrator/announcement/create"/>
 	</jstl:if>
 </acme:form>
+

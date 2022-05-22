@@ -18,6 +18,7 @@ public class AdministratorConfigurationShowService  implements AbstractShowServi
 	@Override
 	public boolean authorise(final Request<Configuration> request) {
 		assert request != null;
+		
 		return true;
 	}
 	
@@ -25,8 +26,8 @@ public class AdministratorConfigurationShowService  implements AbstractShowServi
 	@Override
 	public Configuration findOne(final Request<Configuration> request) {
 		assert request != null;
-		Configuration result;
-		result = this.repository.findConfiguration().stream().findFirst().get();
+		final Configuration result;
+		result = this.repository.findConfiguration();
 		return result;
 	}
 	
@@ -37,9 +38,9 @@ public class AdministratorConfigurationShowService  implements AbstractShowServi
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "sysCurrency","allowedCurrencies","strongSpam","strongThreshold","weakSpam","weakThreshold");
-		model.setAttribute("confirmation", false);
-        model.setAttribute("readonly", true);
+		request.unbind(entity, model, "sysCurrency","allowedCurrencies","strongSpam","weakSpam","strongThreshold","weakThreshold");
+		//model.setAttribute("confirmation", false);
+        //model.setAttribute("readonly", true);
 	}
 
 
