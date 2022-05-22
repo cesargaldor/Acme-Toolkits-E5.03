@@ -19,10 +19,13 @@ inventor.toolkit.list.label.button.create = Crear patrocinio
 inventor.toolkit.list.label.title = Titulo:
 inventor.toolkit.list.label.description = Descripcion:
 inventor.toolkit.list.label.inventor = Inventor:
+inventor.toolkit.list.label.quantity= Cantidad:
 
 
+
+inventor.toolkit.form.button.create = Crear:
 inventor.toolkit.form.label.status = Estado:
-inventor.toolkit.form.label.code = Código:
+
 inventor.toolkit.form.label.legalStuff = Legal:
 inventor.toolkit.form.label.budget = Cantidad:
 inventor.toolkit.form.label.moment = Fecha:
@@ -37,7 +40,10 @@ inventor.toolkit.form.label.title = Titulo:
 inventor.toolkit.form.label.assemblyNotes: Notas:
 inventor.toolkit.form.label.items: Items:
 inventor.toolkit.form.label.quantity: Cantidad:
-
+inventor.toolkit.form.label.totalPrice = Precio Total:
+inventor.toolkit.form.label.description = Descripccion:
+inventor.toolkit.form.label.code = Codigo:
+inventor.toolkit.list.button.create = Crear:
 
 inventor.toolkit.form.label.status.PROPOSED = PROPUESTO
 inventor.toolkit.form.label.status.ACCEPTED  = ACEPTADO
