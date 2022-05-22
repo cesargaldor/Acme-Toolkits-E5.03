@@ -16,6 +16,10 @@ inventor.toolkit.list.label.moment = Fecha:
 inventor.toolkit.list.label.optionalLink = Más información (Opcional):
 inventor.toolkit.list.label.inventor = inventor:
 inventor.toolkit.list.label.button.create = Crear patrocinio
+inventor.toolkit.list.label.title = Titulo:
+inventor.toolkit.list.label.description = Descripcion:
+inventor.toolkit.list.label.inventor = Inventor:
+
 
 inventor.toolkit.form.label.status = Estado:
 inventor.toolkit.form.label.code = Código:
@@ -29,6 +33,10 @@ inventor.toolkit.form.label.inventor.fullName = Nombre completo:
 inventor.toolkit.form.label.button.update = Actualizar patrocinio
 inventor.toolkit.form.label.button.delete = Borrar patrocinio
 inventor.toolkit.form.label.button.publish = Publicar patrocinio
+inventor.toolkit.form.label.title = Titulo:
+inventor.toolkit.form.label.assemblyNotes: Notas:
+inventor.toolkit.form.label.items: Items:
+inventor.toolkit.form.label.quantity: Cantidad:
 
 
 inventor.toolkit.form.label.status.PROPOSED = PROPUESTO
