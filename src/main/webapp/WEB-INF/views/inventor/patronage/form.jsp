@@ -16,21 +16,35 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:input-textarea code="inventor.patronage.form.label.code" path="code" readonly="true"/>
-	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="true"/>
-	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="true"/>
-	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment" readonly="true"/>
+	<acme:input-textarea code="inventor.patronage.form.label.code" path="code" readonly="${true}"/>
+	<acme:input-textbox code="inventor.patronage.form.label.legalStuff" path="legalStuff" readonly="${true}"/>
+	<acme:input-money code="inventor.patronage.form.label.budget" path="budget" readonly="${true}"/>
+	<acme:input-moment code="inventor.patronage.form.label.moment" path="moment" readonly="${true}"/>
 	<acme:input-textbox code="inventor.patronage.form.label.patron.username" path="username" readonly="${true}"/>
 	<acme:input-email code="inventor.patronage.form.label.patron.email" path="email" readonly="${true}"/>			
 	<acme:input-textbox code="inventor.patronage.form.label.patron.fullName" path="username" readonly="${true}"/>			
-				
-	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" readonly="true"/>
+	<acme:input-url code="inventor.patronage.form.label.optionalLink" path="optionalLink" readonly="${true}"/>
 	
-		<acme:input-select code="inventor.patronage.form.label.status" path="status" readonly="true">
-			<acme:input-option code="inventor.patronage.form.label.status.PROPOSED" value="PROPOSED"/>
-			<acme:input-option code="inventor.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
-			<acme:input-option code="inventor.patronage.form.label.status.DENIED" value="DENIED"/>
-		</acme:input-select>
-
+	
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command, 'show, update')}">
+			<acme:input-select code="inventor.patronage.form.label.status" path="status">
+				<acme:input-option code="inventor.patronage.form.label.status.ACCEPTED" value="ACCEPTED"/>
+				<acme:input-option code="inventor.patronage.form.label.status.DENIED" value="DENIED"/>
+			</acme:input-select>		
+			<acme:submit code="inventor.patronage.form.label.button.update" action="/inventor/patronage/update"/>					
+		</jstl:when>
+	</jstl:choose>	
+			
+	
+	
+	<%-- 
+	<jstl:if test="${}">
+	
+	
+	
+	</jstl:if>
+	
+	--%>
 </acme:form>
 

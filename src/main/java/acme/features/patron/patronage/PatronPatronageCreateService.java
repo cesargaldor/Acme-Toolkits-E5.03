@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
+import acme.roles.Inventor;
 import acme.roles.Patron;
 
 @Service
@@ -26,9 +28,11 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un Patron tiene autorización
 		assert request != null;
-
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Patron.class);
+		return result;
 	}
 
 	@Override
@@ -37,7 +41,15 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		if (this.repository.getAllInventors().isEmpty()) {
+			request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		} else {
+			final String id = request.getModel().getAttribute("inventorId").toString();
+			final Inventor inventor = this.repository.getInventorById(Integer.valueOf(id));
+			entity.setInventor(inventor);
+			request.bind(entity, errors, "status", "code", "legalStuff", "budget", "moment", "optionalLink", "inventorId");
+		}
+
 	}
 
 	@Override
@@ -46,6 +58,8 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("onlyCreate", true);
+		model.setAttribute("inventors", this.repository.getAllInventors());
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
 	}
 
@@ -55,14 +69,15 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		Patronage result;
 		Date moment;
-		//SACAR USER REGISTRADO
 		final Integer id = request.getPrincipal().getActiveRoleId();
 		final Patron p = this.repository.PatronById(id);
-		
 		moment = new Date(System.currentTimeMillis());
+
 		result = new Patronage();
 		result.setMoment(moment);
 		result.setPatron(p);
+		result.setPublished(false);
+		result.setStatus(Status.PROPOSED);
 
 		return result;
 	}
@@ -73,6 +88,11 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert entity != null;
 		assert errors != null;
 
+		if (!errors.hasErrors("code")) {
+			Patronage p;
+			p = this.repository.findPatronageByCode(entity.getCode());
+			errors.state(request, p == null, "code", "patron.patronage.form.error.duplicatedCode");
+		}
 	}
 
 	@Override
@@ -82,7 +102,5 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 
 		this.repository.save(entity);
 	}
-
-
 
 }

@@ -32,3 +32,5 @@ inventor.patronage.form.label.button.create = Create patronage
 inventor.patronage.form.label.status.PROPOSED = PROPOSED
 inventor.patronage.form.label.status.ACCEPTED  = ACCEPTED
 inventor.patronage.form.label.status.DENIED = DENIED
+
+inventor.patronage.form.label.button.update = Update
