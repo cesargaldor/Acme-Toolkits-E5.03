@@ -21,7 +21,9 @@ public class InventorPatronageReportListService implements AbstractListService<I
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		return true;
+		boolean res;
+		res = request.getPrincipal().hasRole(Inventor.class);
+		return res;
 	}
 
 	@Override
@@ -30,7 +32,6 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		
 		Collection<PatronageReport> result;
 		Principal principal;
-
 		principal = request.getPrincipal();
         result = this.repository.findPatronagesReports(principal.getUsername());
 		return result;
@@ -41,7 +42,11 @@ public class InventorPatronageReportListService implements AbstractListService<I
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "numSeq","creationMoment", "memorandum","optionalLink");
+		
+	
+		request.unbind(entity, model, "numSeq","creationMoment","optionalLink");
+		model.setAttribute("numSeq", entity.getNumSeq());
+		model.setAttribute("id", entity.getPatronage().getId());
 		
 	}
 
