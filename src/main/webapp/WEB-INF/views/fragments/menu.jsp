@@ -90,14 +90,11 @@
 			<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
 			<acme:menu-suboption code="master.menu.inventor.tool.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
+			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
 			<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
 		</acme:menu-option>
-
-		
-		
 	</acme:menu-left>
 
 	<acme:menu-right>

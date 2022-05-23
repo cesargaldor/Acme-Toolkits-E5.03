@@ -16,7 +16,6 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:form>
-
 	<acme:input-textbox code="inventor.item.form.label.name" path="name"/>
 	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
 	
@@ -45,6 +44,5 @@
 		<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
 		<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
 	</jstl:if>
-	
 </acme:form> 
 
