@@ -22,7 +22,9 @@ inventor.toolkit.list.label.inventor = Inventor:
 inventor.toolkit.list.label.quantity= Quantity:
 
 
-inventor.toolkit.form.button.create = Create:
+inventor.toolkit.form.button.create = Create
+inventor.toolkit.form.button.update = Update
+inventor.toolkit.form.button.delete = Delete
 inventor.toolkit.form.label.status = Status:
 inventor.toolkit.form.label.legalStuff = Legal Stuff:
 inventor.toolkit.form.label.budget = Budget:

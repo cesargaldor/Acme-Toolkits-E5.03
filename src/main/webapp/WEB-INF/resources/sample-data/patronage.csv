@@ -1,4 +1,4 @@
-
+key,status,code,legalStuff,budget,moment,optionalLink,key:patron,key:inventor,published
 patronage-01,PROPOSED,ABC-123-A,Cantidad acordada,USD 150.0,2022/05/27 12:32,http://youtube.com,patron-01,inventor-01,true
 patronage-02,PROPOSED,ABC-123-B,Cantidad acordada,EUR 1000.0,2022/05/27 13:32,http://youtube.com,patron-01,inventor-02,true
 patronage-03,ACCEPTED,ABC-123-C,Cantidad acordada,EUR 500.0,2022/05/27 14:32,http://youtube.com,patron-01,inventor-01,true
