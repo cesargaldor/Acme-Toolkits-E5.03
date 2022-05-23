@@ -14,7 +14,7 @@ public class AnyChirpListAllTest extends TestHarness{
 	public void positiveComponent(final int recordIndex, final String moment, final String author, final String title, final String body) {
 		
 
-		super.clickOnMenu("Anonymous", "List chirps");
+		super.clickOnMenu("Any", "List chirps");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, moment);

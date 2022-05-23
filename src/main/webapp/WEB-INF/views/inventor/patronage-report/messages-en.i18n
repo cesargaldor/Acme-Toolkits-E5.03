@@ -12,11 +12,13 @@ inventor.patronageReport.list.label.numSeq = Sequence Number
 inventor.patronageReport.list.label.creationMoment = Creation Moment
 inventor.patronageReport.list.label.optionalLink = Optional link:
 inventor.patronageReport.list.label.memorandum = Memorandum
-inventor.patronageReport.list.label.button.create = Create patronage
+inventor.patronageReport.list.label.button.create = Create Patronage Report
 
 inventor.patronageReport.form.label.optionalLink = Optional link:
-inventor.patronageReport.form.label.button.create = Create patronageReport
+inventor.patronageReport.form.label.button.create = Create
 inventor.patronageReport.form.label.numSeq = Sequence Number:
 inventor.patronageReport.form.label.creationMoment = Creation Moment:
 inventor.patronageReport.form.label.memorandum = Memorandum:
-inventor.patronageReportReport.form.label.optionalLink = Link with further information:
+inventor.patronageReport.form.label.optionalLink = Link with further information:
+
+inventor.patronageReport.form.label.confirmation = Confirmation

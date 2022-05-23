@@ -24,9 +24,13 @@ inventor.patronage.form.label.legalStuff = Legal Stuff:
 inventor.patronage.form.label.budget = Budget:
 inventor.patronage.form.label.moment = Moment:
 inventor.patronage.form.label.optionalLink = Optional link:
-inventor.patronage.form.label.inventor = Inventor:
+inventor.patronage.form.label.patron.username = Patron:
+inventor.patronage.form.label.patron.email = Email:
+inventor.patronage.form.label.patron.fullName = Full name:
 inventor.patronage.form.label.button.create = Create patronage
 
 inventor.patronage.form.label.status.PROPOSED = PROPOSED
 inventor.patronage.form.label.status.ACCEPTED  = ACCEPTED
 inventor.patronage.form.label.status.DENIED = DENIED
+
+inventor.patronage.form.label.button.update = Update

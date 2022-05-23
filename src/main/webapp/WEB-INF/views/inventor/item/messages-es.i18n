@@ -8,17 +8,33 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.item.form.label.type = Tipo:
+
+inventor.item.list.button.create = Crear nuevo objeto
+
 inventor.item.form.label.name = Nombre:
 inventor.item.form.label.code = Código:
+inventor.item.form.label.type = Tipo:
 inventor.item.form.label.technology = Tecnología:
 inventor.item.form.label.description = Descripción:
-inventor.item.form.label.retailPrice = Precio:
-inventor.item.form.label.optionalLink = Link opcional
-inventor.item.form.label.inventor = Inventor
-inventor.item.form.button.create = Crear
+inventor.item.form.label.retailPrice = Precio Unitario:
+inventor.item.form.label.optionalLink = Link Opcional:
+inventor.item.form.label.published = Publicado:
+inventor.item.form.label.more-info = Más info:
 
-inventor.item.list.label.type = Tipo
-inventor.item.list.label.name = Nombre
-inventor.item.list.label.code = Código
-inventor.item.list.label.description = Descripción
+inventor.item.form.button.create = Crear
+inventor.item.form.button.update = Actualizar
+inventor.item.form.button.delete = Eliminar
+inventor.item.form.button.publish = Publicar
+
+inventor.item.form.error.incorrect-name = Nombre tiene que ser inferior a 101 caracteres
+inventor.item.form.error.incorrect-technology = Tecnología tiene que ser inferior a 101 caracteres
+inventor.item.form.error.incorrect-description = Descripción tiene que ser inferior a 256 caracteres
+
+inventor.item.form.error.duplicated = Ya existe un artículo con este código
+inventor.item.form.error.negative-retailPrice = El precio unitario no puede ser negativo
+inventor.item.form.error.incorrect-currency = Moneda incorrecta. Sólo son aceptables las divisas EUR, USD y GBP
+
+inventor.component.list.label.name = Nombre
+inventor.component.list.label.code = Código
+inventor.component.list.label.technology = Tecnología
+inventor.component.list.label.description = Descripción 

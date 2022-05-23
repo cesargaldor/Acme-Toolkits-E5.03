@@ -16,12 +16,13 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 	protected PatronPatronageRepository repository;
 	
 	
-	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Patron tiene autorización.
 		assert request != null;
-		//
-		return true;
+		boolean result;
+		result = request.getPrincipal().hasRole(Patron.class);
+		return result;
 	}
 
 	@Override
@@ -31,7 +32,6 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		int id;
 		id = request.getModel().getInteger("id");
 		result= this.repository.findPatronageById(id);
-		
 		return result;
 	}
 
@@ -40,11 +40,15 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
-		
-		model.setAttribute("patron", entity.getPatron().getUserAccount().getUsername());
-		model.setAttribute("onlyPatron", true);
-		
+		final String username = entity.getInventor().getUserAccount().getUsername();
+		final String email = entity.getInventor().getUserAccount().getIdentity().getEmail();
+		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
+		model.setAttribute("username", username);
+		model.setAttribute("email", email);
+		model.setAttribute("fullName", fullName);
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+
+		model.setAttribute("readonly", entity.isPublished());
 	}
 
 		

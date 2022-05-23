@@ -38,8 +38,7 @@ master.menu.any.list-toolkits = List toolkits
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
-master.menu.administrator.announcement.list-all = List all announcements
-master.menu.administrator.announcement.list-recent = List recent announcements
+master.menu.administrator.announcement = List all announcemets
 master.menu.administrator.announcement.create = Create announcement
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
@@ -64,22 +63,10 @@ master.menu.authenticated.announcement.list = List announcements
 master.menu.authenticated.money-exchange = Money exchange
 master.menu.authenticated.configuration = System configuration
 
-# master.menu.employer ########################################################
-
-master.menu.employer = Employer
-master.menu.employer.all-jobs = List all jobs
-master.menu.employer.my-jobs = List my jobs
-master.menu.employer.my-applications = List my applications
-
-# master.menu.worker ##########################################################
-
-master.menu.worker = Worker
-master.menu.worker.all-jobs = List all jobs
-master.menu.worker.my-applications = List my applications
 
 # master.menu.patron ##########################################################
 master.menu.patron = Patron
-master.menu.patron.all-patronages = List all patronages
+master.menu.patron.all-patronages =List all patronages
 master.menu.patron.patronageReport.list = List patronage reports
 master.menu.patron.dashboard = Patron dashboard
 
@@ -90,9 +77,9 @@ master.menu.inventor.all-patronages = List my patronages
 master.menu.inventor.patronageReport.list = List my patronage reports
 master.menu.inventor.chirp.list-recent = List recent chirps
 master.menu.inventor.item.list-mine-component = List my Components
-master.menu.inventor.item.list-mine-tool = List my Tools
 master.menu.inventor.toolkit.list-mine-toolkit = List my Toolkits
 master.menu.inventor.item.list-mine = List my Items
+master.menu.inventor.tool.list-mine-tool= List my tools
 
 # master.menu.user-account ####################################################
 

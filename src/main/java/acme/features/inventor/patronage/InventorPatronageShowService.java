@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
@@ -18,8 +19,13 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 	
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
+		//Comprobamos que solo un usuario con rol Inventor tiene autorización.
 		assert request != null;
-		return true;
+		boolean res;
+		res = request.getPrincipal().hasRole(Inventor.class);
+		return res;
+		
+		
 	}
 
 	@Override
@@ -34,12 +40,20 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 
 	@Override
 	public void unbind(final Request<Patronage> request, final Patronage entity, final Model model) {
-		assert request != null;		
+		assert request != null;
 		assert entity != null;
 		assert model != null;
-		model.setAttribute("inventor", entity.getInventor().getUserAccount().getUsername());
-		//model.setAttribute("onlyPatron", true);
-		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");		
+		final String username = entity.getPatron().getUserAccount().getUsername();
+		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
+		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
+		final Status status = entity.getStatus();
+		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
+		model.setAttribute("status", status);
+		model.setAttribute("username", username);
+		model.setAttribute("email", email);
+		model.setAttribute("fullName", fullName);
+//		model.setAttribute("readonly", true);
+		model.setAttribute("confirmation", false);
 	}
 
 }

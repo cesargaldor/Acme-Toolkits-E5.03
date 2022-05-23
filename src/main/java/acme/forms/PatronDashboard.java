@@ -15,6 +15,8 @@ package acme.forms;
 import java.io.Serializable;
 import java.util.Map;
 
+import org.springframework.data.util.Pair;
+
 import acme.entities.patronage.Status;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,11 +32,11 @@ public class PatronDashboard implements Serializable {
 
 		// Attributes -------------------------------------------------------------
 
-		int							totalNumberOfProposedPatronages;
-		int							totalNumberOfAcceptedPatronages;
-		int							totalNumberOfDeniedPatronages;
+		int							numberOfProposedPatronages;
+		int							numberOfAcceptedPatronages;
+		int							numberOfDeniedPatronages;
 
-		Map<Status,Stats>			statsBudgetOfStatusPatronages;
+		Map<Pair<Status,String>, Stats>			statsBudgetOfStatusPatronages;
 
 
 	// Derived attributes -----------------------------------------------------

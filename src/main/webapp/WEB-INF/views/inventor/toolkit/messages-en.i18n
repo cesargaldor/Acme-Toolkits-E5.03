@@ -8,13 +8,45 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-inventor.toolkit.form.label.code = Code:
+inventor.toolkit.list.label.status = Status:
+inventor.toolkit.list.label.code = Code:
+inventor.toolkit.list.label.legalStuff = Legal Stuff:
+inventor.toolkit.list.label.budget = Budget:
+inventor.toolkit.list.label.moment = Moment:
+inventor.toolkit.list.label.optionalLink = Optional link:
+inventor.toolkit.list.label.inventor = inventor:
+inventor.toolkit.list.label.button.create = Create toolkit
+inventor.toolkit.list.label.title = Title:
+inventor.toolkit.list.label.description = Description:
+inventor.toolkit.list.label.inventor = Inventor:
+inventor.toolkit.list.label.quantity= Quantity:
+
+
+inventor.toolkit.form.button.create = Create
+inventor.toolkit.form.button.update = Update
+inventor.toolkit.form.button.delete = Delete
+inventor.toolkit.form.label.status = Status:
+inventor.toolkit.form.label.legalStuff = Legal Stuff:
+inventor.toolkit.form.label.budget = Budget:
+inventor.toolkit.form.label.moment = Moment:
+inventor.toolkit.form.label.optionalLink = Optional link:
+inventor.toolkit.form.label.inventor.username = inventor:
+inventor.toolkit.form.label.inventor.email = Email:
+inventor.toolkit.form.label.inventor.fullName = Full Name:
+inventor.toolkit.form.label.button.create = Create toolkit
+inventor.toolkit.form.label.button.update = Update toolkit
+inventor.toolkit.form.label.button.delete = Delete toolkit
+inventor.toolkit.form.label.button.publish = Publish toolkit
 inventor.toolkit.form.label.title = Title:
+inventor.toolkit.form.label.assemblyNotes: Assembly Notes:
+inventor.toolkit.form.label.items: Items:
+inventor.toolkit.form.label.quantity: Quantity:
+inventor.toolkit.form.label.${item.code} = Code:
+inventor.toolkit.form.label.totalPrice = Total Price:
 inventor.toolkit.form.label.description = Description:
-inventor.toolkit.form.label.assembleNotes = Assemble Notes
-inventor.toolkit.form.label.link = Optional Link:
+inventor.toolkit.form.label.code = Code:
+inventor.toolkit.list.button.create = Create:
 
-inventor.toolkit.form.button.items = Items
-
-inventor.toolkit.list.label.code = Code
-inventor.toolkit.list.label.title = Title
+inventor.toolkit.form.label.status.PROPOSED = PROPOSED
+inventor.toolkit.form.label.status.ACCEPTED  = ACCEPTED
+inventor.toolkit.form.label.status.DENIED = DENIED
