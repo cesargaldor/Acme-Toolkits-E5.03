@@ -14,7 +14,9 @@ patron.patronage.list.label.legalStuff = Legal Stuff:
 patron.patronage.list.label.budget = Budget:
 patron.patronage.list.label.moment = Moment:
 patron.patronage.list.label.optionalLink = Optional link:
+patron.patronage.list.label.inventor = Inventor:
 patron.patronage.list.label.button.create = Create patronage
+patron.patronage.list.label.isPublished = Published:
 
 
 patron.patronage.form.label.status = Status:
@@ -23,8 +25,20 @@ patron.patronage.form.label.legalStuff = Legal Stuff:
 patron.patronage.form.label.budget = Budget:
 patron.patronage.form.label.moment = Moment:
 patron.patronage.form.label.optionalLink = Optional link:
-patron.patronage.form.label.button.create = Create patronage
+patron.patronage.form.label.inventors = Inventors:
+patron.patronage.form.label.inventor.username = Inventor:
+patron.patronage.form.label.inventor.email = Email:
+
+patron.patronage.form.label.inventor.name = Full Name:
+patron.patronage.form.label.button.create =Create patronage
+patron.patronage.form.label.button.update = Update patronage
+patron.patronage.form.label.button.delete = Delete patronage
+patron.patronage.form.label.button.publish = Publish patronage
+
 
 patron.patronage.form.label.status.PROPOSED = PROPOSED
 patron.patronage.form.label.status.ACCEPTED  = ACCEPTED
 patron.patronage.form.label.status.DENIED = DENIED
+
+
+patron.patronage.form.error.duplicatedCode = This code already exists

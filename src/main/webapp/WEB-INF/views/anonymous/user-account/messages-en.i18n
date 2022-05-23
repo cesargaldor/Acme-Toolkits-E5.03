@@ -24,4 +24,3 @@ anonymous.user-account.form.button.create = Sign up
 anonymous.user-account.form.error.duplicated = This name is already taken
 anonymous.user-account.form.error.must-accept = Must accept the license
 anonymous.user-account.form.error.confirmation-no-match = Confirmation doesn't match
-

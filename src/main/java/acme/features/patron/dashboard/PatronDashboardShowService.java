@@ -1,128 +1,91 @@
-/*
- * AdministratorDashboardShowService.java
- *
- * Copyright (C) 2012-2022 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
-
 package acme.features.patron.dashboard;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
-import acme.forms.Dashboard;
+import acme.entities.patronage.Status;
+import acme.forms.PatronDashboard;
+import acme.forms.Stats;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Patron;
 
 @Service
-public class PatronDashboardShowService implements AbstractShowService<Patron, Dashboard> {
-
-
-//	// Internal state ---------------------------------------------------------
-
-	@Autowired
-	protected PatronDashboardRepository repository;
-
-	// AbstractShowService<Administrator, Dashboard> interface ----------------
-
-
-	@Override
-	public boolean authorise(final Request<Dashboard> request) {
-		assert request != null;
-
-		return true;
-	}
-
-	@Override
+public class PatronDashboardShowService implements AbstractShowService<Patron, PatronDashboard> {
 	
-	/*total number of proposed/accepted/denied patronages; average, deviation, minimum, and maximum budget 
-	 * of proposed /accepted/denied patronages grouped by currency.*/
+	//Internal State
 	
-	public void unbind(final Request<Dashboard> request, final Dashboard entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
+		@Autowired
+		protected PatronDashboardRepository repository;
 
-		request.unbind(entity, model, 
-			"numberOfProposedPatronages", "numberOfAcceptedPatronages", "numberOfDeniedPatronages",
-			"averageOfProposedPatronages", "averageOfAcceptedPatronages", "averageOfDeniedPatronages"/*,
+
+		@Override
+		public boolean authorise(final Request<PatronDashboard> request) {
+			//Comprobamos que solo puede acceder el rol Patron
+			assert request != null;
+			boolean result;
+			result = request.getPrincipal().hasRole(Patron.class);
+			return result;
+		}
+		
+		@Override
+		public PatronDashboard findOne(final Request<PatronDashboard> request) {
+			assert request != null;
+			final PatronDashboard result = new PatronDashboard();
+	
+			final int numberOfProposedPatronages = this.repository.numberOfStatusPatronages("PROPOSED");
+			final int numberOfAcceptedPatronages = this.repository.numberOfStatusPatronages("ACCEPTED");
+			final int numberOfDeniedPatronages =  this.repository.numberOfStatusPatronages("DENIED");
 			
-			"deviationOfProposedPatronages", "deviationOfAcceptedPatronages", "deviationOfDeniedPatronages",
+			result.setNumberOfProposedPatronages(numberOfProposedPatronages);
+			result.setNumberOfAcceptedPatronages(numberOfAcceptedPatronages);
+			result.setNumberOfDeniedPatronages(numberOfDeniedPatronages);
 			
-			"minimunBudgetOfProposedPatronages", "maximunBudgetOfProposedPatronages", 
-			"minimunBudgetOfAcceptedPatronages" ,"maximunBudgetOfAcceptedPatronages", 
-			"minimunBudgetOfDeniedPatronages", "maximunBudgetOfDeniedPatronages"*/);
-	}
-
-	@Override
-	public Dashboard findOne(final Request<Dashboard> request) {
-		assert request != null;
-
-		Dashboard result;
-		
-		final Double numberOfProposedPatronages;
-		final Double numberOfAcceptedPatronages;
-		final Double numberOfDeniedPatronages;
-//		final Double averageOfProposedPatronages;
-//		final Double averageOfAcceptedPatronages;
-//		final Double averageOfDeniedPatronages;
-//		final Double deviationOfProposedPatronages;
-//		final Double deviationOfAcceptedPatronages;
-//		final Double deviationOfDeniedPatronages;
-//		final Double minimunBudgetOfProposedPatronages;
-//		final Double maximunBudgetOfProposedPatronages;
-//		final Double minimunBudgetOfAcceptedPatronages;
-//		final Double maximunBudgetOfAcceptedPatronages;
-//		final Double minimunBudgetOfDeniedPatronages;
-//		final Double maximunBudgetOfDeniedPatronages;
-
-
-		
-		numberOfProposedPatronages = this.repository.numberOfProposedPatronages();
-		numberOfAcceptedPatronages = this.repository.numberOfAcceptedPatronages();
-		numberOfDeniedPatronages = this.repository.numberOfDeniedPatronages();
-//		averageOfProposedPatronages = this.repository.averageOfProposedPatronages();
-//		averageOfAcceptedPatronages = this.repository.averageOfAcceptedPatronages();
-//		averageOfDeniedPatronages = this.repository.averageOfDeniedPatronages();
-//		deviationOfProposedPatronages = this.repository.deviationOfProposedPatronages();
-//		deviationOfAcceptedPatronages = this.repository.deviationOfAcceptedPatronages();
-//		deviationOfDeniedPatronages = this.repository.deviationOfDeniedPatronages();
-//		minimunBudgetOfProposedPatronages = this.repository.minimunBudgetOfProposedPatronages();
-//		maximunBudgetOfProposedPatronages = this.repository.maximunBudgetOfProposedPatronages();
-//		minimunBudgetOfAcceptedPatronages = this.repository.minimunBudgetOfAcceptedPatronages();
-//		maximunBudgetOfAcceptedPatronages = this.repository.maximunBudgetOfAcceptedPatronages();
-//		minimunBudgetOfDeniedPatronages = this.repository.minimunBudgetOfDeniedPatronages();
-//		maximunBudgetOfDeniedPatronages = this.repository.maximunBudgetOfDeniedPatronages();
-
-		
-
-		result = new Dashboard();
-		
-		result.setNumberOfProposedPatronages(numberOfProposedPatronages);
-		result.setNumberOfAcceptedPatronages(numberOfAcceptedPatronages);
-		result.setNumberOfDeniedPatronages(numberOfDeniedPatronages);
-//		result.setAverageOfProposedPatronages(averageOfProposedPatronages);
-//		result.setAverageOfAcceptedPatronages(averageOfAcceptedPatronages);
-//		result.setAverageOfDeniedPatronages(averageOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfProposedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(deviationOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfProposedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfProposedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfAcceptedPatronages);
-//		result.setRatioOfProposedStatus(minimunBudgetOfDeniedPatronages);
-//		result.setRatioOfProposedStatus(maximunBudgetOfDeniedPatronages);
-
-
-		return result;
-	}
-
+			final Map<Pair<Status,String>, Stats> statsBudgetOfStatusPatronages = new HashMap<>();
+			final List<Object[]> listStatsBudgetOfStatusPatronages = this.repository.statsBudgetOfStatusPatronages();
+			
+			for (int i=0; i<listStatsBudgetOfStatusPatronages.size(); i++) {
+				//Recorremos la lista de estadísticas que se genera tras la consulta con el método statsBudgetOfStatusPatronages()
+				//con todas las estadísticas
+				
+				final Object[] line = listStatsBudgetOfStatusPatronages.get(i);
+				final Pair<Status, String> pareja = Pair.of((Status)(line[0]), (String)(line[1]));
+				
+				//Variable donde se guardan las estadísticas
+				final Stats stat = new Stats();
+				
+				//Guardamos en stat la media, desviacion, mínimo y máximo
+				stat.setAverage((Double)(line[2]));
+				stat.setDeviation((Double)(line[3]));
+				stat.setMinumun((Double)(line[4]));
+				stat.setMaximun((Double)(line[5]));
+				
+				//Guardamos en el mapa la pareja con status y String como clave y el valor de la estadística como valor del map
+				statsBudgetOfStatusPatronages.put(pareja, stat);
+			}
+			
+			//Seteamos los valores del map en la variable result (PatronDashboard)
+			result.setStatsBudgetOfStatusPatronages(statsBudgetOfStatusPatronages);
+			
+			return result;
+		}
+		@Override
+		public void unbind (final Request<PatronDashboard> request, final PatronDashboard entity, final Model model) {
+			assert request != null;
+			assert entity != null;
+			assert model != null;
+			
+			request.unbind(entity, model, 	"numberOfProposedPatronages", 
+											"numerOfAcceptedPatronages",
+											"numberOfDeniedPatronages",
+											"statsBudgetOfStatusPatronages");
+		}
 }
+
+

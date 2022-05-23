@@ -35,21 +35,25 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-suboption code="master.menu.any.list-items" action="/any/item/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.any.list-toolkits" action="/any/toolkit/list"/>
 		</acme:menu-option>
 		
 		<!-- Rol autenticado -->
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.authenticated.money-exchage" action="/authenticated/money-exchange/perform"/>
+			<acme:menu-suboption code="master.menu.authenticated.money-exchange" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
 		<!-- Rol administrador -->
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">			
-			<acme:menu-suboption code="master.menu.administrator.announcement.list-all" action="/administrator/announcement/list-all"/>
-			<acme:menu-suboption code="master.menu.administrator.announcement.list-recent" action="/administrator/announcement/list-recent"/>			
+			<acme:menu-suboption code="master.menu.administrator.announcement" action="/administrator/announcement/list"/>
+			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create"/>			
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
@@ -62,13 +66,24 @@
 
 	
 		
-		<!-- Roles inventor y patron -->
+		<!-- Rol patron -->
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.all-patronages" action="/patron/patronage/list"/>
-			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/dashboard/show"/>
-			
+			<acme:menu-suboption code="master.menu.patron.patronageReport.list" action="/patron/patronage-report/list"/>
+			<acme:menu-suboption code="master.menu.patron.dashboard" action="/patron/patron-dashboard/show"/>
 		</acme:menu-option>
 		
+
+		<!-- Rol Inventor -->
+		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
+			<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
+			<acme:menu-suboption code="master.menu.inventor.tool.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.inventor.all-patronages" action="/inventor/patronage/list"/>
+			<acme:menu-suboption code="master.menu.inventor.patronageReport.list" action="/inventor/patronage-report/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

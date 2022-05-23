@@ -14,20 +14,25 @@ package acme.features.administrator.dashboard;
 
 import org.springframework.stereotype.Controller;
 
-@Controller
-public class AdministratorDashboardController /*extends AbstractController<Administrator, Dashboard>*/ {
 
-//	// Internal state ---------------------------------------------------------
-//
-//	@Autowired
-//	protected AdministratorDashboardShowService showService;
-//
-//	// Constructors -----------------------------------------------------------
-//
-//
-//	@PostConstruct
-//	protected void initialise() {
-//		super.addCommand("show", this.showService);
-//	}
+import acme.forms.AdministratorDashboard;
+import acme.framework.controllers.AbstractController;
+import acme.framework.roles.Administrator;
+
+@Controller
+public class AdministratorDashboardController extends AbstractController<Administrator, AdministratorDashboard> {
+
+	// Internal state ---------------------------------------------------------
+
+	@Autowired
+	protected AdministratorDashboardShowService showService;
+
+	// Constructors -----------------------------------------------------------
+
+
+	@PostConstruct
+	protected void initialise() {
+		super.addCommand("show", this.showService);
+	}
 
 }

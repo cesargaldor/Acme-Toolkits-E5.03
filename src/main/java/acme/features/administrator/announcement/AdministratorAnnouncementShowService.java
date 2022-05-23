@@ -1,16 +1,7 @@
-/*
- * AuthenticatedAnnouncementShowService.java
- *
- * Copyright (C) 2012-2022 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
-
 package acme.features.administrator.announcement;
+
+import java.util.Calendar;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,34 +13,34 @@ import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorAnnouncementShowService implements AbstractShowService<Administrator, Announcement> {
-
-	// Internal state ---------------------------------------------------------
+public class AdministratorAnnouncementShowService implements AbstractShowService<Administrator, Announcement>  {
 
 	@Autowired
 	protected AdministratorAnnouncementRepository repository;
 
-	// AbstractShowService<Administrator, Announcement> interface --------------
-
-
+	
 	@Override
 	public boolean authorise(final Request<Announcement> request) {
 		assert request != null;
+		
+		boolean result;
+		Calendar calendar;
+		Date deadline;
+		Announcement announcement;
+		int id;
+		
+		
+		calendar = Calendar.getInstance();
+		calendar.add(Calendar.MONTH, -1);
+		deadline = calendar.getTime();
+		
+		id = request.getModel().getInteger("id");
+		announcement = this.repository.findOneAnnouncementById(id);
+		result = announcement.getMoment().after(deadline);
 
-		return true;
+		return result;
 	}
-
-	@Override
-	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
-
-		request.unbind(entity, model, "title", "moment", "status", "text", "info");
-		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", true);
-	}
-
+	
 	@Override
 	public Announcement findOne(final Request<Announcement> request) {
 		assert request != null;
@@ -61,6 +52,16 @@ public class AdministratorAnnouncementShowService implements AbstractShowService
 		result = this.repository.findOneAnnouncementById(id);
 
 		return result;
+	}
+	
+	
+	@Override
+	public void unbind(final Request<Announcement> request, final Announcement entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "moment" ,"title","body", "flag", "optionalLink");
 	}
 
 }

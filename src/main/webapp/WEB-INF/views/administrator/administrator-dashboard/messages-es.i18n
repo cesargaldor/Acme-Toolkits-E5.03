@@ -1,0 +1,19 @@
+administrator.dashboard.form.title.components= Componentes
+administrator.dashboard.form.label.number-of-components= Número de componentes
+
+administrator.dashboard.form.title.tools = Herramientas
+administrator.dashboard.form.label.number-of-tools = Número de herramientas
+
+administrator.dashboard.form.title.patronages = Patrocinios
+administrator.dashboard.form.label.proposed-patronages= Patrocinios Propuestos
+administrator.dashboard.form.label.accepted-patronages = Patrocinios Aceptados
+administrator.dashboard.form.label.denied-patronages = Patrocinios Denegados
+administrator.dashboard.form.label.status = Estado
+
+administrator.dashboard.form.title.stats = Estadísticas
+administrator.dashboard.form.label.technology= Tecnología
+administrator.dashboard.form.label.currency = Divisa
+administrator.dashboard.form.label.average-value = Media
+administrator.dashboard.form.label.deviation-value = Desviación
+administrator.dashboard.form.label.minimum-value= Mínimo
+administrator.dashboard.form.label.maximum-value = Máximo

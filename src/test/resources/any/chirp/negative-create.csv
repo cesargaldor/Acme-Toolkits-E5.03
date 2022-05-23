@@ -1,0 +1,7 @@
+recordIndex,title,body,author,email,confirmation
+0,,E,A,email_correcto@gmail.com,true
+1,Titulo correcto 2,,Fulanito,fulanito@gmail.com,true
+2,Otro titulo,Cuerpo bien 2,,pepito@gmail.com,true
+3,Bien titulo algo más largo,Cuerpo bien y algo más largo,Autor Conocido,autorgmail.com,true
+4,Este titulo es bastante más largo porque se pueden añadir hasta 100 caracteres,Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in repr,Esto es un autor,lorem@gmail.com,true
+5,Autor bien,E,A,email_correcto@gmail.com,false

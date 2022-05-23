@@ -8,6 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
 ﻿# master.menu #################################################################
 
 master.menu.home = Inicio
@@ -32,31 +33,43 @@ master.menu.any.list-patrons = Ver patrones
 master.menu.any.list-chirps = Ver chirps
 master.menu.any.list-patronages = Ver mecenazgos
 master.menu.any.list-items = Ver items
+master.menu.any.list-toolkits = Ver caja de herramientas
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.announcement.list = Ver anuncios
-master.menu.authenticated.money-exchage = Cambio de dinero
+master.menu.authenticated.money-exchange = Cambio de dinero
+master.menu.authenticated.configuration = Configuración del sistema
 
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.announcement.list-all = Ver todos los anuncios
-master.menu.administrator.announcement.list-recent = Ver anuncios recientes
+master.menu.administrator.announcement = Ver anuncios
 master.menu.administrator.announcement.create = Crear anuncio
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.configuration = Configuración del sistema
 
 
 # master.menu.patron ##########################################################
-
 master.menu.patron = Patrón
 master.menu.patron.all-patronages = Ver todos mis patronages
-master.menu.patron.dashboard = Dashboard
+master.menu.patron.patronageReport.list = Ver patronage reports
+master.menu.patron.dashboard = Dashboard de patrón
+
+# master.menu.inventor ##########################################################
+master.menu.inventor = Inventor
+master.menu.inventor.all-patronages = Ver todos mis patrocinios
+master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
+master.menu.inventor.chirp.list-recent = Ver chirps recientes
+master.menu.inventor.item.list-mine-component = Ver mis componentes
+master.menu.inventor.tool.list-mine-tool = Ver mis herramientas
+master.menu.inventor.toolkit.list-mine-toolkit = Ver mis kits de herramientas
+master.menu.inventor.item.list-mine = Ver mis items
 
 # master.menu.user-account ####################################################
 

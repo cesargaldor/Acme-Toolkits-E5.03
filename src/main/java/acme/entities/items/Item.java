@@ -53,17 +53,25 @@ public class Item extends AbstractEntity {
 	protected String				description;
 
 	//retail price
-	@Valid
+	//@Valid
+	@NotNull
 	protected Money					retailPrice;
 
 	//optional link
 	@URL
 	protected String				optionalLink;
+	
+	//published
+	protected boolean published;
 
 	//Relación con el inventor
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected Inventor				inventor;
+	
+	/*public static Boolean positiveMoney(final Money m) {
+		return m.getAmount()>=0;
+	}*/
 
 }

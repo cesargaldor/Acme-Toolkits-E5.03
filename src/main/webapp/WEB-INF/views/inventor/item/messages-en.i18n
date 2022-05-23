@@ -1,0 +1,39 @@
+# i18n-en.i18n
+#
+# Copyright (C) 2012-2022 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+inventor.item.list.button.create = Create new item
+
+inventor.item.form.label.name = Name:
+inventor.item.form.label.code = Code:
+inventor.item.form.label.type = Type:
+inventor.item.form.label.technology = Technology:
+inventor.item.form.label.description = Description:
+inventor.item.form.label.retailPrice = Retail Price:
+inventor.item.form.label.published = Published:
+inventor.item.form.label.optionalLink = Optional Link:
+
+inventor.item.form.error.incorrect-name = Name must be less than 101
+inventor.item.form.error.incorrect-technology = Technology must be less than 101
+inventor.item.form.error.incorrect-description = Description must be less than 256
+
+inventor.item.form.button.create = Create
+inventor.item.form.button.update = Update
+inventor.item.form.button.delete = Delete
+inventor.item.form.button.publish = Publish
+
+inventor.item.form.error.duplicated = There is already an Item with this code
+inventor.item.form.error.negative-retailPrice = Retail Price cannot be in negative
+inventor.item.form.error.incorrect-currency = Incorrect currency. Can only be EUR, USD and GBP. 
+
+inventor.component.list.label.name = Name
+inventor.component.list.label.code = Code
+inventor.component.list.label.technology = Technology
+inventor.component.list.label.description = Description

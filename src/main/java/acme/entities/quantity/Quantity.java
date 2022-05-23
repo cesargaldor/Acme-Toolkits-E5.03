@@ -1,5 +1,6 @@
 package acme.entities.quantity;
 
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
@@ -17,13 +18,14 @@ import lombok.Setter;
 @Setter
 public class Quantity extends AbstractEntity{
 	
-	/**
-	 * 
-	 */
+	//Serialisation identifier 
 	private static final long serialVersionUID = 1L;
 
+	// Atributes
 	@Min(1)
 	protected int number;
+	
+	// Relationships 
 	
 	@NotNull
 	@Valid
