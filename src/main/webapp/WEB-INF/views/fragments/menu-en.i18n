@@ -91,7 +91,7 @@ master.menu.inventor.chirp.list-recent = List recent chirps
 master.menu.inventor.item.list-mine-component = List my Components
 master.menu.inventor.toolkit.list-mine-toolkit = List my Toolkits
 master.menu.inventor.item.list-mine = List my Items
-master.menu.inventor.tool.list-mine-tool=List my tools
+master.menu.inventor.tool.list-mine-tool= List my tools
 
 # master.menu.user-account ####################################################
 

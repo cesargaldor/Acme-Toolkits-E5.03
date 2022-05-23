@@ -9,7 +9,7 @@
 # they accept any liabilities with respect to them.
 
 
-inventor.item.list.button.create = Create new Item:
+inventor.item.list.button.create = Create new item
 
 inventor.item.form.label.name = Name:
 inventor.item.form.label.code = Code:
@@ -33,7 +33,7 @@ inventor.item.form.error.duplicated = There is already an Item with this code
 inventor.item.form.error.negative-retailPrice = Retail Price cannot be in negative
 inventor.item.form.error.incorrect-currency = Incorrect currency. Can only be EUR, USD and GBP. 
 
-inventor.component.list.label.name = Name:
-inventor.component.list.label.code = Code:
-inventor.component.list.label.technology = Technology:
-inventor.component.list.label.description = Description:
+inventor.component.list.label.name = Name
+inventor.component.list.label.code = Code
+inventor.component.list.label.technology = Technology
+inventor.component.list.label.description = Description

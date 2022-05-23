@@ -70,7 +70,7 @@ master.menu.worker.my-applications = Ver mis solicitudes
 # master.menu.patron ##########################################################
 master.menu.patron = Patrón
 master.menu.patron.all-patronages = Ver todos mis patronages
-master.menu.patron.patronageReport.list = List patronage reports
+master.menu.patron.patronageReport.list = Ver patronage reports
 master.menu.patron.dashboard = Dashboard de patrón
 
 # master.menu.inventor ##########################################################
@@ -78,12 +78,10 @@ master.menu.inventor = Inventor
 master.menu.inventor.all-patronages = Ver todos mis patrocinios
 master.menu.inventor.patronageReport.list = Ver los reportes de mis patrocinios
 master.menu.inventor.chirp.list-recent = Ver chirps recientes
-master.menu.inventor.item.list-mine-component = Ver mis Componentes
-master.menu.inventor.item..tool.list-mine-tool = Ver mis Herramientas
+master.menu.inventor.item.list-mine-component = Ver mis componentes
+master.menu.inventor.tool.list-mine-tool = Ver mis herramientas
 master.menu.inventor.toolkit.list-mine-toolkit = Ver mis kits de herramientas
-master.menu.inventor.item.list-mine = Ver mis Items
-
-
+master.menu.inventor.item.list-mine = Ver mis items
 
 # master.menu.user-account ####################################################
 
