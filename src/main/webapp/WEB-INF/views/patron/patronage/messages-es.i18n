@@ -16,6 +16,7 @@ patron.patronage.list.label.moment = Fecha:
 patron.patronage.list.label.optionalLink = Más información (Opcional):
 patron.patronage.list.label.inventor = Inventor:
 patron.patronage.list.label.button.create = Crear patrocinio
+
 patron.patronage.list.label.isPublished = Publicado
 
 patron.patronage.form.label.status = Estado:
@@ -27,6 +28,7 @@ patron.patronage.form.label.optionalLink = Más información (Opcional):
 patron.patronage.form.label.inventors = Inventores:
 patron.patronage.form.label.inventor.username = Inventor:
 patron.patronage.form.label.inventor.email = Correo:
+
 patron.patronage.form.label.inventor.name = Nombre completo:
 patron.patronage.form.label.button.update = Actualizar patrocinio
 patron.patronage.form.label.button.delete = Borrar patrocinio

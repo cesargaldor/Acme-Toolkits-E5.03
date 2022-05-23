@@ -25,6 +25,8 @@ public interface PatronPatronageRepository extends AbstractRepository {
 	Patronage findPatronageById(int id);
 
 	@Query("select p from Patronage p where p.patron.id = :id")
+
+
 	Collection<Patronage> findPatronagesByPatronId(int id);
 
 	//Consulta que devuelve un inventor dado su username

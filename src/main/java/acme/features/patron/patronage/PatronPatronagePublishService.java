@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronage.Patronage;
+
 import acme.entities.patronage.Status;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -68,6 +69,8 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 	public void update(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
 		assert entity != null;
+
+
 		entity.setPublished(true);
 		final Status status = entity.getStatus();
 		entity.setStatus(status);
