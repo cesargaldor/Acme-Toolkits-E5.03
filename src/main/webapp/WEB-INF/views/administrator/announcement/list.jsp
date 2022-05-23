@@ -17,10 +17,8 @@
 
 <acme:list>
 	<acme:list-column code="administrator.announcement.list.label.moment" path="moment" width="20%"/>
-	<acme:list-column code="administrator.announcement.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="administrator.announcement.list.label.body" path="body" width="20%"/>
-	<acme:list-column code="administrator.announcement.list.label.flag" path="flag" width="20%"/>
-	<acme:list-column code="administrator.announcement.list.label.optionalLink" path="optionalLink" width="20%"/>	
+	<acme:list-column code="administrator.announcement.list.label.body" path="body" width="10%"/>
+	<acme:list-column code="administrator.announcement.list.label.title" path="title" width="70%"/>
 </acme:list>
 
-<acme:button code="administrator.announcement.list.label.button.create" action="/administrator/announcement/create"/>
+<acme:button code="administrator.announcement.list.button.create" action="/administrator/announcement/create"/>

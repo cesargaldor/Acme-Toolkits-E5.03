@@ -10,6 +10,7 @@ import acme.entities.configuration.Configuration;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Administrator;
 
+
 @Controller
 public class AdministratorConfigurationController extends AbstractController<Administrator, Configuration> {
 
@@ -17,9 +18,13 @@ public class AdministratorConfigurationController extends AbstractController<Adm
     @Autowired
     protected AdministratorConfigurationShowService    showService;
     
+    @Autowired
+	protected AdministratorConfigurationUpdateService	updateService;
+    
     @PostConstruct
     protected void initialise() {
         super.addCommand("show", this.showService);
+        super.addCommand("update", this.updateService);
     }
 	
 }

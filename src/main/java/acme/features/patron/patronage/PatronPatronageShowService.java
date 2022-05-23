@@ -40,6 +40,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		assert request != null;		
 		assert entity != null;
 		assert model != null;
+		
 		final String username = entity.getInventor().getUserAccount().getUsername();
 		final String email = entity.getInventor().getUserAccount().getIdentity().getEmail();
 		final String fullName = entity.getInventor().getUserAccount().getIdentity().getFullName();
@@ -47,7 +48,7 @@ public class PatronPatronageShowService implements AbstractShowService<Patron, P
 		model.setAttribute("email", email);
 		model.setAttribute("fullName", fullName);
 		request.unbind(entity, model, "status", "code", "legalStuff", "budget", "moment", "optionalLink");
-		if(entity.isPublished()) {model.setAttribute("readonly", true);}
+		model.setAttribute("readonly", entity.isPublished());
 	}
 
 		

@@ -45,8 +45,7 @@ master.menu.authenticated.configuration = Configuración del sistema
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
-master.menu.administrator.announcement.list-all = Ver todos los anuncios
-master.menu.administrator.announcement.list-recent = Ver anuncios recientes
+master.menu.administrator.announcement = Ver anuncios
 master.menu.administrator.announcement.create = Crear anuncio
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
@@ -83,7 +82,6 @@ master.menu.inventor.item.list-mine-component = Ver mis Componentes
 master.menu.inventor.item..tool.list-mine-tool = Ver mis Herramientas
 master.menu.inventor.toolkit.list-mine-toolkit = Ver mis kits de herramientas
 master.menu.inventor.item.list-mine = Ver mis Items
-
 
 
 

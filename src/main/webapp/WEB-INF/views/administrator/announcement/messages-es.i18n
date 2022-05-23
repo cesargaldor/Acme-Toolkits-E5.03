@@ -14,7 +14,7 @@ administrator.announcement.form.label.body = Mensaje:
 administrator.announcement.form.label.flag = Estado:
 administrator.announcement.form.label.optionalLink = Información:
 administrator.announcement.form.label.confirmation = Confirme que el anuncio es correcto
-administrator.announcement.form.label.button.create = Crear
+administrator.announcement.form.button.create = Crear
 
 administrator.announcement.list.label.moment= Fecha:
 administrator.announcement.list.label.title = Título:
@@ -22,5 +22,5 @@ administrator.announcement.list.label.body = Mensaje:
 administrator.announcement.list.label.flag = Estado:
 administrator.announcement.list.label.optionalLink = Información:
 administrator.announcement.list.label.confirmation = Confirme que el anuncio es correcto
-administrator.announcement.list.label.button.create = Crear
+administrator.announcement.list.button.create = Crear
  
