@@ -1,6 +1,0 @@
-recordIndex,reference,title,deadline,salary,score,moreInfo,description
-0,EMP01-JOB01,Title 1,2030/12/11 23:00,"EUR 15,000.98",10.45,http://www.example.com,Lorem ipsum sit dolor amet.
-1,EMP01-JOB02,Title 2,2030/12/11 23:00,"USD 20,000.00",99.98,http://www.example.com,Lorem ipsum sit dolor amet.
-2,EMP01-JOB03,Title 3,2000/01/30 00:00,"USD 25,000.00",50.00,http://www.example.com,Lorem ipsum sit dolor amet.
-3,EMP01-JOB04,Title 4,2030/01/30 00:00,"GBP 30,000.00",0.00,,Lorem ipsum sit dolor amet.
-4,EMP01-JOB05,Title 5,2030/02/28 10:00,"USD 12,345.00",1.45,,Lorem ipsum sit dolor amet.
