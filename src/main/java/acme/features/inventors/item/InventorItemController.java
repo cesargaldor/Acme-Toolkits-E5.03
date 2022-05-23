@@ -1,43 +1,44 @@
-
-package acme.features.inventor.toolkit;
+package acme.features.inventors.item;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import acme.entities.toolkits.Toolkit;
+import acme.entities.items.Item;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class InventorToolkitController extends AbstractController<Inventor, Toolkit> {
+public class InventorItemController extends AbstractController<Inventor, Item> {
 
-	//Internal state 
+	//Internal state  -------------------------------------------------------------------
+	@Autowired
+	protected InventorItemListMineService	listMineService;
 
 	@Autowired
-	protected InventorToolkitListMineService	listMineService;
+	protected InventorItemShowMineService	showMineService;
 
 	@Autowired
-	protected InventorToolkitShowMineService	showMineService;
+	protected InventorItemUpdateService		updateService;
 
 	@Autowired
-	protected InventorToolkitCreateService		createService;
+	protected InventorItemCreateService		createService;
 
 	@Autowired
-	protected InventorToolkitUpdateService		updateService;
+	protected InventorItemDeleteService		deleteService;
 
-	@Autowired
-	protected InventorToolkitDeleteService		deleteService;
+	//Constructors ----------------------------------------------------------------------
 
 
 	@PostConstruct
+
 	protected void initialise() {
 		super.addCommand("list", this.listMineService);
 		super.addCommand("show", this.showMineService);
 		super.addCommand("create", this.createService);
 		super.addCommand("update", this.updateService);
 		super.addCommand("delete", this.deleteService);
-	}
 
+	}
 }
