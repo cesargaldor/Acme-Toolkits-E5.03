@@ -12,8 +12,8 @@
 
 package acme.features.administrator.dashboard;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
 
 import acme.entities.items.Type;
 import acme.entities.patronage.Status;
