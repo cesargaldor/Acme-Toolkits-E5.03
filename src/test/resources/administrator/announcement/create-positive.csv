@@ -1,0 +1,7 @@
+recordIndex,title,body,flag,optionalLink,confirmation
+1,Be careful with your titles and descriptions,Please take in account the pattern we all agreed,true,https://www.good-practices.com,true
+2,You cannot have more than one tool,Remember the maximum quantity of a type of tool is one,true,https://www.acme-toolkits.com,true
+3,Title test title test title test,Announcement body announcement body announcement body announcement body announcement body announcement body,false,,true
+4,How to create an announcement,You have to click on the create button and fill the required information and then submit,false,https://www.more-info.com,true
+5,How to become a patron,Sign in and click on Account in the menu and then click the option of Become a patron,true,https://www.more-info.com,true
+6,This is the last announcement title for test,This is the last announcement body for test,false,https://www.more-info.com,true
