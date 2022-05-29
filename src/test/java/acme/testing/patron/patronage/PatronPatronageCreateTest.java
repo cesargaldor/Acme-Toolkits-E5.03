@@ -4,7 +4,6 @@ package acme.testing.patron.patronage;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.openqa.selenium.By;
 
 import acme.framework.testing.BrowserDriver;
 import acme.testing.TestHarness;
@@ -19,7 +18,7 @@ public class PatronPatronageCreateTest extends TestHarness {
 		final BrowserDriver driver = super.getDriver();
 
 		super.signIn("patron1", "patron1");
-		super.clickOnMenu("Patron", "List all patronages");
+		super.clickOnMenu("Patron", "List patronages");
 		super.clickOnButton("Create patronage");
 
 		super.fillInputBoxIn("status", status);
@@ -29,8 +28,8 @@ public class PatronPatronageCreateTest extends TestHarness {
 		super.fillInputBoxIn("moment", moment);
 		super.fillInputBoxIn("optionalLink", optionalLink);
 		super.fillInputBoxIn("inventorId", inventorId);
-		driver.locateOne(By.xpath("//*[@id=\"inventorId\"]/option[" + inventorId + "]")).click();
-
+		//driver.locateOne(By.xpath("//*[@id=\"inventorId\"]/option[" + inventorId + "]")).click();
+		
 		super.clickOnSubmit("Create patronage");
 		super.signOut();
 	}
