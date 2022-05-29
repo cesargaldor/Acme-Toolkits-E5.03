@@ -1,0 +1,8 @@
+recordIndex,title,body,flag,optionalLink,confirmation
+0,Esto es un titulo de un ejemplo negativo,Esto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largoEsto es un body muy largo,false,,true,true
+1,Esto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largoEsto es un titulo muy largo,Esto es un body,true,http://twitter.com,true,true
+2,Titulo negativo,Body negativo,false,,false
+3,Esto muestra un error en el link opcional,Esto es un body,true,linkopcional.com,true,
+4,,Este tiene un error en el titulo,false,https://twitter.com,true
+5,Error in the body field,,true,https://twitter.com,true
+6,,,,,true

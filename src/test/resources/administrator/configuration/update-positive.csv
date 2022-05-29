@@ -1,0 +1,6 @@
+sysCurrency,allowedCurrencies,strongSpam,strongThreshold,weakSpam,weakThreshold
+EUR,EUR;USD;GBP,sex;hard core;sexo;extremo;viagra;cialis;pene;teta,0.10,sexy;nigeria;you’ve won;has ganado;one million;un millon,0.25
+USD,EUR;USD;GBP,sex;hard core;sexo;extremo;viagra;cialis,0.10,sexy;nigeria;you’ve won;has ganado;one million;un millon,0.25
+EUR,EUR;USD;GBP,sex;hard core;sexo;extremo;viagra;cialis,0.20,sexy;nigeria;you’ve won;has ganado;one million;un millon,0.25
+EUR,EUR;USD;GBP,sex;hard core;sexo;extremo;viagra;cialis,0.21,sexy;nigeria;you’ve won;has ganado;one million;un millon,0.10
+EUR,EUR;CAD;GBP;,sex;hard core;sexo;extremo;viagra;cialis,0.10,sexy;nigeria;you’ve won;has ganado;one million;un millon,0.25

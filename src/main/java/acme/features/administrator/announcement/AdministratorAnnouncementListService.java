@@ -49,7 +49,7 @@ public class AdministratorAnnouncementListService implements AbstractListService
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "body", "moment");
+		request.unbind(entity, model, "title", "body", "moment", "flag");
 	}
 
 	

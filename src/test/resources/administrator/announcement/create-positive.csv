@@ -1,0 +1,7 @@
+recordIndex,title,body,flag,optionalLink,confirmation
+1,Titulo de anuncio 1,Esto es el cuerpo del anuncio 1,true,https://www.twitter.com,true
+2,Titulo de anuncio 2,Esto es el cuerpo del anuncio 2,false,,true
+3,Titulo de anuncio 3,Esto es el cuerpo del anuncio 3,true,,true
+4,Titulo de anuncio 4,Esto es el cuerpo del anuncio 4,true,https://www.youtube.com,true
+5,Titulo de anuncio 5,Esto es el cuerpo del anuncio 5,false,,true
+6,Titulo de anuncio 6,Esto es el cuerpo del anuncio 6,true,,true
