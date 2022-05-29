@@ -14,7 +14,7 @@ public class PatronPatronageListTest  extends TestHarness{
 	public void ListPositiveTest(final int recordIndex, final String status, final String code, final String legalStuff, final String budget,final String moment, final String isPublished) {
 		
 		super.signIn("patron1", "patron1");
-		super.clickOnMenu("Patron", "List all patronages");
+		super.clickOnMenu("Patron", "List patronages");
 		///super.sortListing(recordIndex, isPublished);
 		super.checkColumnHasValue(recordIndex, 0, status);
 		super.checkColumnHasValue(recordIndex, 1, code);
