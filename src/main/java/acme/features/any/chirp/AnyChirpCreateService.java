@@ -20,6 +20,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 	@Autowired
 	protected AnyChirpRepository repository;
 
+	//@Autowired
+	//protected AdministratorSystemConfigurationRepository	scRepo;
 	// AbstractCreateService<Administrator, Chirp> interface --------------
 
 
@@ -36,7 +38,7 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "moment", "title", "author", "body", "email");
+		request.bind(entity, errors, "title", "author", "body", "email");
 	}
 
 	@Override
@@ -46,8 +48,8 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert model != null;
 		
 		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", false);
-		request.unbind(entity, model, "moment", "title", "author", "body", "email");
+		
+		request.unbind(entity, model, "title", "author", "body", "email");
 	}
 
 	@Override
@@ -55,16 +57,12 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert request != null;
 
 		Chirp result;
+		result = new Chirp();
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis());
-
-		result = new Chirp();
-//		result.setTitle("Prueba creando un chirp");
-//		result.setAuthor("César Gálvez");
-//		result.setBody("Lorem ipsum!");
 		result.setMoment(moment);
-//		result.setEmail("cesgaldor@alum.us.es");
+
 
 		return result;
 	}
@@ -84,6 +82,9 @@ public class AnyChirpCreateService implements AbstractCreateService<Any, Chirp> 
 		assert request != null;
 		assert entity != null;
 
+		final Date moment = new Date(System.currentTimeMillis()-1);
+		entity.setMoment(moment);
+		
 		this.repository.save(entity);
 	}
 

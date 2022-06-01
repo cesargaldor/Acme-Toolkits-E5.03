@@ -1,11 +1,12 @@
 
 package acme.features.any.chirp;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
-import java.util.stream.Collectors;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,16 +49,21 @@ public class AnyChirpListService implements AbstractListService<Any, Chirp> {
 	public Collection<Chirp> findMany(final Request<Chirp> request) {
 		assert request != null;
 
-		Collection<Chirp> result;
+		final List<Chirp> res;
+		final List<Chirp> res2 = new ArrayList<Chirp>();
 
-		result = this.repository.findMany();
+		res = this.repository.findMany();
 
-		final LocalDate now = LocalDate.now();
-		final LocalDate minus30days = now.minusMonths(1);
-
-		final Date date = Date.from(minus30days.atStartOfDay(ZoneId.systemDefault()).toInstant());
-
-		return result.stream().filter(r -> r.getMoment().after(date)).collect(Collectors.toList());
+		for(int i = 0; i<res.size();i++) {
+			final Timestamp d = (Timestamp) res.get(i).getMoment();
+			final Duration duration = Duration.between(d.toLocalDateTime(), LocalDateTime.now());
+			final long diff = duration.toDays();
+			if(diff <= 30) {
+				res2.add(res.get(i));
+			}
+			
+		}
+		return res2;
 
 	}
 
