@@ -27,8 +27,17 @@ public class AdministratorConfigurationUpdateTest extends TestHarness {
 		super.fillInputBoxIn("weakThreshold", weakThreshold);
 
 		super.clickOnSubmit("Update");
+		
+		super.clickOnMenu("Administrator", "System configuration");
+		
+		super.checkFormExists();
+		super.checkInputBoxHasValue("sysCurrency", systemCurrency);
+		super.checkInputBoxHasValue("allowedCurrencies", acceptedCurrencies);
+		super.checkInputBoxHasValue("strongSpam", strongSpam);
+		super.checkInputBoxHasValue("strongThreshold", strongThreshold);
+		super.checkInputBoxHasValue("weakSpam", weakSpam);
+		super.checkInputBoxHasValue("weakThreshold", weakThreshold);
 
-		super.checkNotErrorsExist();
 
 		super.signOut();
 	}

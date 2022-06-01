@@ -13,5 +13,9 @@ public interface AdministratorConfigurationRepository extends AbstractRepository
 
 	@Query("select c from Configuration c")
 	Configuration findConfiguration();
+	
+
+	@Query("select c.allowedCurrencies from Configuration c")
+	String findAvaliableCurrencies();
 
 }
