@@ -16,24 +16,16 @@ master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
 
-# master.menu.anonymous #######################################################
-
-master.menu.anonymous = Anonymous
-master.menu.anonymous.all-jobs = List jobs
-master.menu.anonymous.list-shouts = List shouts
-master.menu.anonymous.list-chirps = List chirps
-master.menu.anonymous.list-patronages = List patronages
-master.menu.anonymous.list-items = List items
-
 # master.menu.any #######################################################
 
 master.menu.any = Any
-master.menu.any.list-inventors = List inventors
-master.menu.any.list-patrons = List patrons
-master.menu.any.list-chirps = List chirps
-master.menu.any.list-patronages = List patronages
-master.menu.any.list-items = List items
+master.menu.any.user-account.list = List UserAcounts
+master.menu.any.list-chirps = List Chirps
+master.menu.any.component.list = List Components
+master.menu.any.tool.list = List Tools
 master.menu.any.list-toolkits = List toolkits
+
+
 
 # master.menu.administrator ###################################################
 

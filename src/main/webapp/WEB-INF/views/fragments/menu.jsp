@@ -21,7 +21,7 @@
 		
 		<!-- Rol any -->
 		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
-			<acme:menu-suboption code="master.menu.anonymous.user-account.list" action="/any/user-account/list"/>
+			<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.any.list-chirps" action="/any/chirp/list"/>
 			<acme:menu-separator/>
