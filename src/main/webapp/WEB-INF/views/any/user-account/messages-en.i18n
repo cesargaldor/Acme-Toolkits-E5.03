@@ -8,14 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-any.user-account.form.label.username = Username:
-any.user-account.form.label.name = Name:
-any.user-account.form.label.surname = Surname:
-any.user-account.form.label.email = Email:
-any.user-account.form.label.role = Role:
- 
-any.user-account.list.label.username = Username
-any.user-account.list.label.name = Name
-any.user-account.list.label.surname = Surname
+any.userAccount.list.label.username = Username
+any.userAccount.list.label.email = Email
+any.userAccount.list.label.roles = Roles
 
-any.user-account.list.button.update = Update
+any.userAccount.form.label.username = Username
+any.userAccount.form.label.email = Email
+any.userAccount.form.label.name = Name
+any.userAccount.form.label.surname = Surname

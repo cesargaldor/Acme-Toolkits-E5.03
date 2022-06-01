@@ -1,5 +1,7 @@
 key,username,password,identity,enabled
 user-account-patron-01,patron1,patron1,"UserIdentity{name: 'Patron', surname: 'Uno', email: 'patron1@mail.com', phone: {country-code: '+34', area-code: null, number: '234-446-789'} }",true
 user-account-patron-02,patron2,patron2,"UserIdentity{name: 'Patron', surname: 'Dos', email: 'patron2@mail.com', phone: {country-code: '+34', area-code: null, number: '234-446-548'} }",true
-user-account-inventor-01,inventor1,inventor1,"UserIdentity{name: 'Inventor', surname: 'Uno', email: 'inventor1@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-789'} }",true
-user-account-inventor-02,inventor2,inventor2,"UserIdentity{name: 'Inventor', surname: 'Dos', email: 'inventor2@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-112'} }",true
+user-account-inventor-01,inventor1,inventor1,"UserIdentity{name: 'Inventor1', surname: 'Uno', email: 'inventor1@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-789'} }",true
+user-account-inventor-02,inventor2,inventor2,"UserIdentity{name: 'Inventor2', surname: 'Dos', email: 'inventor2@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-112'} }",true
+user-account-inventor-03,inventor3,inventor3,"UserIdentity{name: 'Inventor3', surname: 'Tres', email: 'inventor3@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-789'} }",true
+user-account-inventor-04,inventor4,inventor4,"UserIdentity{name: 'Inventor4', surname: 'Cuatro', email: 'inventor4@mail.com', phone: {country-code: '+34', area-code: null, number: '635-446-789'} }",true

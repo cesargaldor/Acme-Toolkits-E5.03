@@ -1,6 +1,8 @@
 
 package acme.entities.items;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -56,6 +58,10 @@ public class Item extends AbstractEntity {
 	//@Valid
 	@NotNull
 	protected Money					retailPrice;
+	
+	protected Money convertedPrice;
+	
+	protected Date exchangeDate;
 
 	//optional link
 	@URL
@@ -70,8 +76,8 @@ public class Item extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Inventor				inventor;
 	
-	/*public static Boolean positiveMoney(final Money m) {
+	public static Boolean positiveMoney(final Money m) {
 		return m.getAmount()>=0;
-	}*/
+	}
 
 }

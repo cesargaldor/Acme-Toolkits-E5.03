@@ -22,6 +22,7 @@ public class Quantity extends AbstractEntity{
 	private static final long serialVersionUID = 1L;
 
 	// Atributes
+	@NotNull
 	@Min(1)
 	protected int number;
 	

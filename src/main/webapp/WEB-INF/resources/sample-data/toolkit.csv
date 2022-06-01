@@ -5,3 +5,6 @@ toolkit-03,ABC-123-C,Toolkit3,Esta es la descripción del toolkit 3,Notas de mon
 toolkit-04,ABC-123-D,Toolkit4,Esta es la descripción del toolkit 4,Notas de montaje 4,null,EUR 0.0,true,inventor-02
 toolkit-05,ABC-123-E,Toolkit5,Esta es la descripción del toolkit 5,Notas de montaje 5,null,EUR 110.0,false,inventor-01
 toolkit-06,ABC-123-F,Toolkit6,Esta es la descripción del toolkit 6,Notas de montaje 6,null,EUR 0.0,true,inventor-02
+toolkit-07,RXJ-602-Q,Tolkito7,We are the Seven,Avengers assemble,https://www.acme.org,EUR 0.0,true,inventor-03
+toolkit-08,UTH-377,Tolkito8,The hateful eight,Avengers assemble,https://www.acme.org,EUR 0.0,true,inventor-03
+toolkit-09,BUE-841-I,Tolkito9,This is the ninth toolkit,Avengers assemble,https://lichess.org,GBP 1560.23,false,inventor-03

@@ -41,5 +41,7 @@ public class MoneyExchange {
 	public Money	target;
 
 	public Date		date;
+	
+	public Double rate;
 
 }

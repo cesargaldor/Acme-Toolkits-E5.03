@@ -1,3 +1,5 @@
-key,company,statement,link,key:user-account
-inventor-01,Empresa Inventor,Esto es una prueba inventor,http://youtube.com,user-account-inventor-01
-inventor-02,Empresa Inventor 2,Esto es una prueba inventor 2,http://twitter.com,user-account-inventor-02
+key,key:user-account,company,statement,link
+inventor-01,user-account-inventor-01,Empresa Inventor,Esto es una prueba inventor,https://youtube.com
+inventor-02,user-account-inventor-02,Empresa Inventor 2,Esto es una prueba inventor 2,https://twitter.com
+inventor-03,user-account-inventor-03,!@#~€¬¿?%&/()=,I am the patron number 3,https://example.com
+inventor-04,user-account-inventor-04,1,1,https://example.com
