@@ -1,4 +1,4 @@
-package acme.entities.CHIMPUMs;
+package acme.entities.Chimpums;
 
 import java.util.Date;
 
@@ -21,7 +21,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class CHIMPUM extends AbstractEntity {
+public class Chimpum extends AbstractEntity {
 	
 	private static final long serialVersionUID = 4827750132244297758L;
 	
@@ -29,20 +29,20 @@ public class CHIMPUM extends AbstractEntity {
 	
 	//@Column(unique = true)
 	//@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
-	protected String CODE;
+	protected String code;
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	protected Date 				CREATION_MOMENT;
+	protected Date 				creationMoment;
 	
 	@NotBlank
 	@Length(min=1,max = 100)
-	protected String 			TITLE;
+	protected String 			titulo;
 	
 	@NotBlank
 	@Length(min=1,max=255)
-	protected String 			DESCRIPTION;
+	protected String 			descripcion;
 	
 	
 	//-----------------PERIOD---------------------
@@ -56,10 +56,10 @@ public class CHIMPUM extends AbstractEntity {
 	//--------------------------------------------------------
 	@NotNull
 	@Valid
-	protected Money 			BUDGET;
+	protected Money 			budget;
 	
 	@URL
-	protected String 			LINK;
+	protected String 			link;
 	
 
 }

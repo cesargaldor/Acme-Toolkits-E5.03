@@ -1,0 +1,29 @@
+inventor.chimpum.list.label.code = Código
+inventor.chimpum.list.label.title = Título	
+inventor.chimpum.list.label.budget = Budget
+
+
+inventor.toolkit.form.label.code = Código
+inventor.toolkit.form.label.title = Título
+inventor.toolkit.form.label.description = Descripción
+inventor.toolkit.form.label.assemblyNotes = Instrucciones de montaje
+inventor.toolkit.form.label.totalPrice = Precio Total
+inventor.toolkit.form.label.optionalLink = Más Informacion
+inventor.toolkit.form.button.create = Crear
+inventor.toolkit.form.button.update = Actualizar
+inventor.toolkit.form.label.items = Items
+inventor.toolkit.form.label.${item.name} = ${item.name}
+inventor.toolkit.form.button.delete = Borrar
+inventor.toolkit.form.button.tools = Herramientas
+inventor.toolkit.form.button.components = Componentes
+inventor.toolkit.form.button.publish = Publicar
+
+inventor.chimpum.form.label.spam = Esto es spam
+inventor.chimpum.form.error.duplicated = Código existente
+inventor.chimpum.form.error.past-start-date = La fecha de inicio no puede ser previa al momento de creación
+inventor.chimpum.form.error.past-end-date = La fecha de fin no puede ser previa al momento de creación
+inventor.chimpum.form.error.end-date-previous-to-start-date = La fecha de fin debe ser posterior a la fecha de inicio
+inventor.chimpum.form.error.too-close = La fecha de inicio es demasiado cercana a la de creación (mínimo 1 mes de separación)
+inventor.chimpum.form.error.insufficient-duration = El patrocinio debe durar al menos un mes
+inventor.chimpum.form.error.budget-positive = El presupuesto debe ser mayor o igual a 1
+inventor.chimpum.form.error.retail-price-currency-not-available = Tipo de moneda no disponible en el sistema

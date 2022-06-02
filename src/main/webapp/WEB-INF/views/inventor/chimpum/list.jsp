@@ -17,9 +17,9 @@
 
 <acme:list>
 
-	<acme:list-column code="inventor.CHIMPUM.list.label.CODE" path="CODE" width="10%"/>
-	<acme:list-column code="inventor.CHIMPUM.list.label.TITLE" path="TITLE" width="10%"/>
-	<acme:list-column code="inventor.CHIMPUM.list.label.DESCRIPTION" path="DESCRIPTION" width="80%"/>
+	<acme:list-column code="inventor.chimpum.list.label.code" path="code" width="10%"/>
+	<acme:list-column code="inventor.chimpum.list.label.title" path="title" width="10%"/>
+	<acme:list-column code="inventor.chimpum.list.label.description" path="description" width="80%"/>
 	
 	
 </acme:list>create" action="/inventor/item/create"/>

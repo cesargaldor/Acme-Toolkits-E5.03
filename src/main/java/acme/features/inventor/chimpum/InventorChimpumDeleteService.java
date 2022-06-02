@@ -1,9 +1,9 @@
-package acme.features.inventor.CHIMPUM;
+package acme.features.inventor.chimpum;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.CHIMPUMs.CHIMPUM;
+import acme.entities.Chimpums.Chimpum;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -13,14 +13,14 @@ import acme.roles.Inventor;
 
 
 @Service
-public class InventorCHIMPUMDeleteService implements  AbstractDeleteService<Inventor, CHIMPUM> {
+public class InventorChimpumDeleteService implements  AbstractDeleteService<Inventor, Chimpum> {
 
 		@Autowired
-		protected InventorCHIMPUMRepository repository;
+		protected InventorChimpumRepository repository;
 
 
 		@Override
-		public boolean authorise(final Request<CHIMPUM> request) {
+		public boolean authorise(final Request<Chimpum> request) {
 			assert request != null;
 			boolean result;
 			
@@ -29,50 +29,56 @@ public class InventorCHIMPUMDeleteService implements  AbstractDeleteService<Inve
 			Inventor inventor;
 
 			id = request.getModel().getInteger("id");
-			item = this.repository.findOneItemByCHIMPUMId(id);
+			item = this.repository.findOneItemByChimpumId(id);
 			inventor = item.getInventor();
 			result = item.isPublished(); 
 			return !result && request.isPrincipal(inventor);
 		}
 
 		@Override
-		public CHIMPUM findOne(final Request<CHIMPUM> request) {
+		public Chimpum findOne(final Request<Chimpum> request) {
 			assert request != null;
-			CHIMPUM result;
+			Chimpum result;
 			int id;
 			id = request.getModel().getInteger("id");
-			result = this.repository.findOneCHIMPUMById(id);
+			result = this.repository.findOneChimpumById(id);
 			return result;
 		}
 
 		@Override
-		public void bind(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+		public void bind(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
 
-			request.bind(entity, errors, "TITLE", "CODE", "DESCRIPTION", "startDate", "endDate", "BUDGET", "optionalLink");
+			request.bind(entity, errors, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
 		}
 
 		@Override
-		public void unbind(final Request<CHIMPUM> request, final CHIMPUM entity, final Model model) {
+		public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
 			assert request != null;
 			assert entity != null;
 			assert model != null;
 
-			request.unbind(entity, model, "TITLE", "CODE", "DESCRIPTION", "startDate", "endDate", "BUDGET", "optionalLink");
+			request.unbind(entity, model, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
 		}
 
 		@Override
-		public void validate(final Request<CHIMPUM> request, final CHIMPUM entity, final Errors errors) {
+		public void validate(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
 			assert request != null;
 			assert entity != null;
 			assert errors != null;
 		}
 		@Override
-		public void delete(final Request<CHIMPUM> request, final CHIMPUM entity) {
+		public void delete(final Request<Chimpum> request, final Chimpum entity) {
 			assert request != null;
 			assert entity != null;
+			Item item;
+			
+			item = this.repository.findOneItemByChimpumId(entity.getId());
+			item.setChimpum(null);
+			
+			this.repository.save(item);
 			this.repository.delete(entity);
 		}
 

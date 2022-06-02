@@ -13,7 +13,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.CHIMPUMs.CHIMPUM;
+import acme.entities.Chimpums.Chimpum;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
@@ -75,6 +75,6 @@ public class Item extends AbstractEntity {
 	//------------------------------CONTROL CHECK --------------------
 	@Valid
 	@OneToOne(optional=true)
-	protected CHIMPUM CHIMPUM;
+	protected Chimpum chimpum;
 
 }

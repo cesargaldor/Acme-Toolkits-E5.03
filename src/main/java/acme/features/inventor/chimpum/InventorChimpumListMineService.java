@@ -1,11 +1,11 @@
-package acme.features.inventor.CHIMPUM;
+package acme.features.inventor.chimpum;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.CHIMPUMs.CHIMPUM;
+import acme.entities.Chimpums.Chimpum;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.Principal;
@@ -14,42 +14,42 @@ import acme.roles.Inventor;
 
 
 @Service
-public class InventorCHIMPUMListMineService implements AbstractListService<Inventor, CHIMPUM> {
+public class InventorChimpumListMineService implements AbstractListService<Inventor, Chimpum> {
 
 	
 	@Autowired
-	protected InventorCHIMPUMRepository repository;
+	protected InventorChimpumRepository repository;
 
 	// AbstractListService<Inventor, Item> interface ---------------------------
 
 	@Override
-	public boolean authorise(final Request<CHIMPUM> request) {
+	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 
 		return true;
 	}
 	
 	@Override
-	public Collection<CHIMPUM> findMany(final Request<CHIMPUM> request) {
+	public Collection<Chimpum> findMany(final Request<Chimpum> request) {
 		assert request != null;
 
-		Collection<CHIMPUM> result;
+		Collection<Chimpum> result;
 		Principal principal;
 
 		principal = request.getPrincipal();
-		result = this.repository.findManyCHIMPUMsByInventorId(principal.getActiveRoleId());
+		result = this.repository.findManyChimpumsByInventorId(principal.getActiveRoleId());
 
 		return result;
 	}
 	
 	
 	@Override
-	public void unbind(final Request<CHIMPUM> request, final CHIMPUM entity, final Model model) {
+	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "TITLE", "CODE", "BUDGET");
+		request.unbind(entity, model, "title", "code", "budget");
 	}
 
 
