@@ -18,16 +18,7 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<!-- Anonimo 
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.all-jobs" action="/anonymous/job/list"/>			
-			<acme:menu-suboption code="master.menu.anonymous.list-shouts" action="/anonymous/shout/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.list-chirps" action="/any/chirp/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.list-components" action="/any/component/list"/>
-			<acme:menu-suboption code="master.menu.anonymous.list-patronages" action="/anonymous/patronage/list"/>
-		</acme:menu-option>
-		-->
-		
+	
 		<!-- Rol any -->
 		<acme:menu-option code="master.menu.any" access="isAnonymous() || hasRole('Any')">
 			<acme:menu-suboption code="master.menu.any.list-inventors" action="/any/user-account/list-inventor"/>
@@ -77,6 +68,8 @@
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
 			<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
 			<acme:menu-suboption code="master.menu.inventor.tool.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.inventor.chimpum.list-mine" action="/inventor/chimpum/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list"/>
 			<acme:menu-separator/>
