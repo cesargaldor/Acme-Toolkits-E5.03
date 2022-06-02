@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
+import acme.entities.items.Type;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -36,7 +37,7 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "type", "name", "code", "technology", "description", "retailPrice", "optionalLink");
+		request.unbind(entity, model, "name", "code", "technology", "description");
 	}
 
 	@Override
@@ -44,13 +45,17 @@ public class AnyItemListService implements AbstractListService<Any, Item> {
 		assert request != null;
 
 		Collection<Item> result;
+		Type type;
+		type= Type.valueOf((String)request.getModel().getAttribute("type"));
 
-		result = this.repository.findMany();
+		result = this.repository.findManyItemsByAvailability(type);
 		
-		//return result.stream().filter(r->r.getType().equals(Type.COMPONENT)).collect(Collectors.toList());
-		
+		if(request.getModel().hasAttribute("masterId")) {
+			final int masterId = request.getModel().getInteger("masterId");
+			result = this.repository.findManyItemsByMasterId(type, masterId);
+		}
+
 		return result;
-
 	}
 
 }
