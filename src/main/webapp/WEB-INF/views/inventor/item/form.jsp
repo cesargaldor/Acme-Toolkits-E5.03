@@ -18,31 +18,28 @@
 <acme:form>
 	<acme:input-textbox code="inventor.item.form.label.name" path="name"/>
 	<acme:input-textbox code="inventor.item.form.label.code" path="code"/>
-	
-	<jstl:if test="${command == 'show'}">
-		<acme:input-textbox code="inventor.item.form.label.type" path="type" readonly="true"/>
-	</jstl:if>
-	
-	<jstl:if test="${command != 'show'}">
-		<acme:input-select code="inventor.item.form.label.type" path="type">
-			<acme:input-option code="COMPONENT" value="COMPONENT" selected="${type == 'COMPONENT'}"/>
-			<acme:input-option code="TOOL" value="TOOL" selected="${type == 'TOOL'}"/>
-		</acme:input-select>
-	</jstl:if>
-		
 	<acme:input-textbox code="inventor.item.form.label.technology" path="technology"/>
 	<acme:input-textbox code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="inventor.item.form.label.optionalLink" path="optionalLink"/>
 	
 	
+	
 	<jstl:if test="${command == 'create'}">
-		<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create"/>
+		<acme:submit code="inventor.item.form.button.create" action="/inventor/item/create?type=${type}"/>
+	</jstl:if>
+	
+	
+	<jstl:if test="${acme:anyOf(command, 'show, update, delete, publish') && published == 'false'}">
+		<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
+		<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish"/>
+		<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
+		<acme:submit code="inventor.item.form.button.create-CHIMPUM" action="/inventor/CHIMPUM/create?masterId=${id}" />
 	</jstl:if>
 	
 	<jstl:if test="${command == 'show'}">
-		<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
-		<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
+		<acme:button code="inventor.item.form.button.CHIMPUM" action="/inventor/CHIMPUM/show?id=${CHIMPUM.id}"/>
 	</jstl:if>
+	
 </acme:form> 
 

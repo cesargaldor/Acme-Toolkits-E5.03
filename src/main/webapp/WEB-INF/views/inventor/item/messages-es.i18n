@@ -38,3 +38,6 @@ inventor.component.list.label.name = Nombre
 inventor.component.list.label.code = Código
 inventor.component.list.label.technology = Tecnología
 inventor.component.list.label.description = Descripción 
+
+inventor.item.form.button.create-CHIMPUM = Crear CHIMPUM
+inventor.item.form.button.CHIMPUM = CHIMPUM

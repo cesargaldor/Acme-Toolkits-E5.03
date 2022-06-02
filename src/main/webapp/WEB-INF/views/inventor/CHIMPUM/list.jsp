@@ -16,16 +16,10 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="inventor.component.list.label.name" path="name" width="10%"/>
-	<acme:list-column code="inventor.component.list.label.code" path="code" width="10%"/>
-	<acme:list-column code="inventor.component.list.label.technology" path="technology" width="40%"/>
-</acme:list>
 
-<jstl:if test="${type=='TOOL'}">
-	<acme:button code="inventor.item.list.button.create"
-		action="/inventor/item/create?type=TOOL" />
-</jstl:if>
-<jstl:if test="${type == 'COMPONENT'}">
-	<acme:button code="inventor.item.list.button.create"
-		action="/inventor/item/create?type=COMPONENT" />
-</jstl:if>
+	<acme:list-column code="inventor.CHIMPUM.list.label.CODE" path="CODE" width="10%"/>
+	<acme:list-column code="inventor.CHIMPUM.list.label.TITLE" path="TITLE" width="10%"/>
+	<acme:list-column code="inventor.CHIMPUM.list.label.DESCRIPTION" path="DESCRIPTION" width="80%"/>
+	
+	
+</acme:list>create" action="/inventor/item/create"/>
