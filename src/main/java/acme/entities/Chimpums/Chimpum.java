@@ -59,7 +59,7 @@ public class Chimpum extends AbstractEntity {
 	protected Money 			budget;
 	
 	@URL
-	protected String 			link;
+	protected String 			optionalLink;
 	
 
 }
