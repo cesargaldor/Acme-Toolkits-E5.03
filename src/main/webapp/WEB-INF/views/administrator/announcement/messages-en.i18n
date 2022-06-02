@@ -9,25 +9,17 @@
 # they accept any liabilities with respect to them.
 
 
-
-
 administrator.announcement.form.label.moment= Date:
 administrator.announcement.form.label.title = Title:
 administrator.announcement.form.label.body = Message:
-administrator.announcement.form.label.flag = Status:
+administrator.announcement.form.label.flag = Critical
 administrator.announcement.form.label.optionalLink = Aditional Information:
 administrator.announcement.form.label.confirmation = Confirm that the announcement is correct
 administrator.announcement.form.button.create = Create
 
-
-
-
-
-
-administrator.announcement.list.label.moment = Date:
-administrator.announcement.list.label.title = Title:
-administrator.announcement.list.label.body = Message:
-administrator.announcement.list.label.flag = Status:
-administrator.announcement.list.label.optionalLink = Aditional Information:
-administrator.announcement.list.label.confirmation = Confirm that the announcement is correct
+administrator.announcement.list.label.moment = Date
+administrator.announcement.list.label.title = Title
+administrator.announcement.list.label.body = Message
+administrator.announcement.list.label.flag = Critical
+administrator.announcement.list.label.optionalLink = Aditional Information
 administrator.announcement.list.button.create = Create

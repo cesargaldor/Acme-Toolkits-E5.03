@@ -1,5 +1,5 @@
 recordIndex,status,code,legalStuff,budget,moment,isPublished
-0,ACCEPTED,ABC-123-D,Cantidad acordada,EUR 230.00,2022/05/27 15:32,true
-1,ACCEPTED,ABC-123-E,Cantidad acordada,USD 670.00,2022/05/27 16:32,false
-2,ACCEPTED,ABC-123-F,Cantidad acordada,EUR 120.00,2022/05/27 17:32,false
-3,ACCEPTED,ABC-123-G,Cantidad acordada,EUR 80.00,2022/05/27 18:32,false
+0,ACCEPTED,ABC-123-D,Cantidad acordada,EUR 230.00,2022/07/27 15:32,true
+1,ACCEPTED,ABC-123-E,Cantidad acordada,USD 670.00,2022/07/27 16:32,false
+2,ACCEPTED,ABC-123-F,Cantidad acordada,EUR 120.00,2022/07/27 17:32,false
+3,ACCEPTED,ABC-123-G,Cantidad acordada,EUR 80.00,2022/07/27 18:32,false

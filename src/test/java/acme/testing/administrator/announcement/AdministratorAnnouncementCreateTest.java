@@ -1,4 +1,5 @@
 package acme.testing.administrator.announcement;
+
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -10,58 +11,42 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	
-	public void positiveTest(final int recordIndex, final String title, final String body, final String critical, final String link) {
+	public void createAnnouncementPositiveTest(final int recordIndex, final String title, final String body, final String critical, final String link, final String confirmation) {
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Administrator", "Create announcement");
-		super.checkFormExists();
-		
-		super.fillInputBoxIn("title", title);
-		super.fillInputBoxIn("flag", critical);
-		super.fillInputBoxIn("body", body);
-		
-		super.fillInputBoxIn("optionalLink", link);
-		super.fillInputBoxIn("confirmation", "true");
+		super.clickOnMenu("Administrator", "List announcemets");
+		super.checkListingExists();
 
+		super.clickOnButton("Create");
+
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("optionalLink", link);
+		super.fillInputBoxIn("body", body);
+		super.fillInputBoxIn("flag", critical);
+		super.fillInputBoxIn("confirmation", confirmation);
 		super.clickOnSubmit("Create");
 
-		super.clickOnMenu("Any", "Announcement");
-
-		super.checkListingExists();
-		super.sortListing(2, "desc");
-		super.checkColumnHasValue(recordIndex, 0, title);
-		super.checkColumnHasValue(recordIndex, 1, critical);
-
-		super.clickOnListingRecord(recordIndex);
-
-		super.checkFormExists();
-		super.checkInputBoxHasValue("title", title);
-		super.checkInputBoxHasValue("body", body);
-		super.checkInputBoxHasValue("flag", critical);
-		super.checkInputBoxHasValue("optionalLink", link);
+		super.checkNotErrorsExist();
 
 		super.signOut();
 	}
-	
-	 
+
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/announcement/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void negativeTest(final int recordIndex, final String title, final String body, final String critical, final String link) {
-		
-	
+	public void createAnnouncementNegativeTest(final int recordIndex, final String title, final String body, final String critical, final String link, final String confirmation) {
 
 		super.signIn("administrator", "administrator");
 
-		super.clickOnMenu("Administrator", "Create announcement");
+		super.clickOnMenu("Administrator", "List announcemets");
+		super.clickOnButton("Create");
 		super.checkFormExists();
 
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("body", body);
 		super.fillInputBoxIn("flag", critical);
 		super.fillInputBoxIn("optionalLink", link);
-		super.fillInputBoxIn("confirmation", "true");
+		super.fillInputBoxIn("confirmation", confirmation);
 
 		super.clickOnSubmit("Create");
 
@@ -69,4 +54,5 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 
 		super.signOut();
 	}
+
 }
