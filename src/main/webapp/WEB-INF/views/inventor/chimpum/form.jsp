@@ -20,48 +20,48 @@
 
 	<jstl:choose>
 		<jstl:when test="${command == 'create'}">
-			<acme:input-textbox code="inventor.chimpum.form.label.code"
+			<acme:input-textbox code="inventor.gussmo.form.label.code"
 				path="code" placeholder="ABC-123-A" />
 		</jstl:when>
 		<jstl:otherwise>
-			<acme:input-textbox code="inventor.chimpum.form.label.code"
+			<acme:input-textbox code="inventor.gussmo.form.label.code"
 				path="code" placeholder="ABC-123-A" readonly="true" />
 		</jstl:otherwise>
 	</jstl:choose>
 
-	<acme:input-textbox code="inventor.chimpum.form.label.title"
-		path="title" />
-	<acme:input-textarea code="inventor.chimpum.form.label.description"
-		path="description" />
+	<acme:input-textbox code="inventor.gussmo.form.label.name"
+		path="name" />
+	<acme:input-textarea code="inventor.gussmo.form.label.explanation"
+		path="explanation" />
 	<jstl:if test="${command == 'update'}">
-		<acme:input-moment code="inventor.chimpum.form.label.creationMoment"
+		<acme:input-moment code="inventor.gussmo.form.label.creationMoment"
 		path="creationMoment" readonly="true"/>
 	</jstl:if>
-	<acme:input-moment code="inventor.chimpum.form.label.startDate"
+	<acme:input-moment code="inventor.gussmo.form.label.startDate"
 		path="startDate" />
-	<acme:input-moment code="inventor.chimpum.form.label.endDate"
+	<acme:input-moment code="inventor.gussmo.form.label.endDate"
 		path="endDate" />
-	<acme:input-money code="inventor.chimpum.form.label.budget"
-		path="budget" />
-	<acme:input-url code="inventor.chimpum.form.label.optionalLink"
+	<acme:input-money code="inventor.gussmo.form.label.ration"
+		path="ration" />
+	<acme:input-url code="inventor.gussmo.form.label.optionalLink"
 		path="optionalLink" />
 
 	
 	<jstl:choose>
 		<jstl:when
 			test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
-			<acme:submit code="inventor.chimpum.form.button.update"
-				action="/inventor/chimpum/update" />
-			<acme:submit code="inventor.chimpum.form.button.delete"
-				action="/inventor/chimpum/delete" />
+			<acme:submit code="inventor.gussmo.form.button.update"
+				action="/inventor/gussmo/update" />
+			<acme:submit code="inventor.gussmo.form.button.delete"
+				action="/inventor/gussmo/delete" />
 		</jstl:when>
 		<jstl:when test="${command == 'create'}">
-			<acme:submit code="inventor.chimpum.form.button.create"
-				action="/inventor/chimpum/create?masterId=${masterId}" />
+			<acme:submit code="inventor.gussmo.form.button.create"
+				action="/inventor/gussmo/create?masterId=${masterId}" />
 		</jstl:when>
 	</jstl:choose>
 	<jstl:if test="${command == 'show'}">
-		<acme:button code="inventor.chimpum.form.button.item"
+		<acme:button code="inventor.gussmo.form.button.item"
 			action="/inventor/item/show?id=${masterId}" />
 	</jstl:if>
 </acme:form>
