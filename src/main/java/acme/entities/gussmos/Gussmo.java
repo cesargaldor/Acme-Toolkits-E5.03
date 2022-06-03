@@ -1,4 +1,4 @@
-package acme.entities.chimpums;
+package acme.entities.gussmos;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.gussmo;
 
 import javax.annotation.PostConstruct;
 

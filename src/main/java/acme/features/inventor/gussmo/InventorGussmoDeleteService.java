@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 
-import acme.entities.chimpums.Gussmo;
+import acme.entities.gussmos.Gussmo;
 import acme.entities.items.Item;
 import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;

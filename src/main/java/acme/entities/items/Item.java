@@ -14,7 +14,7 @@ import org.dom4j.tree.AbstractEntity;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.chimpums.Gussmo;
+import acme.entities.gussmos.Gussmo;
 import acme.framework.datatypes.Money;
 import acme.roles.Inventor;
 import lombok.Getter;

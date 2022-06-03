@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
-import acme.entities.chimpums.Gussmo;
+import acme.entities.gussmos.Gussmo;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
