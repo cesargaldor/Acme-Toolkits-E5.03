@@ -80,6 +80,7 @@ master.menu.inventor.item.list-mine-component = List my Components
 master.menu.inventor.toolkit.list-mine-toolkit = List my Toolkits
 master.menu.inventor.item.list-mine = List my Items
 master.menu.inventor.tool.list-mine-tool= List my tools
+master.menu.inventor.chimpum.list-mine= List my chimpum
 
 # master.menu.user-account ####################################################
 
