@@ -171,12 +171,12 @@
  	<acme:input-money code="administrator.administratordashboard.form.label.deviationProposedPatronages" path="deviationProposedPatronages"/>
  	</acme:form> 
  	<br><br><br><br>
- 		<acme:input-textbox code="administrator.administratordashboard.form.label.ratioOfChimpums" path="ratioOfChimpums"/>
+ 		<acme:input-textbox code="administrator.administratordashboard.form.label.ratioOfGussmos" path="ratioOfGussmos"/>
  		<br>
- 	<acme:message code="administrator.administratordashboard.form.label.maxBudgetOfChimpums"/>
+ 	<acme:message code="administrator.administratordashboard.form.label.maxBudgetOfGussmos"/>
 	<table class="table small-table">
-		<caption>Maximum Budget of Chimpums</caption>	
- 		<jstl:forEach items="${maxBudgetOfChimpums}" var="c"> 
+		<caption>Maximum Budget of Gussmos</caption>	
+ 		<jstl:forEach items="${maxBudgetOfGussmos}" var="c"> 
  			<tr>	
 				<th scope="row">	
 					<acme:print value="${c.currency}"/>
@@ -188,10 +188,10 @@
  		</jstl:forEach>
  	</table>
  	<br><br>
- 	<acme:message code="administrator.administratordashboard.form.label.minBudgetOfChimpums"/>
+ 	<acme:message code="administrator.administratordashboard.form.label.minBudgetOfGussmos"/>
  	<table class="table small-table">
- 		<caption>Minimum Budget of Chimpums</caption>	
- 		<jstl:forEach items="${minBudgetOfChimpums}" var="c"> 
+ 		<caption>Minimum Budget of Gussmos</caption>	
+ 		<jstl:forEach items="${minBudgetOfGussmos}" var="c"> 
  			<tr>	
 				<th scope="row">	
 					<acme:print value="${c.currency}"/>
@@ -203,10 +203,10 @@
  		</jstl:forEach>
  	</table>
  	<br><br>
- 	<acme:message code="administrator.administratordashboard.form.label.averageBudgetOfChimpums"/>
+ 	<acme:message code="administrator.administratordashboard.form.label.averageBudgetOfGussmos"/>
  	<table class="table small-table">
- 		<caption>Average Budget of Chimpums</caption>	
- 		<jstl:forEach items="${averageBudgetOfChimpums}" var="c"> 
+ 		<caption>Average Budget of Gussmos</caption>	
+ 		<jstl:forEach items="${averageBudgetOfGussmos}" var="c"> 
  			<tr>	
 				<th scope="row">	
 					<acme:print value="${c.currency}"/>
@@ -219,10 +219,10 @@
  		
  	</table>
  	<br><br>
- 	<acme:message code="administrator.administratordashboard.form.label.deviationBudgetOfChimpums"/>
+ 	<acme:message code="administrator.administratordashboard.form.label.deviationBudgetOfGussmos"/>
  	<table class="table small-table">
- 		<caption>Deviation of the Budget of Chimpums</caption>	
- 		<jstl:forEach items="${deviationBudgetOfChimpums}" var="c"> 
+ 		<caption>Deviation of the Budget of Gussmos</caption>	
+ 		<jstl:forEach items="${deviationBudgetOfGussmos}" var="c"> 
  			<tr>	
 				<th scope="row">	
 					<acme:print value="${c.currency}"/>
