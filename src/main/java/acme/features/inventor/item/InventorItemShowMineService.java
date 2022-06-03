@@ -1,12 +1,12 @@
 package acme.features.inventor.item;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import acme.entities.items.Item;
-import acme.framework.components.models.Model;
-import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -59,6 +59,6 @@ public class InventorItemShowMineService implements AbstractShowService<Inventor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name", "type", "code", "technology", "description", "retailPrice", "optionalLink", "published","chimpum");
+		request.unbind(entity, model, "name", "type", "code", "technology", "description", "retailPrice", "optionalLink", "published","gussmo");
 	}
 }

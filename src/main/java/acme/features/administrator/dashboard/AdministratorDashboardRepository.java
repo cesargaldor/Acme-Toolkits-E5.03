@@ -67,66 +67,66 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 		
 		
 	
-	@Query("select avg(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED GROUP BY p.status")
+	@Query("select avg(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED GROUP BY p.status")
 	Double averageBudgetProposedPatronages();
 		
-	@Query("select avg(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED GROUP BY p.status")
+	@Query("select avg(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED GROUP BY p.status")
 	Double averageBudgetAcceptedPatronages();
 		
-	@Query("select avg(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED GROUP BY p.status")
+	@Query("select avg(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED GROUP BY p.status")
 	Double averageBudgetDeniedPatronages();
 		
 		
 		
-	@Query("select stddev(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
+	@Query("select stddev(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
 	Double deviationBudgetProposedPatronages();
 
-	@Query("select stddev(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
+	@Query("select stddev(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
 	Double deviationBudgetAcceptedPatronages();
 		
-	@Query("select stddev(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
+	@Query("select stddev(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
 	Double deviationBudgetDeniedPatronages();
 		
 		
 		
-	@Query("select min(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
+	@Query("select min(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
 	Double minBudgetProposedPatronages();
 		
-	@Query("select min(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
+	@Query("select min(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
 	Double minBudgetAcceptedPatronages();
 		
-	@Query("select min(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
+	@Query("select min(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
 	Double minBudgetDeniedPatronages();
 		
 
 		
-	@Query("select max(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
+	@Query("select max(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.PROPOSED ")
 	Double maxBudgetProposedPatronages();
 		
-	@Query("select max(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
+	@Query("select max(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.ACCEPTED ")
 	Double maxBudgetAcceptedPatronages();
 		
-	@Query("select max(p.budget.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
+	@Query("select max(p.ration.amount) from Patronage p where p.status = acme.entities.patronage.Status.DENIED ")
 	Double maxBudgetDeniedPatronages();
 	
-	//Chimpums controlcheck
+	//Gussmos controlcheck
 		
-	@Query("select count(i.chimpum) from Item i where i.chimpum.id != null ")
-	Integer getArtefactWithChimpum();
+	@Query("select count(i.gussmo) from Item i where i.gussmo.id != null ")
+	Integer getArtefactWithGussmo();
 		
-	@Query("select count(i) from Item i") // where type==Artefact") <--------- Añadir para el examen
+	@Query("select count(i) from Item i where i.type==COMPONENT") 
 	Integer getTotalArtefacts();
 		
-	@Query("select avg(i.chimpum.budget.amount),i.chimpum.budget.currency from Item i "/** where i.type = 'COMPONENT'*/+ "GROUP BY i.chimpum.budget.currency")
-	List<Object[]> averageBudgetOfChimpums();
+	@Query("select avg(i.gussmo.ration.amount),i.gussmo.ration.currency from Item i  where i.type = 'COMPONENT' GROUP BY i.gussmo.ration.currency")
+	List<Object[]> averageBudgetOfGussmos();
 		
-	@Query("select max(i.chimpum.budget.amount),i.chimpum.budget.currency from Item i "/** where i.type = 'COMPONENT'*/+ "GROUP BY i.chimpum.budget.currency")
-	List<Object[]> maxBudgetOfChimpums();
+	@Query("select max(i.gussmo.ration.amount),i.gussmo.ration.currency from Item i  where i.type = 'COMPONENT' GROUP BY i.gussmo.ration.currency")
+	List<Object[]> maxBudgetOfGussmos();
 		
-	@Query("select min(i.chimpum.budget.amount),i.chimpum.budget.currency from Item i "/** where i.type = 'COMPONENT'*/+ "GROUP BY i.chimpum.budget.currency")
-	List<Object[]> minBudgetOfChimpums();
+	@Query("select min(i.gussmo.ration.amount),i.gussmo.ration.currency from Item i  where i.type = 'COMPONENT' GROUP BY i.gussmo.ration.currency")
+	List<Object[]> minBudgetOfGussmos();
 		
-	@Query("select stddev(i.chimpum.budget.amount),i.chimpum.budget.currency from Item i "/** where i.type = 'COMPONENT'*/+ "GROUP BY i.chimpum.budget.currency")
-	List<Object[]> deviationBudgetOfChimpums();
+	@Query("select stddev(i.gussmo.ration.amount),i.gussmo.ration.currency from Item i  where i.type = 'COMPONENT' GROUP BY i.gussmo.ration.currency")
+	List<Object[]> deviationBudgetOfGussmos();
 	
 }

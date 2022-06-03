@@ -1,26 +1,25 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.gussmo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
-import acme.entities.chimpums.Chimpum;
+import acme.entities.chimpums.Gussmo;
 import acme.entities.items.Item;
-import acme.framework.components.models.Model;
-import acme.framework.controllers.Request;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumShowMineService implements AbstractShowService<Inventor, Chimpum> {
+public class InventorGussmoShowMineService implements AbstractShowService<Inventor, Gussmo> {
 
 	
 	@Autowired
-	protected InventorChimpumRepository repository;
+	protected InventorGussmoRepository repository;
 
 	// AbstractShowService<Inventor, Item> interface ---------------------------
 
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Gussmo> request) {
 		assert request != null;
 
 		int id;
@@ -28,14 +27,14 @@ public class InventorChimpumShowMineService implements AbstractShowService<Inven
 		Inventor inventor;
 
 		id = request.getModel().getInteger("id");
-		item = this.repository.findOneItemByChimpumId(id);
+		item = this.repository.findOneItemByGussmoId(id);
 		inventor = item.getInventor();
 
 		return request.isPrincipal(inventor);
 	}
 
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Gussmo> request, final Gussmo entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -44,20 +43,20 @@ public class InventorChimpumShowMineService implements AbstractShowService<Inven
 		int id;
 		final int masterId;
 		id=request.getModel().getInteger("id");
-		item=this.repository.findOneItemByChimpumId(id);
+		item=this.repository.findOneItemByGussmoId(id);
 		masterId=item.getId();	
-		request.unbind(entity, model, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
+		request.unbind(entity, model, "name", "code", "explanation", "startDate", "endDate", "ration", "optionalLink");
 		model.setAttribute("masterId", masterId);
 		model.setAttribute("published", item.isPublished());
 	}
 	
 	@Override
-	public Chimpum findOne(final Request<Chimpum> request) {
+	public Gussmo findOne(final Request<Gussmo> request) {
 		assert request != null;
-		Chimpum result;
+		Gussmo result;
 		int id;
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneChimpumById(id);
+		result = this.repository.findOneGussmoById(id);
 
 		return result;
 	}

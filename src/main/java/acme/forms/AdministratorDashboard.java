@@ -27,6 +27,6 @@ public class AdministratorDashboard {
 	Map<String,Double>					patronagesStats;
 	
 //Control CHECK
-	Double 						ratioOfChimpums;
-	Map<String,List<Money>>			chimpumStats;
+	Double 						ratioOfGussmos;
+	Map<String,List<Money>>			gussmoStats;
 }

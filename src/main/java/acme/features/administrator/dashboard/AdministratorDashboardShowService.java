@@ -8,10 +8,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import acme.forms.AdministratorDashboard;
-import acme.framework.components.models.Model;
-import acme.framework.controllers.Request;
 import acme.framework.datatypes.Money;
 import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
@@ -63,19 +62,19 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double deviationPriceOfProposedPatronages = this.repository.deviationBudgetProposedPatronages();
 		
 	//CONTROL CHECK
-		final Double ratioOfChimpums = ((double)this.repository.getArtefactWithChimpum()/this.repository.getTotalArtefacts());
+		final Double ratioOfGussmos = ((double)this.repository.getArtefactWithGussmo()/this.repository.getTotalArtefacts());
 		
-		final Map<String, List<Money>> budgetOfChimpumsStats = new HashMap<>();
+		final Map<String, List<Money>> budgetOfGussmosStats = new HashMap<>();
 		
-		final List<Object[]> maxBudgetOfChimpums = this.repository.maxBudgetOfChimpums();
-		final List<Object[]> minBudgetOfChimpums = this.repository.minBudgetOfChimpums();
-		final List<Object[]> averageBudgetOfChimpums = this.repository.averageBudgetOfChimpums();
-		final List<Object[]> deviationBudgetOfChimpums = this.repository.deviationBudgetOfChimpums();
+		final List<Object[]> maxBudgetOfGussmos = this.repository.maxBudgetOfGussmos();
+		final List<Object[]> minBudgetOfGussmos = this.repository.minBudgetOfGussmos();
+		final List<Object[]> averageBudgetOfGussmos = this.repository.averageBudgetOfGussmos();
+		final List<Object[]> deviationBudgetOfGussmos = this.repository.deviationBudgetOfGussmos();
 		
-		budgetOfChimpumsStats.put("max", this.objectListToMoneyList(maxBudgetOfChimpums));
-		budgetOfChimpumsStats.put("min", this.objectListToMoneyList(minBudgetOfChimpums));
-		budgetOfChimpumsStats.put("average", this.objectListToMoneyList(averageBudgetOfChimpums));
-		budgetOfChimpumsStats.put("deviation", this.objectListToMoneyList(deviationBudgetOfChimpums));
+		budgetOfGussmosStats.put("max", this.objectListToMoneyList(maxBudgetOfGussmos));
+		budgetOfGussmosStats.put("min", this.objectListToMoneyList(minBudgetOfGussmos));
+		budgetOfGussmosStats.put("average", this.objectListToMoneyList(averageBudgetOfGussmos));
+		budgetOfGussmosStats.put("deviation", this.objectListToMoneyList(deviationBudgetOfGussmos));
 	
 		final Map<String, List<Pair<Double,String>>> priceOfComponentsStats = new HashMap<>();
 		
@@ -126,8 +125,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setPriceOfToolsStats(priceOfToolsStats);
 		result.setPatronagesStats(patronageStats);
 		//control check
-		result.setRatioOfChimpums(ratioOfChimpums);
-		result.setChimpumStats(budgetOfChimpumsStats);
+		result.setRatioOfGussmos(ratioOfGussmos);
+		result.setGussmoStats(budgetOfGussmosStats);
 
 		return result;
 	}
@@ -139,7 +138,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "totalNumComponents", "totalNumTools","ratioOfChimpums");
+		request.unbind(entity, model, "totalNumComponents", "totalNumTools","ratioOfGussmos");
 		model.setAttribute("numberOfAcceptedPatronages", entity.getNumberOfPatronages().get("accepted"));
 		model.setAttribute("numberOfDeniedPatronages", entity.getNumberOfPatronages().get("denied"));
 		model.setAttribute("numberOfProposedPatronages", entity.getNumberOfPatronages().get("proposed"));
@@ -164,10 +163,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		model.setAttribute("averageProposedPatronages", entity.getPatronagesStats().get("averageProposed"));
 		model.setAttribute("deviationProposedPatronages", entity.getPatronagesStats().get("deviationProposed"));
 	//CHIMPUMS
-		model.setAttribute("maxBudgetOfChimpums", entity.getChimpumStats().get("max"));
-		model.setAttribute("minBudgetOfChimpums", entity.getChimpumStats().get("min"));
-		model.setAttribute("averageBudgetOfChimpums", entity.getChimpumStats().get("average"));
-		model.setAttribute("deviationBudgetOfChimpums", entity.getChimpumStats().get("deviation"));
+		model.setAttribute("maxBudgetOfGussmos", entity.getGussmoStats().get("max"));
+		model.setAttribute("minBudgetOfGussmos", entity.getGussmoStats().get("min"));
+		model.setAttribute("averageBudgetOfGussmos", entity.getGussmoStats().get("average"));
+		model.setAttribute("deviationBudgetOfGussmos", entity.getGussmoStats().get("deviation"));
 	
 	}
 	

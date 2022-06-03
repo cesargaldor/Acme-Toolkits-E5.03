@@ -1,4 +1,4 @@
-package acme.features.inventor.chimpum;
+package acme.features.inventor.gussmo;
 
 
 import java.util.Calendar;
@@ -6,28 +6,28 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 
-import acme.entities.chimpums.Chimpum;
+import acme.entities.chimpums.Gussmo;
 import acme.entities.items.Item;
-import acme.framework.components.models.Model;
-import acme.framework.controllers.Errors;
-import acme.framework.controllers.Request;
+import acme.entities.items.Type;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorChimpumCreateService implements AbstractCreateService<Inventor, Chimpum> {
+public class InventorGussmoCreateService implements AbstractCreateService<Inventor, Gussmo> {
 
 	@Autowired
-	protected InventorChimpumRepository						repository;
+	protected InventorGussmoRepository						repository;
 
 
 	
 	@Override
-	public boolean authorise(final Request<Chimpum> request) {
+	public boolean authorise(final Request<Gussmo> request) {
 		assert request != null;
 
-		//final Type type = Type.COMPONENT; //  <----------------------CAMBIAR POR EL DEL EXAMEN
+		final Type type = Type.COMPONENT; 
 		int id;
 		Item item;
 		Inventor inventor;
@@ -36,18 +36,18 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		item = this.repository.findOneItemById(id);
 		inventor = item.getInventor();
 
-		return request.isPrincipal(inventor) && !item.isPublished() && item.getChimpum() == null; //&& item.getType().equals(type); //<----------------------CAMBIAR POR EL DEL EXAMEN
+		return request.isPrincipal(inventor) && !item.isPublished() && item.getGussmo() == null && item.getType().equals(type);
 	}
 
 
 	@Override
-	public Chimpum instantiate(final Request<Chimpum> request) {
+	public Gussmo instantiate(final Request<Gussmo> request) {
 		assert request != null;
-		final Chimpum result;
+		final Gussmo result;
 		Date moment;
 		Date startDate, endDate;
 
-		result = new Chimpum();
+		result = new Gussmo();
 
 		moment = new Date(System.currentTimeMillis() - 1);
 
@@ -67,18 +67,18 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void bind(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void bind(final Request<Gussmo> request, final Gussmo entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
+		request.bind(entity, errors, "name", "code", "explanation", "startDate", "endDate", "ration", "optionalLink");
 
 	}
 	
 
 	@Override
-	public void validate(final Request<Chimpum> request, final Chimpum entity, final Errors errors) {
+	public void validate(final Request<Gussmo> request, final Gussmo entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
@@ -95,7 +95,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	}
 
 	@Override
-	public void unbind(final Request<Chimpum> request, final Chimpum entity, final Model model) {
+	public void unbind(final Request<Gussmo> request, final Gussmo entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
@@ -106,14 +106,14 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		masterId = request.getModel().getInteger("masterId");
 		item = this.repository.findOneItemById(masterId);
 
-		request.unbind(entity, model, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
+		request.unbind(entity, model, "name", "code", "explanation", "startDate", "endDate", "ration", "optionalLink");
 
 		model.setAttribute("masterId", masterId);
 		model.setAttribute("published", item.isPublished());
 	}
 
 	@Override
-	public void create(final Request<Chimpum> request, final Chimpum entity) {
+	public void create(final Request<Gussmo> request, final Gussmo entity) {
 		assert request != null;
 		assert entity != null;
 
@@ -127,7 +127,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		entity.setCode(finalCode);
 
 		this.repository.save(entity);
-		item.setChimpum(entity);
+		item.setGussmo(entity);
 		this.repository.save(item);
 	}
 	

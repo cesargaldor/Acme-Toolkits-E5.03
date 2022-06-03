@@ -10,12 +10,12 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.dom4j.tree.AbstractEntity;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.chimpums.Chimpum;
+import acme.entities.chimpums.Gussmo;
 import acme.framework.datatypes.Money;
-import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import lombok.Getter;
 import lombok.Setter;
@@ -75,6 +75,6 @@ public class Item extends AbstractEntity {
 	//------------------------------CONTROL CHECK --------------------
 	@Valid
 	@OneToOne(optional=true)
-	protected Chimpum chimpum;
+	protected Gussmo gussmo;
 
 }
