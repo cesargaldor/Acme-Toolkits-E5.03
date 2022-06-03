@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.Chimpums.Chimpum;
+import acme.entities.chimpums.Chimpum;
 import acme.entities.items.Item;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;

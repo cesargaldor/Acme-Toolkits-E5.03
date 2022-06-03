@@ -1,4 +1,4 @@
-package acme.entities.Chimpums;
+package acme.entities.chimpums;
 
 import java.util.Date;
 

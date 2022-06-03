@@ -1,4 +1,3 @@
-
 <%--
 - list.jsp
 -
@@ -10,6 +9,7 @@
 - purposes.  The copyright owner does not offer any warranties or representations, nor do
 - they accept any liabilities with respect to them.
 --%>
+
 <%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>

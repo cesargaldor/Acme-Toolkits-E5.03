@@ -1,7 +1,7 @@
 inventor.chimpum.list.label.code = Code
-inventor.chimpum.list.label.Title = Title
-inventor.chimpum.list.label.Budget = Budget
-
+inventor.chimpum.list.label.title = Title
+inventor.chimpum.list.label.budget = Budget
+inventor.chimpum.list.label.description = Description
 
 inventor.toolkit.form.label.code = Code
 inventor.toolkit.form.label.title = Title
