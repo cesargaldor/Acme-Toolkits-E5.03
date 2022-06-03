@@ -46,6 +46,7 @@
 	<acme:input-url code="inventor.chimpum.form.label.optionalLink"
 		path="optionalLink" />
 
+	
 	<jstl:choose>
 		<jstl:when
 			test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
@@ -59,9 +60,8 @@
 				action="/inventor/chimpum/create?masterId=${masterId}" />
 		</jstl:when>
 	</jstl:choose>
-	<jstl:when test="${command == 'show'}">
+	<jstl:if test="${command == 'show'}">
 		<acme:button code="inventor.chimpum.form.button.item"
 			action="/inventor/item/show?id=${masterId}" />
-	</jstl:when>
-	
+	</jstl:if>
 </acme:form>

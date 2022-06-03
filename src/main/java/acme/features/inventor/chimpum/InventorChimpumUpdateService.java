@@ -11,7 +11,6 @@ import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
@@ -48,17 +47,9 @@ public class InventorChimpumUpdateService implements AbstractUpdateService<Inven
 		if (!errors.hasErrors("endDate")) {
 			errors.state(request, entity.getEndDate().after(entity.getStartDate()), "endDate", "inventor.chimpum.form.error.end-date-previous-to-start-date");
 		}
-		if (!errors.hasErrors("endDate")) {
-			final Date oneWeekAfterStartDate = DateUtils.addWeeks(entity.getStartDate(), 1);
-			errors.state(request, entity.getEndDate().equals(oneWeekAfterStartDate) || entity.getEndDate().after(oneWeekAfterStartDate), "endDate", "inventor.chimpum.form.error.insufficient-duration");
-		}
+		
 
-		if (!errors.hasErrors("budget")) {
-			final Money budget = entity.getBudget();
-			final boolean BUDGETPositive = budget.getAmount() > 0.;
-			errors.state(request, BUDGETPositive, "budget", "inventor.chimpum.form.error.budget-positive");
-
-		}
+	
 
 	}
 

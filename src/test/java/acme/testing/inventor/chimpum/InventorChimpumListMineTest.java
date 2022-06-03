@@ -25,7 +25,7 @@ public class InventorChimpumListMineTest extends TestHarness {
 	@Order(10)
 	public void positive(final int recordIndex, final String title, final String code,final String description, final String startDate, final String endDate,final String budget, final String optionalLink) {
 		super.signIn("inventor1", "inventor1");
-		super.clickOnMenu("Inventor", "List my chimpums");
+		super.clickOnMenu("Inventor", "List my chimpum");
 
 		super.checkListingExists();
 		super.sortListing(0, "asc");

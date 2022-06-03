@@ -1,9 +1,9 @@
 package acme.features.inventor.chimpum;
 
+
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,6 @@ import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
-import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
@@ -28,7 +27,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 	public boolean authorise(final Request<Chimpum> request) {
 		assert request != null;
 
-		//final ItemType type = ItemType.COMPONENT; //  <----------------------CAMBIAR POR EL DEL EXAMEN
+		//final Type type = Type.COMPONENT; //  <----------------------CAMBIAR POR EL DEL EXAMEN
 		int id;
 		Item item;
 		Inventor inventor;
@@ -91,37 +90,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		moment.setTime(now);
 		entity.setCreationMoment(moment.getTime());
 
-		if (!errors.hasErrors("code")) {
-			final Chimpum existing = this.repository.findOneChimpumByCode(entity.getCode());
-			errors.state(request, existing == null, "code", "inventor.item.form.error.duplicated");
-		}
-
-		if (!errors.hasErrors("startDate")) {
-			errors.state(request, entity.getStartDate().after(entity.getCreationMoment()), "startDate", "inventor.chimpum.form.error.past-start-date");
-		}
-		if (!errors.hasErrors("startDate")) {
-			final Date oneMonthAfterCreationDate = DateUtils.addMonths(entity.getCreationMoment(), 1);
-			errors.state(request, entity.getStartDate().equals(oneMonthAfterCreationDate) || entity.getStartDate().after(oneMonthAfterCreationDate), "startDate", "inventor.chimpum.form.error.too-close");
-		}
-
-		if (!errors.hasErrors("endDate")) {
-			errors.state(request, entity.getEndDate().after(entity.getCreationMoment()), "endDate", "inventor.chimpum.form.error.past-end-date");
-		}
-		if (!errors.hasErrors("endDate")) {
-			errors.state(request, entity.getEndDate().after(entity.getStartDate()), "endDate", "inventor.chimpum.form.error.end-date-previous-to-start-date");
-		}
-		if (!errors.hasErrors("endDate")) {
-			final Date oneWeekAfterStartDate = DateUtils.addWeeks(entity.getStartDate(), 1);
-			errors.state(request, entity.getEndDate().equals(oneWeekAfterStartDate) || entity.getEndDate().after(oneWeekAfterStartDate), "endDate", "inventor.chimpum.form.error.insufficient-duration");
-		}
-
-		if (!errors.hasErrors("budgedt")) {
-			final Money budget = entity.getBudget();
-			
-			final boolean BUDGETPositive = budget.getAmount() > 0.;
-			errors.state(request, BUDGETPositive, "budgedt", "inventor.chimpum.form.error.budget-positive");
-
-		}
+		
 
 	}
 
@@ -137,7 +106,7 @@ public class InventorChimpumCreateService implements AbstractCreateService<Inven
 		masterId = request.getModel().getInteger("masterId");
 		item = this.repository.findOneItemById(masterId);
 
-		request.unbind(entity, model, "title", "code", "description", "startDate", "endDate", "budget", "moreInfo");
+		request.unbind(entity, model, "title", "code", "description", "startDate", "endDate", "budget", "optionalLink");
 
 		model.setAttribute("masterId", masterId);
 		model.setAttribute("published", item.isPublished());

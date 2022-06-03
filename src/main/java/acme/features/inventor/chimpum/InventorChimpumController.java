@@ -15,17 +15,13 @@ public class InventorChimpumController extends AbstractController<Inventor, Chim
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
+	protected InventorChimpumCreateService 		createService;
+	@Autowired
 	protected InventorChimpumListMineService	listMineService;
-
 	@Autowired
 	protected InventorChimpumShowMineService	showMineService;
-	
 	@Autowired
 	protected InventorChimpumUpdateService 		updateService;
-
-	@Autowired
-	protected InventorChimpumCreateService 		createService;
-	
 	@Autowired
 	protected InventorChimpumDeleteService		deleteService;
 	
