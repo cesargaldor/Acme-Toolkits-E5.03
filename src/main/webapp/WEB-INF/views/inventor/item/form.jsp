@@ -34,14 +34,14 @@
 		<acme:submit code="inventor.item.form.button.update" action="/inventor/item/update"/>
 		<acme:submit code="inventor.item.form.button.publish" action="/inventor/item/publish"/>
 		<acme:submit code="inventor.item.form.button.delete" action="/inventor/item/delete"/>
-		<jstl:if test="${chimpum eq null}">
-				<acme:button code="inventor.item.form.button.create-chimpum" action="/inventor/chimpum/create?masterId=${id}" />
+		<jstl:if test="${gussmo eq null}">
+				<acme:button code="inventor.item.form.button.create-gussmo" action="/inventor/gussmo/create?masterId=${id}" />
 		</jstl:if>
 	</jstl:if>
 	
 	<jstl:if test="${command == 'show'}">
-		<jstl:if test="${!(chimpum eq null)}">
-			<acme:button code="inventor.item.form.button.chimpum" action="/inventor/chimpum/show?id=${chimpum.id}"/>
+		<jstl:if test="${!(gussmo eq null)}">
+			<acme:button code="inventor.item.form.button.gussmo" action="/inventor/gussmo/show?id=${gussmo.id}"/>
 		</jstl:if>
 	</jstl:if>
 	
