@@ -1,4 +1,4 @@
-package acme.features.inventors.item;
+package acme.features.inventor.item;
 
 import javax.annotation.PostConstruct;
 
