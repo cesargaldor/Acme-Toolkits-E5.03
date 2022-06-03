@@ -62,7 +62,20 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double averagePriceOfProposedPatronages = this.repository.averageBudgetProposedPatronages();
 		final Double deviationPriceOfProposedPatronages = this.repository.deviationBudgetProposedPatronages();
 		
-	
+	//CONTROL CHECK
+		final Double ratioOfChimpums = ((double)this.repository.getArtefactWithChimpum()/this.repository.getTotalArtefacts());
+		
+		final Map<String, List<Money>> budgetOfChimpumsStats = new HashMap<>();
+		
+		final List<Object[]> maxBudgetOfChimpums = this.repository.maxBudgetOfChimpums();
+		final List<Object[]> minBudgetOfChimpums = this.repository.minBudgetOfChimpums();
+		final List<Object[]> averageBudgetOfChimpums = this.repository.averageBudgetOfChimpums();
+		final List<Object[]> deviationBudgetOfChimpums = this.repository.deviationBudgetOfChimpums();
+		
+		budgetOfChimpumsStats.put("max", this.objectListToMoneyList(maxBudgetOfChimpums));
+		budgetOfChimpumsStats.put("min", this.objectListToMoneyList(minBudgetOfChimpums));
+		budgetOfChimpumsStats.put("average", this.objectListToMoneyList(averageBudgetOfChimpums));
+		budgetOfChimpumsStats.put("deviation", this.objectListToMoneyList(deviationBudgetOfChimpums));
 	
 		final Map<String, List<Pair<Double,String>>> priceOfComponentsStats = new HashMap<>();
 		
@@ -112,6 +125,9 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setPriceOfComponentsStats(priceOfComponentsStats);
 		result.setPriceOfToolsStats(priceOfToolsStats);
 		result.setPatronagesStats(patronageStats);
+		//control check
+		result.setRatioOfChimpums(ratioOfChimpums);
+		result.setChimpumStats(budgetOfChimpumsStats);
 
 		return result;
 	}
@@ -123,7 +139,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "totalNumComponents", "totalNumTools");
+		request.unbind(entity, model, "totalNumComponents", "totalNumTools","ratioOfChimpums");
 		model.setAttribute("numberOfAcceptedPatronages", entity.getNumberOfPatronages().get("accepted"));
 		model.setAttribute("numberOfDeniedPatronages", entity.getNumberOfPatronages().get("denied"));
 		model.setAttribute("numberOfProposedPatronages", entity.getNumberOfPatronages().get("proposed"));
@@ -147,6 +163,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		model.setAttribute("minProposedPatronages", entity.getPatronagesStats().get("minProposed"));
 		model.setAttribute("averageProposedPatronages", entity.getPatronagesStats().get("averageProposed"));
 		model.setAttribute("deviationProposedPatronages", entity.getPatronagesStats().get("deviationProposed"));
+	//CHIMPUMS
+		model.setAttribute("maxBudgetOfChimpums", entity.getChimpumStats().get("max"));
+		model.setAttribute("minBudgetOfChimpums", entity.getChimpumStats().get("min"));
+		model.setAttribute("averageBudgetOfChimpums", entity.getChimpumStats().get("average"));
+		model.setAttribute("deviationBudgetOfChimpums", entity.getChimpumStats().get("deviation"));
+	
 	}
 	
 	private List<Money> objectListToMoneyList(final List<Object[]> list) {
@@ -172,6 +194,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		return res;
 	}
-
+	
+	
+	
+	
 }
+
 

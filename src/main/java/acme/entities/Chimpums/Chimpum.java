@@ -25,10 +25,10 @@ public class Chimpum extends AbstractEntity {
 	
 	private static final long serialVersionUID = 4827750132244297758L;
 	
-	//Attributes-------------------------------------------
 	
+	//^[A-Z]{5}(-[0-9]{2}[/][0][1-9]|[1][12][/][1-9]|[12][0-9]|3[01])$
 	//@Column(unique = true)
-	//@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
+	//@Pattern(regexp = "^[A-Z]{5}(-[0-9]{2}[/][0][1-9]|[1][12][/][1-9]|[12][0-9]|3[01])$")
 	protected String code;
 	
 	@NotNull
@@ -38,11 +38,11 @@ public class Chimpum extends AbstractEntity {
 	
 	@NotBlank
 	@Length(min=1,max = 100)
-	protected String 			titulo;
+	protected String 			title;
 	
 	@NotBlank
 	@Length(min=1,max=255)
-	protected String 			descripcion;
+	protected String 			description;
 	
 	
 	//-----------------PERIOD---------------------

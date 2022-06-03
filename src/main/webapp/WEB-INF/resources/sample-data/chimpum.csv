@@ -1,4 +1,4 @@
-key,code,creationMoment,titulo,descripcion,startDate,endDate,budget,optionalLink
+key,code,creationMoment,title,description,startDate,endDate,budget,optionalLink
 chimpum-01,bbb,2000/01/01 00:04,New chimpum,new chimpum,2000/02/01 00:00,2000/02/08 00:00,EUR 10.0,http://www.acme-jobs.com/discount
 chimpum-02,aaa,2001/02/21 22:00,New chimpum,new chimpum,2001/04/22 22:20,2002/02/21 22:00,EUR 100.0,http://www.acme-jobs.com/discount
 chimpum-03,ccc,2010/04/12 23:59,chimpum,new chimpum,2010/06/12 23:59,2010/06/20 00:00,EUR 34.56,http://www.acme-jobs.com/discount
