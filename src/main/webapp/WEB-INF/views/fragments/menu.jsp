@@ -69,7 +69,7 @@
 			<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
 			<acme:menu-suboption code="master.menu.inventor.tool.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.inventor.chimpum.list-mine" action="/inventor/chimpum/list"/>
+			<acme:menu-suboption code="master.menu.inventor.gussmo.list-mine" action="/inventor/gussmo/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list"/>
 			<acme:menu-separator/>
